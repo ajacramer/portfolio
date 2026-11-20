@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Membership Pitch | Aja Cramer</title>
+<meta name="description" content="A 32-slide, click-through membership presentation that tells a visitor's story and shows where a member's business turns up along the way.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300..900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Caveat:wght@600&display=swap">
+<style>
+:root{
+  --navy:#201E43; --navy-2:#1A1838; --blue:#134B70; --teal:#508C9B;
+  --paper:#E7E3F1; --muted:#BFC6D6; --sun:#B69CFF; --ink:#14132A;
+  --head:"League Spartan", system-ui, sans-serif;
+  --body:"Instrument Sans", system-ui, sans-serif;
+  --hand:"Caveat", cursive;
+  --gutter:clamp(1.25rem,4vw,3rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--paper);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:radial-gradient(rgba(182,156,255,.14) .7px,transparent 1px);background-size:9px 9px}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--sun);outline-offset:4px;border-radius:6px}
+.wrap{max-width:76rem;margin:0 auto;padding:0 var(--gutter)}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--sun);color:var(--ink);padding:.5rem 1rem;border-radius:6px;font-weight:600}
+.skip:focus{left:.5rem;z-index:50}
+h1,h2,h3{font-family:var(--head);font-weight:800;letter-spacing:-.02em;margin:0}
+.spot{color:var(--sun)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font:700 1.05rem/1 var(--head);letter-spacing:.01em;padding:1.05rem 1.6rem .95rem;border-radius:999px;text-decoration:none;background:var(--sun);color:var(--ink);border:0;cursor:pointer;transition:transform .2s cubic-bezier(.3,1.6,.5,1),box-shadow .2s}
+.btn:hover{transform:translateY(-3px) rotate(-1.5deg);box-shadow:0 10px 0 -2px var(--teal)}
+.btn.ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 2px var(--teal)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--sun),0 10px 0 -2px var(--teal);color:var(--sun)}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(32,30,67,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:4.5rem}
+.logo{font:800 1.35rem/1 var(--head);text-decoration:none;letter-spacing:-.02em;display:flex;align-items:baseline;gap:.15rem}
+.logo i{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--sun);transform:translateY(-.05rem)}
+.top nav{display:flex;gap:.3rem}
+.top nav a{text-decoration:none;font:600 1rem/1 var(--head);padding:.6rem .9rem;border-radius:999px;transition:background .2s,color .2s}
+.top nav a:hover{background:var(--blue);color:var(--sun)}
+
+/* intro */
+.intro{padding:clamp(2rem,6vh,4rem) 0 clamp(2.5rem,6vh,4rem)}
+.back{display:inline-flex;align-items:center;gap:.5rem;font:600 1rem/1 var(--head);text-decoration:none;color:var(--muted);margin-bottom:clamp(1.5rem,4vh,2.5rem)}
+.back svg{width:1.1rem;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.back:hover{color:var(--sun)}
+.back:hover svg{transform:translateX(-5px)}
+.intro h1{font-size:clamp(2.8rem,8.2vw,7.6rem);line-height:.9;letter-spacing:-.045em;max-width:11ch;font-weight:700}
+.intro .h-row{position:relative}
+.hnote{position:absolute;right:0;bottom:.6rem;font:600 clamp(1.3rem,2vw,1.75rem)/1.05 var(--hand);color:var(--sun);transform:rotate(-4deg);max-width:12rem;text-align:center}
+.hnote svg{display:block;margin:0 auto .2rem;fill:none;stroke:var(--sun);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.outcome{font:600 clamp(1.25rem,2vw,1.6rem)/1.35 var(--head);letter-spacing:-.01em;max-width:40rem;margin:1.6rem 0 0}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.6fr);gap:1.5rem 2rem;margin-top:clamp(2rem,5vh,3rem);padding-top:1.5rem;border-top:1px solid rgba(80,140,155,.45)}
+.facts dt{font:700 .78rem/1 var(--head);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.55rem}
+.facts dd{margin:0;font-size:1rem;line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.chips li{font:600 .82rem/1 var(--body);padding:.42rem .75rem;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--teal)}
+
+/* hero cover */
+.cover{position:relative;border-radius:22px;overflow:hidden;background:var(--teal);margin-top:clamp(2rem,5vh,3rem)}
+.cover img{width:100%;aspect-ratio:16/10;object-fit:cover;position:relative;z-index:1}
+.cover .layer + .layer{position:absolute;inset:0;height:100%}
+.cover::before{content:"";position:absolute;z-index:0;width:26%;aspect-ratio:1;border-radius:50%;background:var(--sun);right:-7%;top:-14%}
+
+/* story panel */
+.sec{padding:clamp(4rem,10vh,7rem) 0}
+.label{font:700 .8rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 0 1rem}
+.story{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.5rem clamp(2rem,5vw,4.5rem);padding:clamp(1.8rem,3.4vw,2.8rem) clamp(1.6rem,3.2vw,2.75rem) clamp(1.8rem,3.4vw,2.8rem) clamp(2rem,3.8vw,3.25rem);background:rgba(80,140,155,.2);border-radius:4px}
+.story::before{content:"";position:absolute;left:0;top:0;bottom:0;width:.45rem;background:var(--teal);border-radius:4px 0 0 4px}
+.story h2{font-size:clamp(1.7rem,2.8vw,2.4rem);line-height:1;letter-spacing:-.03em;margin-bottom:1rem}
+.story p{margin:0 0 1rem;font-size:1.08rem}
+.groups{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-top:.4rem}
+.groups span.k{font:600 1.45rem/1 var(--hand);color:var(--sun);margin-right:.4rem;transform:rotate(-3deg)}
+.groups b{font:700 1.05rem/1 var(--head);padding:.75rem 1.1rem .65rem;border-radius:999px;background:var(--sun);color:var(--ink)}
+.groups b:nth-child(odd){transform:rotate(-2deg)} .groups b:nth-child(even){transform:rotate(1.5deg)}
+.summary{max-width:46rem;font-size:clamp(1.15rem,1.6vw,1.3rem);line-height:1.6;margin:0 0 clamp(2.5rem,5vw,3.5rem)}
+
+/* journey */
+.sec-head h2{font-size:clamp(2.6rem,6.5vw,5.4rem);line-height:.92;letter-spacing:-.04em}
+.sec-head p{color:var(--muted);font-size:1.12rem;max-width:32rem;margin:1rem 0 0}
+.journey{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:clamp(2rem,5vw,4rem);margin-top:clamp(2.5rem,6vw,4rem)}
+.rail{position:sticky;top:7rem;align-self:start;list-style:none;margin:0;padding:0 0 0 1.6rem}
+.rail::before,.rail .fill{content:"";position:absolute;left:.42rem;top:.6rem;width:3px;border-radius:3px}
+.rail::before{bottom:.6rem;background:rgba(80,140,155,.35)}
+.rail .fill{height:0;background:var(--teal);transition:height .6s cubic-bezier(.2,.8,.2,1)}
+.rail li{position:relative;margin-bottom:1.5rem}
+.rail a{text-decoration:none;font:700 1.25rem/1 var(--head);color:var(--muted);transition:color .3s}
+.rail a small{display:block;font:600 .75rem/1 var(--head);letter-spacing:.12em;color:var(--teal);margin-bottom:.3rem}
+.rail li::before{content:"";position:absolute;left:-1.6rem;top:.55rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--navy);box-shadow:inset 0 0 0 3px rgba(80,140,155,.6);transition:background .3s,box-shadow .3s,transform .4s cubic-bezier(.3,1.7,.5,1)}
+.rail li.done::before{background:var(--teal);box-shadow:none}
+.rail li.on::before{background:var(--sun);box-shadow:0 0 0 5px rgba(182,156,255,.25);transform:scale(1.25)}
+.rail li.on a{color:var(--sun)}
+.steps{display:flex;flex-direction:column;gap:clamp(5rem,12vw,8rem)}
+.step h3{font-size:clamp(2rem,4vw,3.3rem);line-height:.95;letter-spacing:-.035em;margin-bottom:1rem}
+.step h3 .v{color:var(--sun)}
+.step .num{font:700 .8rem/1 var(--head);letter-spacing:.14em;color:var(--teal);display:block;margin-bottom:.8rem}
+.step > p{font-size:1.1rem;max-width:40rem;margin:0}
+
+/* device frames */
+.stagebox{position:relative;margin-top:2rem;padding-bottom:3rem}
+.browser{border-radius:14px;overflow:hidden;background:var(--navy-2);box-shadow:0 0 0 1.5px rgba(80,140,155,.5),0 30px 60px -30px rgba(10,9,30,.8);width:88%}
+.bar{display:flex;align-items:center;gap:.4rem;height:2.1rem;padding:0 .9rem;background:var(--ink)}
+.bar i{width:.6rem;height:.6rem;border-radius:50%;background:var(--teal)}
+.bar i:nth-child(2){background:var(--sun)} .bar i:nth-child(3){background:var(--muted);opacity:.5}
+.bar span{margin-left:.7rem;font:600 .72rem/1 var(--body);color:var(--muted);background:rgba(80,140,155,.2);padding:.32rem .8rem;border-radius:999px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot{position:relative;aspect-ratio:16/10;background:var(--navy-2)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .35s}
+.shot img.sq{object-fit:contain}
+.phone{position:absolute;right:0;bottom:0;width:22%;min-width:7.5rem;border-radius:1.6rem;padding:.45rem;background:var(--ink);box-shadow:0 0 0 1.5px rgba(80,140,155,.5),0 30px 50px -20px rgba(10,9,30,.9)}
+.phone img{border-radius:1.2rem;aspect-ratio:600/1298;object-fit:cover;object-position:top;width:100%}
+.dot{position:absolute;z-index:-1;border-radius:50%;background:var(--sun);width:30%;aspect-ratio:1;right:4%;top:-8%}
+.step:nth-child(even) .dot{right:auto;left:-6%;top:auto;bottom:-2%;background:var(--teal)}
+.cap{font-size:.95rem;color:var(--muted);margin:.9rem 0 0;max-width:34rem;min-height:1.5em}
+.thumbs{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem;width:88%}
+.thumbs button{padding:0;border:0;background:none;cursor:pointer;width:calc(20% - .5rem);min-width:4.5rem;border-radius:8px;overflow:hidden;box-shadow:0 0 0 1.5px rgba(80,140,155,.5);transition:box-shadow .2s,transform .25s cubic-bezier(.3,1.6,.5,1)}
+.thumbs button img{aspect-ratio:16/10;object-fit:cover;object-position:top;opacity:.6;transition:opacity .2s}
+.thumbs button:hover{transform:translateY(-3px)}
+.thumbs button:hover img,.thumbs button[aria-pressed="true"] img{opacity:1}
+.thumbs button[aria-pressed="true"]{box-shadow:0 0 0 3px var(--sun)}
+
+/* decisions */
+.decisions{background:var(--blue)}
+.dgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);margin-top:clamp(2.5rem,5vw,3.5rem)}
+.viewer{position:sticky;top:6.5rem;align-self:start}
+.viewer .browser{width:100%}
+.port{position:relative;height:min(68vh,40rem);overflow:hidden;background:var(--navy-2)}
+.pan{position:absolute;left:0;top:0;width:100%;transition:transform 1s cubic-bezier(.6,0,.2,1)}
+.pan img{width:100%}
+.pan[hidden]{display:block;visibility:hidden}
+.spotbox{position:absolute;border-radius:10px;box-shadow:0 0 0 3px var(--sun),0 0 0 9999px rgba(20,19,42,.55);transition:all .6s cubic-bezier(.6,0,.2,1);pointer-events:none}
+.spotbox b{position:absolute;left:-.9rem;top:-.9rem;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--sun);color:var(--ink);font:800 1rem/1.95rem var(--head);text-align:center}
+.notes{list-style:none;margin:0;padding:12vh 0 30vh}
+.notes li{min-height:52vh;display:flex;flex-direction:column;justify-content:center;opacity:.3;transition:opacity .4s}
+.notes li.on{opacity:1}
+.notes .n{font:700 .8rem/1 var(--head);letter-spacing:.14em;color:var(--teal);margin-bottom:.8rem}
+.notes h3{font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1;letter-spacing:-.03em;margin-bottom:.8rem}
+.notes li.on h3{color:var(--sun)}
+.notes p{margin:0;font-size:1.08rem;max-width:28rem}
+.notes .mshot{display:none}
+
+/* links + next */
+.live{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.live a.l{font:600 1rem/1 var(--head);text-decoration:none;padding:.8rem 1.15rem .7rem;border-radius:999px;box-shadow:inset 0 0 0 2px var(--teal);transition:box-shadow .2s,color .2s,transform .2s cubic-bezier(.3,1.6,.5,1)}
+.live a.l:hover{box-shadow:inset 0 0 0 2px var(--sun);color:var(--sun);transform:translateY(-3px)}
+.live a.l::after{content:" \2197";color:var(--teal)}
+.next{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:2rem 3rem;align-items:center;text-decoration:none;padding:clamp(1.6rem,3.5vw,2.6rem);border-radius:22px;box-shadow:inset 0 0 0 2px var(--teal);transition:box-shadow .25s}
+.next:hover{box-shadow:inset 0 0 0 2px var(--sun)}
+.next small{font:700 .8rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.next h2{font-size:clamp(2rem,4.5vw,3.6rem);line-height:.95;letter-spacing:-.04em;margin:.7rem 0 .9rem;transition:color .2s}
+.next:hover h2{color:var(--sun)}
+.next p{margin:0;color:var(--muted)}
+.next .cover{margin:0;background:var(--blue)}
+.next .cover::before{left:-9%;right:auto;top:auto;bottom:-17%}
+
+footer{border-top:1px solid rgba(80,140,155,.4);padding:2rem 0 2.6rem;margin-top:clamp(4rem,10vh,6rem)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap}
+footer .made{font:600 1.35rem/1 var(--hand);color:var(--sun)}
+footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+footer nav a{text-decoration:none;color:var(--muted);font-weight:600}
+footer nav a:hover{color:var(--sun)}
+footer small{color:var(--muted);font-size:.9rem}
+
+/* motion */
+.motion .rise{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+.motion .rise.in{opacity:1;transform:none}
+.motion .cover .layer{transition:transform 1.25s cubic-bezier(.2,.85,.25,1.05),opacity .8s ease}
+.motion .cover .layer[data-from="left"]{transform:translateX(-70%) rotate(-5deg);opacity:0}
+.motion .cover .layer[data-from="right"]{transform:translateX(70%) rotate(6deg);opacity:0;transition-delay:.12s}
+.motion .cover.in .layer{transform:none;opacity:1}
+.motion .cover::before{transform:scale(0);transition:transform .65s cubic-bezier(.3,1.6,.5,1) 1.15s}
+.motion .cover.in::before{transform:scale(1)}
+.motion .stagebox .browser{opacity:0;transform:translateX(-8%) rotate(-2deg);transition:opacity .8s ease,transform 1.1s cubic-bezier(.2,.85,.25,1.05)}
+.motion .stagebox .phone{opacity:0;transform:translateX(40%) rotate(6deg);transition:opacity .8s ease .15s,transform 1.1s cubic-bezier(.2,.85,.25,1.05) .15s}
+.motion .stagebox .dot{transform:scale(0);transition:transform .6s cubic-bezier(.3,1.6,.5,1) .9s}
+.motion .stagebox.in .browser,.motion .stagebox.in .phone{opacity:1;transform:none}
+.motion .stagebox.in .dot{transform:none}
+.motion .groups b{opacity:0;transform:scale(.4)}
+.motion .groups.in b{opacity:1;transition:opacity .3s ease,transform .5s cubic-bezier(.3,1.7,.5,1)}
+.motion .groups.in b:nth-child(odd){transform:rotate(-2deg)} .motion .groups.in b:nth-child(even){transform:rotate(1.5deg)}
+.motion .hnote{clip-path:inset(-30% 100% -30% -10%);transition:clip-path 1.1s cubic-bezier(.5,0,.4,1) .6s}
+.motion .hnote.in{clip-path:inset(-30% -10% -30% -10%)}
+
+@media (max-width:900px){
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:last-child{grid-column:1/-1}
+  .story,.dgrid,.next{grid-template-columns:1fr}
+  .journey{grid-template-columns:1fr}
+  .rail{display:none}
+  .hnote{display:none}
+  .browser,.thumbs{width:100%}
+  .phone{width:30%;right:-.5rem;bottom:0}
+  .stagebox{padding-bottom:5.5rem}
+  .viewer{display:none}
+  .notes{padding:0}
+  .notes li{min-height:0;opacity:1;margin-bottom:3rem}
+  .notes .mshot{display:block;margin-bottom:1.2rem;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1.5px rgba(80,140,155,.5);position:relative;aspect-ratio:16/10;background:var(--navy-2)}
+  .notes .mshot img{position:absolute;left:0;top:0;width:100%;max-width:none;transform-origin:0 0}
+  .top nav a{padding:.55rem .55rem;font-size:.95rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+/* hub header: two columns */
+.intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:2rem clamp(2rem,5vw,4.5rem);align-items:center}
+.intro h1{font-size:clamp(2.6rem,6vw,5.6rem);max-width:none}
+.intro .outcome{max-width:32rem}
+.intro .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hero-art{position:relative;padding-top:4.5rem}
+.hero-art .cover{margin:0}
+.hero-art .hnote{position:absolute;left:-1.5rem;top:-.4rem;right:auto;bottom:auto;text-align:left;max-width:15rem;z-index:3}
+.hero-art .hnote svg{position:absolute;left:62%;top:1.6rem;margin:0}
+.deliv{margin-top:clamp(1.8rem,4vh,2.5rem)}
+
+/* the four pieces, joined by a path */
+.pieces{position:relative;list-style:none;margin:clamp(3rem,7vw,5rem) 0 0;padding:0;display:flex;flex-direction:column;gap:clamp(4rem,10vw,7rem)}
+.trail{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.trail path{fill:none;stroke-linecap:round}
+.trail .bg{stroke:rgba(80,140,155,.35);stroke-width:3;stroke-dasharray:2 12}
+.trail .fg{stroke:var(--teal);stroke-width:3}
+.piece{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem clamp(5rem,9vw,8rem);align-items:center}
+.piece:nth-child(odd of .piece) .art{order:2}
+.piece .art{display:block;text-decoration:none}
+.piece .stagebox{margin:0;padding-bottom:2.5rem}
+.piece .browser{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.piece a.art:hover .browser{box-shadow:0 0 0 4px var(--sun),0 30px 60px -30px rgba(10,9,30,.8)}
+.piece .badge{display:inline-grid;place-items:center;width:3.4rem;height:3.4rem;border-radius:50%;background:var(--navy);box-shadow:inset 0 0 0 3px var(--teal);font:800 1.3rem/1 var(--head);color:var(--teal);margin-bottom:1.1rem;transition:background .4s,color .4s,box-shadow .4s,transform .5s cubic-bezier(.3,1.7,.5,1)}
+.piece .badge{position:absolute;left:50%;top:50%;margin:0;transform:translate(-50%,-50%)}
+.piece.reached .badge{background:var(--sun);color:var(--ink);box-shadow:0 0 0 7px rgba(182,156,255,.22);transform:translate(-50%,-50%) rotate(-8deg) scale(1.08)}
+.piece .moment{display:block;font:700 .8rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem}
+.piece h3{font-size:clamp(2rem,3.8vw,3.2rem);line-height:.95;letter-spacing:-.035em;margin-bottom:.9rem}
+.piece h3 a{text-decoration:none}
+.piece h3 a:hover{color:var(--sun)}
+.piece p{margin:0 0 1.2rem;font-size:1.08rem;color:var(--paper);max-width:30rem}
+.piece .go{font:700 1rem/1 var(--head);color:var(--sun);text-decoration:none;display:inline-flex;gap:.5rem;align-items:center}
+.piece .go svg{width:1.1rem;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.piece .go:hover svg{transform:translateX(5px)}
+.piece .soon{font:600 1.35rem/1 var(--hand);color:var(--sun);display:inline-block;transform:rotate(-3deg)}
+.piece .phone{width:24%}
+@media (max-width:900px){
+  .intro-grid,.piece{grid-template-columns:1fr}
+  .piece:nth-child(odd of .piece) .art{order:0}
+  .piece .badge,.piece.reached .badge{position:static;transform:none;margin-bottom:1rem}
+  .trail{display:none}
+  .hero-art{padding-top:0}
+  .hero-art .hnote{display:none}
+  .intro .facts{grid-template-columns:1fr 1fr}
+}
+@view-transition{navigation:auto}
+::view-transition-group(deck-shot){animation-duration:.7s;animation-timing-function:cubic-bezier(.6,0,.2,1)}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;font:700 .8rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1.1rem}
+.kicker b{display:inline-grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--sun);color:var(--ink);font-size:.95rem;letter-spacing:0}
+.hero-media{position:relative}
+.hero-media .browser{width:100%;view-transition-name:deck-shot}
+.hero-media video,.hero-media .poster{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--navy-2)}
+.vbtn{position:absolute;right:.8rem;bottom:.8rem;z-index:2;display:inline-flex;align-items:center;gap:.45rem;border:0;border-radius:999px;padding:.55rem .85rem;background:rgba(20,19,42,.82);color:var(--paper);font:600 .85rem/1 var(--body);cursor:pointer}
+.vbtn:hover{color:var(--sun)}
+.vbtn svg{width:.9rem;height:.9rem}
+.hero-media::before{content:"";position:absolute;z-index:-1;width:34%;aspect-ratio:1;border-radius:50%;background:var(--sun);right:-8%;top:-12%}
+
+/* the script: story beats */
+.script{list-style:none;margin:clamp(2.5rem,6vw,4rem) 0 0;padding:0;position:relative;display:flex;flex-direction:column;gap:clamp(3.5rem,8vw,6rem)}
+.script::before{content:"";position:absolute;left:1.05rem;top:1rem;bottom:1rem;width:3px;border-radius:3px;background:repeating-linear-gradient(var(--teal) 0 3px,transparent 3px 12px)}
+.beat{position:relative;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:1.5rem clamp(2rem,4vw,3.5rem);align-items:center;padding-left:3.6rem}
+.beat .bn{position:absolute;left:0;top:.2rem;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--navy);box-shadow:inset 0 0 0 3px var(--teal);display:grid;place-items:center;font:800 .95rem/1 var(--head);color:var(--teal);transition:background .4s,color .4s,box-shadow .4s,transform .5s cubic-bezier(.3,1.7,.5,1)}
+.beat.in .bn{background:var(--sun);color:var(--ink);box-shadow:0 0 0 6px rgba(182,156,255,.22);transform:rotate(-8deg)}
+.beat .line{font:800 clamp(1.9rem,3.6vw,3.1rem)/.95 var(--head);letter-spacing:-.035em;margin:0 0 1rem}
+.beat .line span{display:block;color:var(--sun)}
+.beat .then{font-size:1rem;color:var(--muted);margin:0}
+.beat .then b{color:var(--paper);font-weight:600}
+.frame{position:relative}
+.frame .shot img{transition:opacity .6s ease}
+.frame .shot img.f{opacity:0}
+.frame.final .shot img.f{opacity:1}
+.frame.final .shot img.b{opacity:0}
+.flip{display:inline-flex;gap:.25rem;margin-top:.9rem;padding:.25rem;border-radius:999px;box-shadow:inset 0 0 0 1.5px rgba(80,140,155,.6)}
+.flip button{border:0;background:none;color:var(--muted);font:600 .88rem/1 var(--head);padding:.55rem .95rem .5rem;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
+.flip button[aria-pressed="true"]{background:var(--sun);color:var(--ink)}
+.flip button:hover:not([aria-pressed="true"]){color:var(--sun)}
+
+.why3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:clamp(2.5rem,5vw,3.5rem);list-style:none;padding:0}
+.why3 li{padding:1.6rem 1.6rem 1.7rem;border-radius:18px;box-shadow:inset 0 0 0 2px rgba(80,140,155,.55);position:relative}
+.why3 li::before{content:"";position:absolute;right:1.2rem;top:1.2rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--sun)}
+.why3 li:nth-child(2)::before{background:var(--teal)}
+.why3 h3{font-size:1.45rem;line-height:1.05;letter-spacing:-.025em;margin:0 0 .6rem;max-width:85%}
+.why3 p{margin:0;color:var(--paper);font-size:1.02rem}
+
+
+/* chapter players: every slide, recorded live */
+.chapters{display:flex;flex-direction:column;gap:clamp(4rem,9vw,6.5rem);margin-top:clamp(2.5rem,5vw,3.5rem)}
+.chap-h{display:flex;flex-direction:column;align-items:flex-start;gap:.55rem;margin-bottom:1.4rem}
+.chap-h .cn{font:800 .85rem/1 var(--head);letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
+.chap-h h3{font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1;letter-spacing:-.035em}
+.chap-h .ct{font-size:.98rem;color:var(--muted)}
+.player{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:1.25rem clamp(1.5rem,3vw,2.5rem);align-items:start}
+.screen{position:relative;position:sticky;top:6rem}
+.screen .browser{width:100%}
+.screen video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--navy-2)}
+.screen .scrub{position:relative;height:5px;background:rgba(80,140,155,.3)}
+.screen .scrub i{position:absolute;left:0;top:0;bottom:0;background:var(--teal);width:0}
+.screen .scrub b{position:absolute;top:-3px;width:2px;height:11px;background:rgba(231,227,241,.35)}
+.screen .vbtn{top:.22rem;bottom:auto;right:.45rem;padding:.38rem .75rem;font-size:.78rem;background:rgba(80,140,155,.25)}
+.slist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.35rem;max-height:min(70vh,36rem);overflow:auto;padding-right:.3rem;scrollbar-width:thin;scrollbar-color:var(--teal) transparent}
+.slist button{width:100%;display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:.2rem .8rem;align-items:start;text-align:left;border:0;background:transparent;color:var(--paper);padding:.75rem .9rem .8rem;border-radius:12px;cursor:pointer;position:relative;overflow:hidden;transition:background .25s}
+.slist button:hover{background:rgba(80,140,155,.14)}
+.slist button .no{grid-row:span 3;font:800 .95rem/1.6rem var(--head);color:var(--teal);width:2.2rem;height:2.2rem;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(80,140,155,.6);display:grid;place-items:center;transition:background .3s,color .3s,box-shadow .3s}
+.slist button .ln{font:800 1.12rem/1.1 var(--head);letter-spacing:-.015em}
+.slist button .ln em{font-style:normal;color:var(--sun)}
+.slist button .tt{font-size:.85rem;color:var(--muted)}
+.slist button .act{justify-self:start;margin-top:.35rem;font:600 .75rem/1 var(--body);padding:.32rem .6rem;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--teal);color:var(--paper)}
+.slist button .act::before{content:"";display:inline-block;width:.45rem;height:.45rem;border-radius:50%;background:var(--sun);margin-right:.4rem;vertical-align:.05rem}
+.slist button[aria-current="true"]{background:rgba(80,140,155,.22)}
+.slist button[aria-current="true"] .no{background:var(--sun);color:var(--ink);box-shadow:none}
+.slist button .pg{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--sun)}
+@media (max-width:900px){.player{grid-template-columns:1fr}.screen{position:relative;top:0}.slist{max-height:none}}
+
+
+.sec-head .tip{font-size:.9rem;color:var(--teal);margin-top:.6rem}
+.now{margin:1rem auto 0;min-height:0;max-width:30rem;text-align:center}
+.now .nn{margin:0 auto;padding:0;max-width:none;font-size:clamp(1.25rem,1.7vw,1.5rem);text-align:center;transform:rotate(-1.5deg)}
+.now .nn::before{display:none}
+.now .nn svg{display:block;margin:0 auto .35rem;fill:none;stroke:var(--sun);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.slist button .ds{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.slist button .ds>span{overflow:hidden;font-size:.9rem;line-height:1.5;color:var(--muted);opacity:0;transition:opacity .3s}
+.slist button[aria-current="true"] .ds{grid-template-rows:1fr}
+.slist button[aria-current="true"] .ds>span{opacity:1;padding-top:.35rem;transition:opacity .4s .15s}
+.hands:empty{display:none}
+.hands{display:flex;flex-wrap:wrap;gap:.8rem 2.5rem;margin:-.4rem 0 1.4rem;max-width:62rem}
+.hand{margin:0;font:600 clamp(1.25rem,1.7vw,1.5rem)/1.12 var(--hand);color:var(--sun);max-width:24rem;transform:rotate(var(--rot,-2deg));padding-left:1.6rem;position:relative}
+.hand::before{content:"";position:absolute;left:0;top:.45em;width:1rem;height:.7rem;border-left:2px solid var(--sun);border-bottom:2px solid var(--sun);border-radius:0 0 0 .6rem}
+.rlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.75rem}
+.rlist li{display:grid;grid-template-columns:2.4rem 1fr;gap:.8rem;align-items:start;padding:1rem 1.1rem;border-radius:14px;background:rgba(80,140,155,.13);font-size:.95rem;line-height:1.45}
+.rlist b{display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--teal);color:var(--ink);font:800 1rem/1 var(--head)}
+.rlist li:last-child b,.rlist li:nth-child(7) b{background:var(--sun)}
+.rlist em{font-style:normal;color:var(--sun);font-weight:600}
+.cuts{margin-top:clamp(3rem,6vw,4rem)}
+.cuts ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.9rem}
+.cuts li{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.2rem}
+.cuts s{font:700 clamp(1.15rem,1.8vw,1.5rem)/1.2 var(--head);letter-spacing:-.01em;color:var(--muted);text-decoration-color:var(--sun);text-decoration-thickness:3px}
+.cuts span{font:600 1.35rem/1 var(--hand);color:var(--sun);transform:rotate(-2deg)}
+/* bookends */
+.ends{background:var(--blue)}
+.bookends{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.5rem clamp(1.5rem,3vw,2.5rem);margin-top:clamp(2rem,5vw,3rem)}
+.bookends figure{margin:0}
+.bookends figcaption{margin-top:.9rem;font-size:.98rem;color:var(--paper)}
+.bookends figcaption b{display:block;font:700 .8rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--sun);margin-bottom:.45rem}
+.ends .browser{width:100%}
+.endnote{font:600 clamp(1.35rem,2vw,1.7rem)/1.1 var(--hand);color:var(--sun);transform:rotate(-2deg);margin:1.6rem 0 0;text-align:center}
+.endbig{margin-top:clamp(2.5rem,5vw,3.5rem);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:2rem clamp(2rem,4vw,3.5rem);align-items:center}
+.endbig h3{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1;letter-spacing:-.03em;margin-bottom:1rem}
+.endbig p{margin:0 0 1rem;font-size:1.08rem}
+
+/* controls viewer reuses the details viewer */
+.ctl .port{height:auto;aspect-ratio:16/10}
+.ctl .pan{transition:none}
+.ctl .pan img{width:100%}
+.keys{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
+.keys kbd{font:700 .85rem/1 var(--head);padding:.45rem .6rem .4rem;border-radius:7px;background:var(--ink);box-shadow:inset 0 -2px 0 rgba(80,140,155,.6);color:var(--paper)}
+.keys span{font-size:.9rem;color:var(--muted);align-self:center;margin-right:.6rem}
+@media (max-width:900px){
+  .beat,.bookends,.endbig,.why3{grid-template-columns:1fr}
+  .beat{padding-left:3rem}
+}
+
+
+.why3.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.why3.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.split2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:2rem clamp(2rem,4vw,3.5rem);margin-top:clamp(2.5rem,5vw,3.5rem);align-items:start}
+.mapl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.8rem}
+.mapl li{padding:1rem 1.2rem;border-radius:14px;background:var(--blue)}
+.mapl b{display:block;font:700 1.08rem/1.2 var(--head);margin-bottom:.3rem}
+.mapl span{font-size:.97rem}
+.split2 .rlist{grid-template-columns:1fr}
+@media (max-width:1100px){.why3.four,.why3.five{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.split2{grid-template-columns:1fr}.why3.four,.why3.five{grid-template-columns:1fr}}
+
+
+
+
+
+
+
+
+/* slide detail panel */
+.player{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)!important;align-items:start}
+.sdet{position:sticky;top:6.5rem}
+.segs{display:flex;gap:5px}
+.seg{flex:1;min-width:0;border:0;background:none;padding:.3rem 0 .4rem;cursor:pointer;color:var(--muted);font:700 .78rem/1 var(--body);text-align:left;transition:color .25s}
+.seg span{display:block;padding-left:1px}
+.seg i{display:block;height:5px;border-radius:9px;background:rgba(80,140,155,.3);margin-top:.45rem;position:relative;overflow:hidden}
+.seg i::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p,0%);background:var(--sun);border-radius:9px}
+.seg:hover{color:var(--paper)}
+.seg[aria-current="true"]{color:var(--sun)}
+.scard{margin-top:1.1rem;padding:clamp(1.2rem,2vw,1.6rem);border-radius:18px;background:rgba(80,140,155,.13);box-shadow:inset 0 0 0 1.5px rgba(80,140,155,.32);min-height:15rem}
+.scard .sk{margin:0;font:700 .74rem/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.scard .sk b{color:var(--sun);font-weight:800}
+.scard .skof b{color:var(--teal)}
+.scard h4{font:800 clamp(1.3rem,2vw,1.75rem)/1.1 var(--head);letter-spacing:-.01em;margin:.7rem 0 .75rem;color:var(--paper)}
+.scard .sd{margin:0;color:var(--muted);line-height:1.6;font-size:.98rem}
+.scard .act{display:inline-block;margin-top:1rem;font:600 .78rem/1 var(--body);padding:.4rem .7rem;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--teal);color:var(--paper)}
+.scard .act::before{content:"";display:inline-block;width:.45rem;height:.45rem;border-radius:50%;background:var(--sun);margin-right:.45rem;vertical-align:.05rem}
+.scard.swap>*{animation:sdin .5s cubic-bezier(.2,.8,.2,1) both}
+.scard.swap h4{animation-delay:.04s}.scard.swap .sd{animation-delay:.09s}.scard.swap .act{animation-delay:.14s}
+@keyframes sdin{from{opacity:0;transform:translateY(8px)}}
+.snav{display:flex;align-items:center;gap:.5rem;margin-top:.9rem}
+.snav button{width:2.6rem;height:2.6rem;border-radius:50%;border:0;background:rgba(80,140,155,.2);color:var(--paper);cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+.snav button:hover{background:var(--sun);color:var(--ink)}
+.snav svg{width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.snav .shint{margin-left:.4rem;font-size:.82rem;color:var(--muted)}
+@media (max-width:900px){
+ .player{grid-template-columns:1fr!important;gap:1rem}
+ .sdet{position:relative;top:0}
+ .scard{min-height:0}
+ .seg span{text-align:center}
+ .snav .shint{display:none}
+ .snav{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.scard.swap>*{animation:none}}
+
+.now:has(.nn[hidden]){display:none}
+
+
+
+/* presenter controls, panel version */
+.ctl .dgrid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center}
+.ctl .viewer{position:relative;top:0;display:block!important}
+.ctl .port{height:auto;aspect-ratio:16/10}
+.ctl .scard{min-height:13rem}
+.ctl .sdet{position:relative;top:0}
+.ctl .spotbox b{display:none}
+@media (max-width:900px){.ctl .dgrid{grid-template-columns:1fr;gap:1.2rem}.ctl .scard{min-height:0}}
+
+
+/* ===== round 2 layouts ===== */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.scard .act[hidden]{display:none}
+.ba{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:1.4rem;align-items:stretch}
+.ba-card{border-radius:22px;padding:clamp(1.4rem,2.6vw,2.2rem);box-shadow:inset 0 0 0 1.5px rgba(80,140,155,.4)}
+.ba-card.before{background:rgba(20,19,42,.45)}
+.ba-card.after{background:linear-gradient(150deg,rgba(80,140,155,.28),rgba(182,156,255,.14));box-shadow:inset 0 0 0 1.5px rgba(182,156,255,.45)}
+.ba-card h2{font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.05;letter-spacing:-.02em;margin:0 0 .9rem}
+.ba-card p:last-child{margin:0;color:var(--muted);line-height:1.65}
+.ba-art{height:8.5rem;margin-bottom:1.4rem;display:grid;place-items:center}
+.oldslide{width:min(15rem,90%);aspect-ratio:16/10;background:#E7E3F1;border-radius:6px;padding:.8rem .9rem;display:flex;flex-direction:column;gap:.38rem;transform:rotate(-2deg);box-shadow:0 14px 24px -12px rgba(10,8,30,.8);opacity:.7;filter:grayscale(.6)}
+.oldslide b{font:800 .7rem/1 var(--head);color:#3d3a5c;margin-bottom:.15rem}
+.oldslide i{display:block;height:4px;border-radius:9px;background:#9aa1b6;width:88%}
+.oldslide i::before{content:"";display:inline-block}
+.oldslide i:nth-child(odd){width:72%}.oldslide i:nth-child(3n){width:80%}
+.route{width:100%;height:100%;overflow:visible}
+.route .rp{fill:none;stroke:var(--teal);stroke-width:3;stroke-dasharray:6 8;stroke-linecap:round}
+.route .st circle{fill:#1A1838;stroke:var(--sun);stroke-width:3}
+.route .st .end{fill:var(--sun)}
+.route .tx text{font:700 13px var(--body);fill:var(--paper);text-anchor:middle}
+.motion .after .route .rp{stroke-dashoffset:400;animation:rdash 24s linear infinite}
+@keyframes rdash{to{stroke-dashoffset:0}}
+.ba-arrow{align-self:center;width:3.6rem;color:var(--sun)}
+.ba-arrow svg{width:100%;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.why4{list-style:none;margin:clamp(2rem,4vw,3rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 1.2rem}
+.why4 li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.1rem;align-items:start;padding:1.3rem 1.4rem;border-radius:18px;background:rgba(80,140,155,.12)}
+.why4 .ic{width:3.4rem;height:3.4rem;border-radius:14px;background:rgba(182,156,255,.16);display:grid;place-items:center}
+.why4 li:nth-child(2) .ic,.why4 li:nth-child(3) .ic{background:rgba(80,140,155,.3)}
+.why4 svg{width:2.1rem;height:2.1rem;fill:none;stroke:var(--sun);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.why4 li:nth-child(2) svg,.why4 li:nth-child(3) svg{stroke:var(--paper)}
+.why4 svg .f{fill:currentColor;stroke:none}.why4 li svg .f{fill:var(--sun)}
+.why4 svg .b{fill:#1A1838}
+.why4 h3{font:800 1.15rem/1.15 var(--head);margin:.15rem 0 .4rem}
+.why4 p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.6}
+@media (max-width:900px){.ba{grid-template-columns:1fr}.ba-arrow{transform:rotate(90deg);justify-self:center}.why4{grid-template-columns:1fr}}
+.pipe{list-style:none;margin:clamp(2.5rem,5vw,3.5rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.2rem;position:relative}
+.pipe::before{content:"";position:absolute;left:1.4rem;right:1.4rem;top:1.4rem;height:2px;background:repeating-linear-gradient(90deg,var(--teal) 0 8px,transparent 8px 14px)}
+.pipe li{position:relative;transition-delay:var(--d)}
+.pipe .pn{position:relative;z-index:1;display:grid;place-items:center;width:2.8rem;height:2.8rem;border-radius:50%;background:var(--sun);color:var(--ink);font:800 1.1rem/1 var(--head);box-shadow:0 0 0 6px var(--navy)}
+.pipe h3{font:800 1.12rem/1.15 var(--head);margin:1.1rem 0 .5rem}
+.pipe p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.6}
+@media (max-width:900px){.pipe{grid-template-columns:1fr;gap:1.6rem;padding-left:0}.pipe::before{left:1.4rem;right:auto;top:1rem;bottom:1rem;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--teal) 0 8px,transparent 8px 14px)}.pipe li{display:grid;grid-template-columns:2.8rem 1fr;column-gap:1rem}.pipe .pn{grid-row:span 2}.pipe h3{margin:.55rem 0 .4rem}}
+details.rounds{margin-top:clamp(2.5rem,5vw,3.5rem);border-radius:18px;box-shadow:inset 0 0 0 1.5px rgba(80,140,155,.45)}
+details.rounds summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;font:700 1rem/1 var(--body);color:var(--paper)}
+details.rounds summary::-webkit-details-marker{display:none}
+details.rounds summary svg{width:1.1rem;height:1.1rem;fill:none;stroke:var(--sun);stroke-width:2.2;stroke-linecap:round;transition:transform .3s}
+details.rounds[open] summary svg{transform:rotate(180deg)}
+details.rounds summary:hover{color:var(--sun)}
+details.rounds .rlist{padding:0 1.4rem 1.4rem}
+.circle{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-top:clamp(2rem,5vw,3rem)}
+.cflip{position:relative}
+.cflip img{display:block;width:100%;transition:opacity .9s ease}
+.cflip .b{position:absolute;inset:0;height:100%;object-fit:cover;opacity:0}
+.cflip.to-b .b{opacity:1}.cflip.to-b .a{opacity:0}
+.ctext{position:relative}
+.ctog{display:inline-flex;padding:4px;border-radius:99px;background:rgba(80,140,155,.2);margin-bottom:1.3rem}
+.ctog button{border:0;background:none;color:var(--paper);font:700 .9rem/1 var(--body);padding:.65rem 1rem;border-radius:99px;cursor:pointer;transition:background .3s,color .3s}
+.ctog button.on{background:var(--sun);color:var(--ink)}
+.ctext .cq{display:none;margin:0;font:600 clamp(1.15rem,1.8vw,1.45rem)/1.4 var(--head);color:var(--paper);animation:sdin .5s both}
+.ctext .cq.on{display:block}
+.ctext .cnote{margin:1.4rem 0 0;font-size:1.9rem}
+.cloop{position:absolute;left:-.3rem;bottom:-.6rem;width:2.6rem;fill:none;stroke:var(--sun);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.motion .cloop{animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.askchips{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 1.1rem;padding:0}
+.askchips li{padding:.55rem .9rem;border-radius:12px;background:rgba(182,156,255,.16);color:var(--paper);font-size:.9rem}
+.askchips b{font:800 1.25rem/1 var(--head);color:var(--sun);margin-right:.25rem}
+@media (max-width:900px){.circle{grid-template-columns:1fr}}
+.flipwrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:clamp(1.5rem,5vw,4rem);align-items:center;margin-top:clamp(2rem,5vw,3rem)}
+.flip{border:0;background:none;padding:0;cursor:pointer;perspective:1800px;width:min(100%,30rem);justify-self:center}
+.fcard{display:grid;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,.1,.2,1)}
+.flipwrap.isback .fcard{transform:rotateY(180deg)}
+.flip:hover .fcard{transform:rotateY(-8deg)}
+.flipwrap.isback .flip:hover .fcard{transform:rotateY(172deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#E7E3F1;padding:3%;border-radius:4px;box-shadow:0 30px 50px -22px rgba(10,8,30,.9)}
+.face img{display:block;width:100%}
+.face.bk{transform:rotateY(180deg)}
+.ftog{display:inline-flex;padding:4px;border-radius:99px;background:rgba(80,140,155,.2);margin-bottom:1.2rem}
+.ftog button{border:0;background:none;color:var(--paper);font:700 .9rem/1 var(--body);padding:.65rem 1.1rem;border-radius:99px;cursor:pointer}
+.ftog button.on{background:var(--sun);color:var(--ink)}
+.fcap{display:none;margin:0;color:var(--muted);line-height:1.65;animation:sdin .5s both}
+.fcap.on{display:block}
+.fcap b{display:block;font:800 1.3rem/1.15 var(--head);color:var(--paper);margin-bottom:.5rem}
+.fhint{margin-top:1.3rem;font-size:1.5rem}
+@media (max-width:900px){.flipwrap{grid-template-columns:1fr}}
+.bigcta{display:flex;justify-content:center}
+.bigcta a{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.4rem 2.2rem;width:min(100%,46rem);padding:clamp(1.6rem,3.4vw,2.6rem) clamp(1.8rem,4vw,3rem);border-radius:30px;background:var(--sun);color:var(--ink);text-decoration:none;box-shadow:0 30px 60px -28px rgba(182,156,255,.8);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.bigcta a:hover{transform:translateY(-5px) rotate(-.5deg);box-shadow:0 40px 70px -28px rgba(182,156,255,.95)}
+.bigcta .k{font:700 .85rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.bigcta .t{grid-column:1;font:800 clamp(2rem,5vw,3.6rem)/.95 var(--head);letter-spacing:-.03em}
+.bigcta .ar{grid-column:2;grid-row:1/3;width:clamp(3.6rem,7vw,5rem);height:clamp(3.6rem,7vw,5rem);border-radius:50%;background:var(--ink);color:var(--sun);display:grid;place-items:center;transition:transform .35s}
+.bigcta a:hover .ar{transform:rotate(45deg)}
+.bigcta svg{width:45%;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.keys{justify-content:center;margin-top:1.4rem}
+
+
+/* round 3 */
+.oldslide{padding:.75rem .85rem .2rem;gap:.4rem;overflow:hidden}
+.olist{position:relative;height:100%;overflow:hidden;-webkit-mask:linear-gradient(transparent,#000 18%,#000 75%,transparent);mask:linear-gradient(transparent,#000 18%,#000 75%,transparent)}
+.olist ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.38rem;padding-bottom:.38rem}
+.olist li{font:500 .6rem/1.1 var(--body);color:#5a5875;padding-left:.7rem;position:relative;white-space:nowrap}
+.olist li::before{content:"";position:absolute;left:0;top:.25em;width:.32rem;height:.32rem;border-radius:50%;background:#9aa1b6}
+.motion .olist ul{animation:oscroll 16s linear infinite}
+@keyframes oscroll{to{transform:translateY(-100%)}}
+.route .st circle{transition:fill .4s}
+.route .st circle.on{fill:var(--teal)}
+.route .trav{fill:var(--sun);filter:drop-shadow(0 0 8px rgba(182,156,255,.9))}
+.route .tx text{transition:fill .3s}
+.route .tx text.on{fill:var(--sun)}
+.ctabs{display:flex;gap:.5rem;margin:0 0 1.6rem;overflow-x:auto;scrollbar-width:none;padding-bottom:.2rem}
+.ctabs::-webkit-scrollbar{display:none}
+.ctabs button{flex:1 1 0;min-width:9.5rem;position:relative;border:0;cursor:pointer;text-align:left;padding:.85rem 1rem 1.05rem;border-radius:14px;background:rgba(80,140,155,.13);color:var(--muted);display:flex;gap:.65rem;align-items:flex-start;overflow:hidden;transition:background .25s,color .25s}
+.ctabs button:hover{background:rgba(80,140,155,.22);color:var(--paper)}
+.ctabs .tn{flex:none;width:1.7rem;height:1.7rem;border-radius:50%;display:grid;place-items:center;font:800 .85rem/1 var(--head);box-shadow:inset 0 0 0 1.5px var(--teal);color:var(--teal)}
+.ctabs .tl{font:700 .86rem/1.25 var(--body)}
+.ctabs i{position:absolute;left:0;bottom:0;height:3px;width:var(--p,0%);background:var(--sun)}
+.ctabs button[aria-selected="true"]{background:rgba(182,156,255,.16);color:var(--paper);box-shadow:inset 0 0 0 1.5px rgba(182,156,255,.55)}
+.ctabs button[aria-selected="true"] .tn{background:var(--sun);color:var(--ink);box-shadow:none}
+.chap[hidden]{display:none}
+.chapters{margin-top:0}
+@media (max-width:900px){.ctabs{margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter));padding-left:var(--gutter);padding-right:var(--gutter)}.ctabs button{flex:0 0 auto;min-width:0;max-width:13rem}}
+details.rounds .rlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.4rem;padding:.4rem 1.6rem 1.8rem;counter-reset:none}
+details.rounds .rlist li{display:grid;grid-template-columns:3rem minmax(0,1fr);grid-template-rows:auto auto;column-gap:1rem;padding:.9rem 0;background:none;border-radius:0;border-top:1px solid rgba(80,140,155,.28);font-size:.95rem}
+details.rounds .rlist li b{grid-row:1/3;width:3rem;height:3rem;font-size:1.15rem;background:rgba(80,140,155,.25)!important;color:var(--paper)}
+details.rounds .rlist .rk{font:700 .7rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);align-self:end;margin-bottom:.35rem}
+details.rounds .rlist p{margin:0;color:var(--muted);line-height:1.5}
+details.rounds[open] .rlist li{animation:sdin .45s both}
+details.rounds .rlist li:nth-child(n){animation-delay:calc(var(--i,0) * 1ms)}
+@media (max-width:900px){details.rounds .rlist{grid-template-columns:1fr;padding:.2rem 1.1rem 1.2rem}}
+.hand.noarr::before{display:none}
+.hand.noarr{padding-left:0}
+.harr{display:inline-block;width:3.2rem;height:2.2rem;vertical-align:-.3rem;margin-right:.3rem;fill:none;stroke:var(--sun);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+@media (max-width:900px){.harr{transform:rotate(55deg)}.fhint .harr{transform:rotate(90deg)}}
+.face{padding:0!important;background:none!important;border-radius:14px!important;overflow:hidden}
+.face img{border-radius:14px}
+.bigk{text-align:center;font:700 .85rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 0 1.1rem}
+.bigcta a{display:inline-flex!important;width:auto!important;align-items:center;gap:1.4rem!important;border-radius:999px!important;padding:clamp(1rem,2vw,1.35rem) clamp(1rem,2vw,1.35rem) clamp(1rem,2vw,1.35rem) clamp(1.8rem,3.6vw,2.8rem)!important}
+.bigcta .t{white-space:nowrap;font-size:clamp(1.35rem,4vw,2.8rem)!important;line-height:1!important}
+.bigcta .ar{width:clamp(3rem,6vw,4.4rem)!important;height:clamp(3rem,6vw,4.4rem)!important}
+
+
+
+/* one-line headers */
+@media (min-width:901px){
+ .sec-head h2{white-space:nowrap;font-size:clamp(2.4rem,4.6vw,4.4rem)}
+ .intro h1{white-space:nowrap;font-size:clamp(2.4rem,4.1vw,4rem)!important;position:relative;z-index:6}
+ .chap-h h3{white-space:nowrap}
+}
+
+/* header subtext */
+.sec-head>p:not(.tip){font-size:clamp(1.08rem,1.45vw,1.3rem);line-height:1.55;color:var(--paper);opacity:.9;padding-left:1.1rem;border-left:3px solid var(--sun);margin-top:1.1rem;max-width:none}
+@media (min-width:901px){.sec-head{display:grid;grid-template-columns:min-content}}
+
+
+
+
+
+
+/*CK*/
+/* step-through gallery */
+.steps2{margin-top:clamp(2rem,4vw,3rem)}
+.steps2 .stage{position:relative;border-radius:18px;overflow:hidden;background:var(--navy-2);box-shadow:0 0 0 1.5px rgba(80,140,155,.5)}
+.steps2 .stage img{display:block;width:100%;height:100%;object-fit:contain;position:absolute;inset:0;opacity:0;transition:opacity .5s ease;background:var(--paper)}
+.steps2 .stage img.on{opacity:1;position:relative}
+.steps2 .stage img:not(.on){pointer-events:none}
+.steps2 .bar2{display:flex;align-items:center;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+.steps2 .pips{display:flex;gap:.35rem;flex-wrap:wrap}
+.steps2 .pips button{width:2.3rem;height:2.3rem;border-radius:50%;border:0;cursor:pointer;background:transparent;color:var(--teal);font:800 .9rem/1 var(--head);box-shadow:inset 0 0 0 2px rgba(80,140,155,.6);transition:background .25s,color .25s,transform .3s cubic-bezier(.3,1.7,.5,1)}
+.steps2 .pips button[aria-pressed="true"]{background:var(--sun);color:var(--ink);box-shadow:none;transform:scale(1.08)}
+.steps2 .pips button.last{box-shadow:inset 0 0 0 2px var(--sun);color:var(--sun)}
+.steps2 .nav2{display:flex;gap:.4rem;margin-left:auto}
+.steps2 .nav2 button{width:2.6rem;height:2.6rem;border-radius:50%;border:0;cursor:pointer;background:var(--blue);color:var(--paper);font:800 1.1rem/1 var(--head)}
+.steps2 .nav2 button:hover{background:var(--sun);color:var(--ink)}
+.steps2 .cap2{margin:.9rem 0 0;font-size:1.02rem;min-height:3em;max-width:46rem}
+.steps2 .cap2 b{color:var(--sun);font-family:var(--head)}
+/* two-up compare */
+.duo2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:clamp(2rem,4vw,3rem)}
+.duo2 figure{margin:0}
+.duo2 img{border-radius:14px;box-shadow:0 0 0 1.5px rgba(80,140,155,.5);width:100%;cursor:zoom-in}
+.duo2 figcaption{margin-top:.7rem;font-size:.95rem;color:var(--muted)}
+.duo2 figcaption b{display:block;color:var(--paper);font:700 1.05rem/1.2 var(--head);margin-bottom:.2rem}
+.duo2.three{grid-template-columns:repeat(3,1fr)}
+/* zoom */
+img[data-zoom]{cursor:zoom-in}
+.zoombox{position:fixed;inset:0;z-index:60;background:rgba(20,19,42,.92);display:grid;place-items:center;padding:4vh 4vw;opacity:0;pointer-events:none;transition:opacity .25s}
+.zoombox.open{opacity:1;pointer-events:auto}
+.zoombox img{max-width:100%;max-height:92vh;border-radius:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);transform:scale(.96);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.zoombox.open img{transform:none}
+.zoombox button{position:absolute;top:1.2rem;right:1.2rem;width:3rem;height:3rem;border-radius:50%;border:0;background:var(--sun);color:var(--ink);font:800 1.4rem/1 var(--head);cursor:pointer}
+.zoomhint{display:inline-flex;align-items:center;gap:.4rem;font:600 .82rem/1 var(--body);color:var(--muted);margin-top:.6rem}
+@media (max-width:900px){.duo2,.duo2.three{grid-template-columns:1fr}}
+
+/* on-this-page nav + reading progress */
+.secnav{position:fixed;left:0;right:0;top:4.5rem;z-index:19;background:rgba(26,24,56,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(80,140,155,.3);transform:translateY(-120%);opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.secnav.show{transform:none;opacity:1}
+.secnav .wrap{display:flex;align-items:center;gap:.4rem;height:3rem;overflow-x:auto;scrollbar-width:none}
+.secnav .wrap::-webkit-scrollbar{display:none}
+.secnav .t{font:700 .78rem/1 var(--head);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-right:.6rem;white-space:nowrap}
+.secnav a{flex:none;text-decoration:none;font:600 .9rem/1 var(--head);color:var(--muted);padding:.5rem .8rem .45rem;border-radius:999px;transition:background .25s,color .25s}
+.secnav a:hover{color:var(--sun)}
+.secnav a[aria-current="true"]{background:var(--sun);color:var(--ink)}
+.readbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--sun);z-index:30}
+@media (max-width:900px){.secnav .t{display:none}}
+
+/* device mockup overview */
+.ovart.devices{position:relative;aspect-ratio:16/12;width:100%;margin-top:6.2rem}
+.intro .hero-art .hnote.long{z-index:5}
+.intro .hero-art:has(.ovart.devices){align-self:center;margin-top:-11rem}
+.intro .hero-art:has(.ovart.devices) .hnote{top:11.4rem!important;left:auto!important;right:-1.5rem!important;padding-right:.35em;overflow:visible;text-align:right;max-width:none}
+.intro .hero-art:has(.ovart.devices) .hnote svg{left:auto!important;right:15.4rem!important;top:calc(100% - 1.25rem)!important;width:66px!important;height:66px!important;transform:scaleX(-1) rotate(6deg)}
+.intro .hero-art:has(.ovart.devices) .ovart.devices{margin-top:9rem}
+@media (max-width:900px){.intro .hero-art:has(.ovart.devices){margin-top:1rem}}
+.dv-laptop{position:absolute;left:5%;right:10%;top:22%;z-index:2;filter:drop-shadow(0 30px 40px rgba(10,8,30,.55))}
+.dv-lid{position:relative;background:#14132A;border-radius:14px 14px 4px 4px;padding:3.2% 3.2% 3.6%;box-shadow:inset 0 0 0 1.5px rgba(191,198,214,.25)}
+.dv-lid video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:3px;background:#1A1838}
+.dv-cam{position:absolute;left:50%;top:1.3%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:rgba(191,198,214,.35)}
+.dv-base{height:0;padding-bottom:3.6%;margin:0 -6.5%;background:linear-gradient(#BFC6D6,#8d93a8);border-radius:2px 2px 14px 14px;position:relative}
+.dv-base::before{content:"";position:absolute;left:50%;top:0;width:15%;height:38%;margin-left:-7.5%;background:#9aa1b6;border-radius:0 0 8px 8px}
+.dv-lid .reelbtn{position:absolute;right:5%;bottom:7%;z-index:2}
+.dv-phone{position:absolute;right:0;top:34%;width:22%;z-index:3;background:#14132A;border-radius:22px;padding:2.6% 1.6%;box-shadow:inset 0 0 0 1.5px rgba(191,198,214,.3),0 30px 40px -12px rgba(10,8,30,.75)}
+.dv-phone::before{content:"";position:absolute;left:50%;top:1.6%;width:30%;height:2.4%;margin-left:-15%;border-radius:99px;background:#14132A;z-index:2}
+.ovart.devices .dv-phone video.reel{display:block;width:100%;aspect-ratio:9/19.5!important;object-fit:cover;object-position:top;border-radius:16px;background:#1A1838}
+.dv-sheet{position:absolute;left:-3%;top:2%;width:33%;z-index:1;transform:rotate(-8deg);background:#E7E3F1;padding:1.2%;border-radius:3px;box-shadow:0 20px 30px -12px rgba(10,8,30,.7);animation:dvsheet 9s ease-in-out infinite}
+.dv-sheet img{display:block;width:100%;border-radius:1px}
+.dv-sheet.b{left:10%;top:-3%;transform:rotate(4deg);z-index:0;opacity:.95;animation-delay:-4s}
+@keyframes dvfloat{50%{transform:translateY(-8px)}}
+@keyframes dvsheet{50%{translate:0 -5px;rotate:1deg}}
+@media (prefers-reduced-motion:reduce){.dv-phone,.dv-sheet{animation:none}}
+@media (max-width:900px){.ovart.devices{margin-top:3.5rem}}
+
+/* at-a-glance overview */
+.glance{display:flex;flex-direction:column;gap:.9rem;margin-top:1.4rem;max-width:34rem}
+.glance > div{display:grid;grid-template-columns:7.2rem minmax(0,1fr);gap:1rem;align-items:baseline;padding-bottom:.9rem;border-bottom:1px solid rgba(80,140,155,.35)}
+.glance .gk{font:700 .78rem/1.3 var(--head);letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.glance > div:last-child .gk{color:var(--sun)}
+.glance p{margin:0;font-size:1.02rem;line-height:1.5}
+.gchips{list-style:none;margin:1.2rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.gchips li{font:600 .82rem/1 var(--body);padding:.45rem .75rem;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--teal)}
+.gcta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.reelbtn{margin-left:auto;width:1.6rem;height:1.6rem;border-radius:50%;border:0;cursor:pointer;background:rgba(80,140,155,.25);color:var(--paper);display:grid;place-items:center;flex:none}
+.reelbtn:hover{color:var(--sun)}
+.reelbtn svg{width:.7rem;height:.7rem}
+.ovart{position:relative}
+.ovart .browser{width:88%}
+.ovart.solo .browser{width:100%}
+.ovart video.reel{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;background:var(--navy-2)}
+.ovart .phone{width:24%;bottom:-1.5rem}
+.ovart .phone video,.ovart .phone img{aspect-ratio:390/844;border-radius:1.2rem;object-fit:cover;object-position:top;width:100%;display:block}
+.intro h1{font-size:clamp(2.4rem,4.7vw,4.5rem)!important;line-height:.95!important;max-width:none!important}
+.intro .kicker{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;font:700 .8rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 0 1.1rem}
+.intro .kicker b{display:inline-grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--sun);color:var(--ink);font-size:.95rem;letter-spacing:0}
+.intro .hero-art{padding-top:6.5rem!important}
+.intro .hero-art .hnote{top:0!important;bottom:auto!important;left:-1rem!important;right:auto!important;max-width:16rem;text-align:left}
+.intro .hero-art .hnote svg{position:absolute;left:calc(100% + .1rem);top:.5rem;bottom:auto;width:58px;height:58px;margin:0}
+.intro .hero-art .hnote.long{max-width:25rem;top:-1.6rem!important;font-size:clamp(1.15rem,1.45vw,1.35rem);line-height:1.15}
+.motion .intro .hero-art .hnote{clip-path:inset(-30% 100% -150% -10%)}
+.motion .intro .hero-art .hnote.in{clip-path:inset(-30% -10% -150% -10%)}
+.intro .hero-art .hnote.long svg{top:1.4rem}
+@media (max-width:900px){.intro .hero-art{padding-top:0!important}}
+.motion .glance > div{opacity:0;transform:translateY(14px);animation:gl .7s cubic-bezier(.2,.8,.2,1) forwards}
+.motion .glance > div:nth-child(2){animation-delay:.12s}.motion .glance > div:nth-child(3){animation-delay:.24s}
+@keyframes gl{to{opacity:1;transform:none}}
+@media (max-width:600px){.glance > div{grid-template-columns:1fr;gap:.35rem}}
+/*/CK*/
+
+/* side handwritten note */
+.now.side{margin:1.3rem 0 0;max-width:none;text-align:left;position:relative;padding-left:3.4rem;min-height:3rem}
+.now.side .nn{text-align:left;margin:0;transform:rotate(-1.5deg)}
+.now.side .nn svg{position:absolute;left:-3.3rem;top:-.4rem;margin:0;width:2.8rem;height:2.4rem;transform:rotate(-75deg)}
+.now.side .nn{position:relative;padding-left:0}
+.sdet .snav{margin-top:1.1rem}
+
+.ba-card h2.one{white-space:nowrap;font-size:clamp(1.05rem,1.75vw,1.65rem)}
+@media (max-width:900px){.ba-card h2.one{white-space:normal;font-size:clamp(1.5rem,6vw,2rem)}}
+
+@media (min-width:901px){.sec-head{grid-template-columns:minmax(min-content,36rem)}}
+.pipe{margin-bottom:0}
+.pn-note{margin-top:1rem;font-size:1.3rem}
+@media (min-width:901px){
+ .pipe{padding-bottom:1rem}
+ .pipe li:has(.pn-note){padding-bottom:0}
+ .pipe li .pn-note{position:static;margin-top:1.1rem;transform:rotate(-2deg)}
+ .pipe li .pn-note .harr{display:block;margin:0 0 .3rem .4rem;transform:rotate(60deg)}
+}
+.rnote{margin:clamp(2rem,4vw,3rem) 0 0 auto;max-width:30rem;text-align:right;font-size:1.3rem}
+.rnote .harr.dn{display:block;margin:.2rem 2rem 0 auto;transform:rotate(-100deg) scaleY(-1)}
+details.rounds{margin-top:.6rem!important}
+@media (max-width:900px){.rnote{text-align:left;margin-left:0}.rnote .harr.dn{margin:.2rem auto 0 1rem;transform:rotate(-80deg)}}
+
+.pipe p.pn-note{font:600 clamp(1.25rem,1.6vw,1.45rem)/1.15 var(--hand);color:var(--sun);line-height:1.15}
+
+@media (max-width:900px){.pipe li .pn-note{grid-column:2;margin-top:.9rem}.pipe li .pn-note .harr{transform:rotate(60deg)}}
+
+@media (min-width:901px){.pipe p.pn-note{font-size:1.18rem;line-height:1.12}}
+
+/* ending pair */
+.pair{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:1.4rem;align-items:start;margin-top:clamp(2rem,5vw,3rem)}
+.pair figure{margin:0}
+.pair figcaption{margin-top:1rem;color:var(--muted);line-height:1.6}
+.pair figcaption b{display:block;font:700 .78rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.55rem}
+.pairnote{align-self:center;margin:0 0 4rem;text-align:center;font-size:clamp(1.6rem,2.4vw,2.1rem)!important;padding:0!important;max-width:9rem}
+.pairnote .loop{display:block;width:6.5rem;margin:0 auto .2rem;fill:none;stroke:var(--sun);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+@media (max-width:900px){.pair{grid-template-columns:1fr}.pairnote{margin:0 auto;max-width:none}.pairnote .loop{transform:rotate(90deg);width:4.5rem}}
+.flip{cursor:zoom-in}
+.flip .face img{cursor:zoom-in}
+.flipwrap:not(.isback) .face.bk,.flipwrap.isback .face.f{pointer-events:none}
+.zhint{margin:1.1rem 0 0;font-size:.85rem;color:var(--teal)}
+.zhint::before{content:"⤢ ";}
+.short{margin-top:clamp(3rem,6vw,4.5rem)}
+.why4.three{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:.4rem}
+.why4.three li{grid-template-columns:1fr}
+@media (max-width:900px){.why4.three{grid-template-columns:1fr}.why4.three li{grid-template-columns:auto minmax(0,1fr)}}
+
+@media (min-width:901px){#os-h{font-size:clamp(2rem,3.3vw,3.3rem)}}
+.why4.three li{align-content:start}
+
+/* at a glance */
+.atg{margin-top:clamp(3rem,6vw,4.5rem)}
+.gl-stage{position:relative;padding-right:clamp(2.5rem,6vw,5.5rem)}
+.gl-br{box-shadow:0 30px 60px -28px rgba(10,8,30,.9)}
+.gl-br video{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;background:#1A1838}
+.gl-ph{position:absolute;right:0;bottom:-2.5rem;width:clamp(7.5rem,19%,12.5rem);background:#14132A;border-radius:24px;padding:2.4% 1.5%;box-shadow:inset 0 0 0 1.5px rgba(191,198,214,.3),0 30px 40px -14px rgba(10,8,30,.85)}
+.gl-ph video{display:block;width:100%;aspect-ratio:9/19.5;object-fit:cover;object-position:top;border-radius:18px;background:#1A1838}
+.gl-foot{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-top:clamp(3.4rem,6vw,4.5rem)}
+@media (max-width:700px){.gl-stage{padding-right:2.6rem}.gl-ph{width:34%;bottom:-2rem;border-radius:16px}.gl-ph video{border-radius:12px}}
+/*INK*/
+html,body{overflow-x:clip;max-width:100%}
+.top{z-index:100!important}.secnav{z-index:99!important}.readbar{z-index:101!important}.zoombox{z-index:200!important}
+@supports not (overflow:clip){html,body{overflow-x:hidden}}
+pre,.code,table,img,video,svg{max-width:100%}
+.rise,.wrap>*,[class*="grid"]>*,[class*="two"]>*,[class*="split"]>*{min-width:0}
+@media (max-width:700px){.comp th,.comp td{padding:.7rem .5rem;overflow-wrap:anywhere}.swatch2{flex-wrap:wrap}.swatch2 span{flex:1 1 40%}}
+.ink{clip-path:none!important;transition-property:none!important;z-index:40!important}
+.ink svg{overflow:visible!important;position:relative;z-index:1}
+.hero-art .hnote.ink svg,.note.ink svg{position:absolute}
+.ink .iw{display:inline-block;white-space:nowrap}
+.ink .ic{display:inline-block}
+.inkon .ink:not(.go) .ic{opacity:0}
+.inkon .ink.go .ic{animation:inkc .22s cubic-bezier(.3,.6,.4,1) both;animation-delay:calc(var(--i) * var(--d) * 1ms)}
+@keyframes inkc{0%{opacity:0;clip-path:inset(-80% 100% -80% -80%);transform:translateY(.04em)}35%{opacity:1}100%{opacity:1;clip-path:inset(-80% -80% -80% -80%);transform:none}}
+.inkon .ink svg path{stroke-dasharray:1;stroke-dashoffset:1}
+.inkon .ink.go svg path{animation:inka .55s cubic-bezier(.5,0,.3,1) forwards;animation-delay:calc(var(--n) * var(--d) * 1ms + 120ms)}
+.inkon .ink.go svg path+path{animation-delay:calc(var(--n) * var(--d) * 1ms + 560ms);animation-duration:.3s}
+@keyframes inka{to{stroke-dashoffset:0}}
+.inkon .ink.hand::before{opacity:0;transition:opacity .3s}
+.inkon .ink.hand.go::before{opacity:1}
+/*/INK*/
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Aja Cramer, home">Aja Cramer<i aria-hidden="true"></i></a>
+    <nav aria-label="Main">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="intro">
+    <div class="wrap">
+      <a class="back" href="vftcb-membership.html#pieces"><svg viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 6H2M6 1 1 6l5 5"/></svg>Membership Journey</a>
+      <div class="intro-grid">
+        <div>
+          <p class="kicker"><b>1</b>Mini project 1 of 4 · Sell</p>
+          <h1>The Membership <span class="spot">Pitch</span></h1>
+          <div class="glance">
+            <div><span class="gk">The brief</span><p>The old presentation gave every prospect the same list of benefits, without explaining why they mattered to their business. I wanted to show how the Valley Forge Tourism &amp; Convention Board brings visitors to Montgomery County and tailor the pitch so each business could see a reason to join.</p></div>
+            <div><span class="gk">What I did</span><p>I designed and art directed a 32-slide interactive web-based presentation, a printed one-sheeter, and a Membership at a Glance web page. I built the digital pieces with AI as my coding partner and refined the presentation through 14 rounds of iteration over a month.</p></div>
+            <div><span class="gk">The result</span><p>The pitch works for live conversations with a membership representative and for prospects exploring on their own, with controls to tailor it to each business. The one-sheeter and Membership at a Glance web page offer a quicker way to understand the value of joining and take the next step.</p></div>
+          </div>
+          <ul class="gchips"><li>2026</li><li>Interactive presentation</li><li>Printed one-sheeter</li><li>At a Glance webpage</li></ul>
+          <div class="gcta"><a class="btn" href="#story" data-readstory>Read the story <span aria-hidden="true">&darr;</span></a><a class="btn ghost" href="https://vftcb-membership.netlify.app/" rel="noopener">Open the presentation <span aria-hidden="true">&nearr;</span></a></div>
+        </div>
+        <div class="hero-art">
+          <p class="hnote" aria-hidden="true">Every slide comes back to<br>‘Why should I join?’<svg width="70" height="70" viewBox="0 0 70 70"><path d="M4 6 C 34 4, 54 22, 58 56"/><path d="M48 48 L 58 60 L 66 46"/></svg></p>
+          <div class="ovart devices"><div class="dv-sheet b" aria-hidden="true"><img src="images/deck/onesheet/page2.webp" alt="" loading="lazy"></div><div class="dv-sheet" aria-hidden="true"><img src="images/deck/onesheet/page1.webp" alt="" loading="lazy"></div>
+            <div class="dv-laptop"><div class="dv-lid"><div class="dv-cam"></div><video class="reel" muted loop playsinline preload="metadata" poster="images/deck/reel.webp" aria-label="Opening scenes, animated slides, and interactions from the Membership Pitch"><source src="images/deck/reel.mp4?v=2" type="video/mp4"></video><button class="reelbtn" type="button" aria-label="Pause the highlight reel"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"></svg></button></div><div class="dv-base"></div></div>
+            <div class="dv-phone"><video class="reel" muted loop playsinline preload="metadata" poster="images/deck/reel-phone.webp" aria-label="The presentation on a phone"><source src="images/deck/reel-phone.mp4?v=2" type="video/mp4"></video></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" data-nav="Overview" style="padding-top:clamp(2rem,5vh,3rem)">
+    <div class="wrap">
+      <div class="ba">
+        <article class="ba-card before rise">
+          <div class="ba-art" aria-hidden="true"><div class="oldslide"><b>Member benefits</b><div class="olist"><ul><li>Listing on valleyforge.org</li><li>Visitors Guide listing</li><li>E-newsletter feature</li><li>Social media mention</li><li>Networking events</li><li>Member portal access</li><li>Group referrals</li><li>Co-op advertising</li><li>Kiosk placement</li><li>Brochure distribution</li><li>Event calendar</li><li>Member directory</li></ul><ul aria-hidden="true"><li>Listing on valleyforge.org</li><li>Visitors Guide listing</li><li>E-newsletter feature</li><li>Social media mention</li><li>Networking events</li><li>Member portal access</li><li>Group referrals</li><li>Co-op advertising</li><li>Kiosk placement</li><li>Brochure distribution</li><li>Event calendar</li><li>Member directory</li></ul></div></div></div>
+          <p class="label">Where it started</p>
+          <h2 class="one">The old presentation led with benefits</h2>
+          <p>The existing presentation ran through member benefits without a consistent narrative tying them together. I wanted to build a story that introduced who we are, showed the scope of our work, and explained how it brings visitors to Montgomery County. With that context, prospects could see how membership could help them attract those visitors, bring more people through their doors, and grow their sales.</p>
+        </article>
+        <span class="ba-arrow" aria-hidden="true"><svg viewBox="0 0 60 24"><path d="M2 12h52M44 3l10 9-10 9"/></svg></span>
+        <article class="ba-card after rise">
+          <div class="ba-art" aria-hidden="true"><svg class="route" viewBox="0 -10 400 130"><path class="rp" d="M20 80 C 80 10, 140 100, 200 50 S 320 20, 380 60"/><g class="st"><circle cx="20" cy="80" r="7"/><circle cx="118" cy="56" r="7"/><circle cx="200" cy="50" r="7"/><circle cx="290" cy="34" r="7"/><circle cx="380" cy="60" r="7"/></g><circle class="trav" r="10" cx="20" cy="80"/>
+            <g class="tx"><text x="20" y="104">Deciding</text><text x="118" y="84">Search</text><text x="200" y="78">Guide</text><text x="290" y="62">Local tip</text><text x="380" y="92">Their door</text></g></svg></div>
+          <p class="label">The idea</p>
+          <h2>Tell it from the prospect’s side</h2>
+          <p>I organized the story around the visitor’s journey, from deciding where to go to finding things to do once they arrive. Each stage connects our work to a decision that could lead someone to a member’s business, whether they’re searching online, picking up a guide, or asking for a local recommendation. I wanted prospects to picture how those moments could turn into customers of their own.</p>
+        </article>
+      </div>
+      <ul class="why4"><li class="rise"><span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="26" rx="4"/><path d="M6 19h36M14 12l4 7M24 12l4 7M34 12l4 7"/><path d="M21 25v8l7-4z" class="f"/></svg></span><div><h3>Scenes for reading alone</h3><p>Short opening scenes carry the transitions I’d usually say out loud. They give someone clicking through on their own a reason to care before the details appear.</p></div></li><li class="rise"><span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 14h28M10 24h28M10 34h28"/><circle cx="18" cy="14" r="4" class="f"/><circle cx="31" cy="24" r="4" class="f"/><circle cx="22" cy="34" r="4" class="f"/></svg></span><div><h3>Tailored to each business</h3><p>A restaurant and an event venue have different reasons to join. I can keep the core story while choosing the slides most relevant to each business and hiding those that don’t apply.</p></div></li><li class="rise"><span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="4" y="10" width="30" height="20" rx="2.5"/><path d="M2 34h34"/><rect x="34" y="18" width="11" height="20" rx="2.5" class="b"/></svg></span><div><h3>Works on every screen</h3><p>I might share the presentation on a Zoom call, show it to a larger audience on a big screen, or send it to a prospect who might open it on their phone. I refined the layouts so the story stays clear and easy to follow on any screen size.</p></div></li><li class="rise"><span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M12 6h18l8 8v28H12z"/><path d="M30 6v8h8M18 22h14M18 28h14M18 34h9"/></svg></span><div><h3>A shorter read, too</h3><p>Some prospects come through referrals or were members in the past and already know who we are. The double-sided one-sheeter and Membership at a Glance webpage give them a quick refresher on the current benefits and how to join.</p></div></li></ul>
+    </div>
+  </section>
+
+  <section class="sec" id="beats" data-nav="Slides" aria-labelledby="beats-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="beats-h">Walk through the <span class="spot">presentation</span></h2>
+        <p>Here’s how the story comes together, from introducing VFTCB to inviting a business to join. Explore each chapter to see the storytelling, motion, and interactions in context.</p>
+        <p class="tip">Choose a slide beside each video to jump to that moment.</p>
+      </div>
+      <div class="ctabs" id="ctabs" role="tablist" aria-label="Chapters"></div>
+      <div class="chapters" id="chapters"></div>
+      <div class="sec-head" id="process" data-nav="Process" style="margin-top:clamp(4rem,9vw,6rem);margin-bottom:0"><h2>My <span class="spot">process</span></h2><p>I developed the presentation through 14 rounds of iteration over a month, using AI as my coding partner. Each round involved reviewing what had been built, identifying what needed to change, and directing the next revision. I evaluated the work as both the designer and the person who would use it in sales conversations.</p></div>
+      <ol class="pipe"><li class="rise" style="--d:0.00s"><span class="pn">1</span><h3>Build the story first</h3><p>I worked out the narrative and slide structure before adding final photography, publication covers, logos, and video. As the presentation developed, I revisited the sequence to make sure each section gave prospects the context they needed for what followed.</p></li><li class="rise" style="--d:0.08s"><span class="pn">2</span><h3>Direct the development</h3><p>I used AI to build and revise the presentation, giving feedback on the layouts, motion, interactions, and responsive behavior. My role was to define what each piece needed to communicate and assess whether the result accomplished that.</p></li><li class="rise" style="--d:0.16s"><span class="pn">3</span><h3>Refine what people notice first</h3><p>I used matched-width headline lines to create consistency across slides, then checked line breaks, scale, and spacing. The hierarchy needed to make the main point easy to find while giving supporting details enough room to read.</p></li><li class="rise" style="--d:0.24s"><span class="pn">4</span><h3>Review it in context</h3><p>I reviewed the presentation for the different ways it would be used, from a shared screen during a call to a prospect clicking through on their phone. That meant revisiting layouts, navigation, animation timing, and how much information appeared at once.</p></li><li class="rise" style="--d:0.32s"><span class="pn">5</span><h3>Keep revising the details</h3><p>I changed graphics, simplified motion, enlarged videos, and removed elements that competed for attention. I also checked figures against VFTCB sources and cut claims I couldn’t verify. Each revision came back to what would help a prospect follow the story and understand the offer.</p></li></ol>
+    </div>
+  </section>
+
+  <section class="sec ends" data-nav="The ending" aria-labelledby="ends-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="ends-h">How it <span class="spot">ends</span></h2>
+        <p>I brought the opening map pin back for the final scene, connecting the story of tourism in Montgomery County to an invitation to join. After seeing how membership works, prospects return to the original promise with a clearer picture of where their business fits.</p>
+      </div>
+      <div class="pair rise">
+        <figure><div class="browser"><div class="bar"><i></i><i></i><i></i><span>Slide 2</span></div><div class="shot"><img src="images/vftcb/deck-cover.webp" data-zoom alt="An early slide: Put your business on the map, with Montgomery County highlighted" loading="lazy"></div></div><figcaption><b>The opening promise</b>“Put your business on the map” introduces the county and the opportunity to reach its visitors.</figcaption></figure>
+        <p class="hand pairnote noarr" style="--rot:-4deg"><svg class="loop" viewBox="0 0 120 70" aria-hidden="true"><path d="M8 52 C 30 4, 92 4, 110 44"/><path d="M98 40 L 111 46 L 116 32"/></svg>Full circle.</p>
+        <figure><div class="browser"><div class="bar"><i></i><i></i><i></i><span>The final scene</span></div><div class="shot"><img src="images/deck/join-bridge.webp" data-zoom alt="The final opening scene: Your turn to get on the map, with a pin dropping" loading="lazy"></div></div><figcaption><b>The invitation to join</b>“Your turn to get on the map” brings that promise back to the business watching.</figcaption></figure>
+      </div>
+      <div class="endbig">
+        <div class="rise">
+          <h3>The last slide makes the ask</h3>
+          <p>I brought the annual price, included benefits, contact details, and sign-up button together on the final slide. Prospects can join immediately or reach out to the people they’ll work with.</p>
+          <p>The slide went through seven rounds as I refined the hierarchy and visual path from the pin to the price. I wanted the offer and next step to be easy to find, whether I was presenting or someone was viewing it alone.</p>
+        </div>
+        <div class="stagebox rise" style="margin:0;padding:0"><span class="dot" aria-hidden="true"></span><div class="browser" style="width:100%"><div class="bar"><i></i><i></i><i></i><span>Join</span></div><div class="shot"><img src="images/deck/join-final.webp" alt="The final slide: Let's put you on the map, with the price, what's included, the membership team's contact details and a button to become a member" loading="lazy"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="onesheet" data-nav="One-sheeter and At a Glance" aria-labelledby="os-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="os-h">The one-sheeter and <span class="spot">Membership at a Glance</span></h2><p>Some prospects already know us through a referral or a past membership and need a refresher on the current benefits. I designed the two-page one-sheeter for that quicker read, then adapted its structure for Membership at a Glance, adding motion and interactions from the presentation.</p></div>
+      <div class="flipwrap rise">
+        <div class="flip">
+          <span class="fcard"><span class="face f"><img data-zoom src="images/deck/onesheet/page1.webp" alt="One-sheet page 1: Membership puts your business in front of millions of visitors, a $300 price ring, five stats and four benefit groups" loading="lazy"></span><span class="face bk"><img data-zoom src="images/deck/onesheet/page2.webp" alt="One-sheet page 2: the four-step visitor journey, the sales team's groups, why it works, and a join card" loading="lazy"></span></span>
+        </div>
+        <div class="fside">
+          <div class="ftog"><button type="button" class="on" data-f="0">Page 1</button><button type="button" data-f="1">Page 2</button></div>
+          <p class="fcap on"><b>What membership includes</b>The annual price and audience figures establish the offer before introducing four benefit groups. The layout helps prospects find the opportunities most relevant to their business.</p>
+          <p class="fcap"><b>How it connects to customers</b>The visitor journey, group travel, and overnight stays explain how our work creates opportunities for local businesses. A contact card and invitation to join close the page.</p>
+          <p class="zhint">Select a page to see it larger</p>
+          <p class="hand fhint noarr" style="--rot:-2deg"><svg class="harr" viewBox="0 0 60 40" aria-hidden="true"><path d="M57 21 C 42 19.5, 24 20.5, 6 20"/><path d="M15 12 L 5 20 L 15 28"/></svg>Designed to be passed along after the conversation.</p>
+        </div>
+      </div>
+       <div class="atg rise">
+        <div class="gl-stage">
+          <div class="browser gl-br"><div class="bar"><i></i><i></i><i></i><span>vftcb-membership.netlify.app/overview</span></div><video class="glv" muted loop playsinline preload="none" poster="images/deck/glance/desktop.webp" aria-label="Scrolling through the Membership at a Glance web page on desktop"><source src="images/deck/glance/desktop.mp4?v=2" type="video/mp4"></video></div>
+          <div class="gl-ph"><video class="glv" muted loop playsinline preload="none" poster="images/deck/glance/mobile.webp" aria-label="The Membership at a Glance web page on a phone"><source src="images/deck/glance/mobile.mp4" type="video/mp4"></video></div>
+        </div>
+        <div class="gl-foot"><p class="label" style="margin:0">Membership at a Glance</p><a class="btn ghost" href="https://vftcb-membership.netlify.app/overview/" rel="noopener">See it live <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="short rise">
+        <p class="label">Same story, shorter</p>
+        <ul class="why4 three">
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="6" width="15" height="15" rx="3"/><rect x="27" y="6" width="15" height="15" rx="3"/><rect x="6" y="27" width="15" height="15" rx="3"/><rect x="27" y="27" width="15" height="15" rx="3" class="f"/></svg></span><div><h3>Benefits organized around business goals</h3><p>Get seen, Get business, Go bigger, and Connect and grow help prospects navigate the offer based on what they want to accomplish. I carried those groups across the presentation, one-sheeter, web page, and sign-up form.</p></div></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 40V28M18 40V20M28 40V24M38 40V10"/></svg></span><div><h3>Reach established at a glance</h3><p>I placed five sourced audience figures near the top so prospects could quickly understand the scale of the promotional channels. That context gives the benefits below them more meaning.</p></div></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 24h30M28 14l10 10-10 10"/><circle cx="42" cy="24" r="3" class="f"/></svg></span><div><h3>A clear path to joining</h3><p>I kept the annual price, contact information, and next step easy to locate. Someone ready to act can find what they need while skimming either format.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec decisions ctl" id="controls" data-nav="Controls" aria-labelledby="ctl-h" style="background:transparent">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="ctl-h">Presenter <span class="spot">controls</span></h2>
+        <p>The controls are built for how I pitch: trim it for the business in front of me, cut the scenes when time is short, and jump straight to whatever a prospect asks about.</p>
+      </div>
+      <div class="dgrid">
+        <div class="viewer" aria-hidden="true">
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><span id="url">vftcb-membership.netlify.app</span></div>
+            <div class="port" id="port"><span class="spotbox" id="spotbox"><b id="spotnum">1</b></span></div>
+          </div>
+        </div>
+        <div class="sdet csdet">
+          <div class="segs" id="csegs" aria-label="Presenter controls"></div>
+          <div class="scard" id="ccard" aria-live="polite"><p class="sk">Control <b id="cn">1</b> of <span id="ctot">7</span></p><h4 id="ct"></h4><p class="sd" id="cd"></p></div>
+          <div class="snav"><button class="sprev" type="button" id="cprev" aria-label="Previous control"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button><button class="snext" type="button" id="cnext" aria-label="Next control"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button><span class="shint">or choose a number above</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="live-h" style="padding-top:0">
+    <div class="wrap">
+      <h2 id="live-h" class="vh">Try it yourself</h2>
+      <p class="bigk rise">Try it yourself</p>
+      <div class="bigcta rise"><a href="https://vftcb-membership.netlify.app/" rel="noopener"><span class="t">Open the presentation</span><span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></div>
+      <div class="keys rise"><span>Try</span><kbd>←</kbd><kbd>→</kbd><span>to move</span><kbd>G</kbd><span>all slides</span><kbd>T</kbd><span>tailor</span><kbd>I</kbd><span>intros</span><kbd>F</kbd><span>full screen</span></div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-label="Next mini project">
+    <a class="next rise" href="vftcb-signup.html">
+      <div>
+        <small>Next in the Membership Journey · 2 of 4</small>
+        <h2>Sign-up and Welcome</h2>
+        <p>A five-minute, five-step sign-up, then a welcome that gets a new member's listing live and walks them through their first steps.</p>
+      </div>
+      <div class="cover"><img class="layer" src="images/vftcb/join.webp" alt="" style="aspect-ratio:16/10;object-fit:cover"></div>
+    </a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="made">Made with care.</span>
+    <nav aria-label="Footer">
+      <a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a><a href="https://www.linkedin.com/in/ajacramer/" rel="noopener">LinkedIn</a>
+    </nav>
+    <small>Aja | Digital Designer</small>
+  </div>
+</footer>
+
+<script>
+if("scrollRestoration" in history) history.scrollRestoration = "manual";
+const toTop = () => { if(!location.hash){ document.documentElement.style.scrollBehavior = "auto"; scrollTo(0,0); document.documentElement.style.scrollBehavior = ""; } };
+toTop(); addEventListener("pageshow", toTop);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pad = n => String(n).padStart(2,"0");
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!calm) document.documentElement.classList.add("motion");
+const D = "images/deck/";
+
+
+
+/* chapter players */
+
+const CH = [{"name": "Connecting tourism to local business", "len": 47.35, "slides": [{"id": "intro", "n": 1, "t": 0.2, "title": "Introducing membership", "line": null, "desc": "I opened with the membership logo set inside the Valley Forge arch to connect the program to a recognizable local landmark. It establishes whose story we’re telling before introducing the details.", "note": "Spot the Valley Forge arch in the logo."}, {"id": "map", "n": 2, "t": 10.22, "title": "Membership across Montgomery County", "line": null, "desc": "I made Montgomery County the focus, using the map and pin to connect the membership offer to a place. “Put your business on the map” gives prospects a reason to keep watching and introduces an idea that returns when it’s time to join.", "note": "Keep an eye on that pin. It comes back."}, {"id": "about", "n": 3, "t": 19.7, "title": "How our work brings customers here", "line": null, "desc": "I used a visual loop to explain how our work connects destination marketing, visitor planning, and spending at local businesses. It gives prospects the context they need to understand the benefits that follow, including how a business like theirs fits into that activity.", "note": "My favorite visual solution!"}, {"id": "hotels", "n": 4, "t": 33.35, "title": "From hotel stays to local spending", "line": null, "desc": "I animated guests entering the hotel and windows lighting up as they check in to make overnight visitation feel tangible. From there, the slide connects hotel stays to people eating, shopping, and exploring nearby, giving prospects beyond the hotel industry a reason to care about those numbers."}]}, {"name": "Bringing visitors to Montgomery County", "len": 84.0, "slides": [{"id": "intl", "n": 5, "t": 0.2, "title": "Visitors within driving distance", "line": null, "desc": "I used an interactive map to show how close Montgomery County is to several major cities. Selecting a city draws its distance to the county, making the size of the nearby visitor market easier to understand than a list of mileage figures.", "note": "Tap a city to draw the distance."}, {"id": "cphl", "n": 6, "t": 14.0, "title": "Reaching international travelers", "line": null, "desc": "I introduced international tourism with a spinning globe before explaining our partnership with the Brandywine Valley. The sequence expands the story from nearby cities to overseas markets, showing prospects how their business connects to promotional work happening well beyond the county.", "note": "Give the globe a spin."}, {"id": "meetings", "n": 7, "t": 28.0, "title": "Bringing meetings and conventions here", "line": null, "desc": "I used swinging lanyards labeled with group types to introduce meetings and conventions. Those examples give the booking figures context and help prospects picture the occasions that bring groups here, along with the venues, meals, and services they need."}, {"id": "sports", "n": 8, "t": 42.0, "title": "Bringing sports teams to Montco", "line": null, "desc": "I gave sports its own slide to show another way we bring groups into the county. Animated figures introduce the scale of that activity, while the Playeasy information connects it to a tool members can use to reach visiting teams."}, {"id": "fest", "n": 9, "t": 56.0, "title": "Drawing festival and show crowds", "line": null, "desc": "I continued the group travel story with festivals and shows, broadening the picture beyond meetings and sports. Placing them together helps prospects see the range of reasons people visit and the opportunities those different audiences create for nearby businesses."}, {"id": "refer", "n": 10, "t": 70.0, "title": "Connecting planners with members", "line": null, "desc": "I made referrals interactive so prospects could choose a sample request and follow it from the planner, through VFTCB, to matching members. It turns a broad benefit into a visible process and shows how our sales work can lead to an inquiry for their business.", "note": "My second favorite visual! Pick a request and follow it."}]}, {"name": "Helping visitors find your business", "len": 167.9, "slides": [{"id": "why", "n": 11, "t": 0.2, "title": "Why we lead with Valley Forge", "line": null, "desc": "I used a national map to explain why our marketing leads with Valley Forge when we represent Montgomery County. Showing the other Montgomery Counties makes the naming decision easier to understand and establishes the brand prospects will see throughout the marketing examples."}, {"id": "journey", "n": 12, "t": 13.9, "title": "Mapping the visitor journey", "line": null, "desc": "I organized the visitor journey into four stages: dream, plan, arrive, and explore. An animated route connects them, giving prospects a framework for understanding when and how each member benefit could help someone discover their business."}, {"id": "web", "n": 13, "t": 27.9, "title": "Getting found on valleyforge.org", "line": null, "desc": "A search scene leads into a sample member page, connecting a visitor’s question to a business they could discover. I introduced the listing features in sequence so prospects could follow how photos, events, and offers help someone decide to visit.", "note": "The page-view counter keeps ticking."}, {"id": "social", "n": 14, "t": 41.9, "title": "Showing up in social feeds", "line": null, "desc": "I placed social content inside phone screens to show it in the setting where visitors encounter it. Pairing those examples with audience figures helps prospects understand both the reach of our channels and what a feature could look like for their business."}, {"id": "pr", "n": 15, "t": 55.9, "title": "Reaching visitors through media coverage", "line": null, "desc": "A newspaper opening introduces press coverage, followed by clips and a ticker that show the work in context. I paired examples with the media figures so prospects could connect the scale of our coverage to stories that inspire people to visit."}, {"id": "camp", "n": 16, "t": 69.9, "title": "Building awareness through campaigns", "line": null, "desc": "I used rotating campaign examples to show the range of places people encounter Montgomery County, from billboards to ballparks. Each example gets space on screen while the sequence builds a picture of how we keep the destination in front of potential visitors."}, {"id": "mobile", "n": 17, "t": 83.9, "title": "Taking visitor information on the road", "line": null, "desc": "I included our Montco Mobile to show how our outreach continues at festivals and community events. The mobile visitors center gives prospects a concrete example of our team sharing guides, recommendations, and information about local businesses in person."}, {"id": "pubs", "n": 18, "t": 97.9, "title": "Putting member listings in visitors’ hands", "line": null, "desc": "A guide rack introduces the publications before the slide shows real covers and distribution locations. I wanted prospects to connect their listing to the moment someone picks up a guide and starts deciding where to eat, shop, or explore.", "note": "Those are the real publication covers."}, {"id": "kiosk", "n": 19, "t": 111.9, "title": "Reaching visitors at local attractions", "line": null, "desc": "I grouped the three kiosk locations together and used video to show the touchscreen experience. Presenting the locations alongside the kiosks helps prospects understand where someone might discover their business and how close that person already is."}, {"id": "vc", "n": 20, "t": 125.9, "title": "Turning local advice into recommendations", "line": null, "desc": "An ask-a-local scene introduces the Visitor Services team at Valley Forge National Historical Park. It makes the recommendation process familiar, showing how a visitor’s question can become an introduction to a member business."}, {"id": "enews", "n": 21, "t": 139.9, "title": "Staying connected through email and blogs", "line": null, "desc": "I showed a sample newsletter inside an inbox to help prospects picture how their business could appear. This slide extends the journey beyond a single visit, explaining how email and blog content can inspire plans before a trip and bring people back afterward."}, {"id": "passes", "n": 22, "t": 153.9, "title": "Encouraging another stop with experience passes", "line": null, "desc": "I animated a route between pass locations to show how one visit can lead to another stop. Breaking the experience into steps explains how the passes work and helps prospects picture their business as part of a larger outing."}]}, {"name": "Advertising opportunities for members", "len": 14.0, "slides": [{"id": "coop", "n": 23, "t": 0.2, "title": "Previewing co-op advertising", "line": null, "desc": "I built a preview for each advertising option so prospects could see how the placements work, from digital billboards to email sponsorships. Switching between examples helps them picture their own business in each format and consider where they might want more exposure."}]}, {"name": "Bringing members together", "len": 28.0, "slides": [{"id": "events", "n": 24, "t": 0.2, "title": "Exploring signature events", "line": null, "desc": "I paired event videos with audience figures and sponsorship information to help prospects explore the opportunities. Selecting an event brings its details into the same space, making room for the footage while keeping the slide easy to follow."}, {"id": "network", "n": 25, "t": 14.0, "title": "Connecting at Montco Meetups", "line": null, "desc": "I gave Montco Meetups their own slide to highlight the relationships members can build through the program. Event footage helps prospects picture the atmosphere and understand what attending could look like for them."}]}, {"name": "Being part of the membership", "len": 112.0, "slides": [{"id": "edu", "n": 26, "t": 0.2, "title": "Putting visitor data to work", "line": null, "desc": "I paired visitor insights with examples of decisions a business could make using them. Cycling through the tools connects the information to practical uses, helping prospects understand how it could inform their staffing, promotions, or inventory."}, {"id": "know", "n": 27, "t": 14.0, "title": "Keeping members informed", "line": null, "desc": "I used examples of member updates to show what staying connected looks like after joining. Cycling through the content gives prospects a sense of the opportunities, news, and reminders they can expect to receive."}, {"id": "portal", "n": 28, "t": 28.0, "title": "Managing membership through Member HQ", "line": null, "desc": "I showed Member HQ on a laptop and phone to make the portal feel familiar before a prospect ever logs in. Feature previews explain how members can keep their listing current and manage the information visitors see."}, {"id": "members", "n": 29, "t": 42.0, "title": "Exploring the member network", "line": null, "desc": "I made the network interactive so prospects could select a business group and explore its place in the membership. It helps them see both where they fit and the range of businesses they could build relationships with.", "note": "Tap a business group."}, {"id": "who", "n": 30, "t": 56.0, "title": "Recognizing businesses like yours", "line": null, "desc": "I represented the member mix as a street of businesses and included real member logos. The combination gives the network a recognizable local identity and helps prospects find examples they can relate to.", "note": "These are real member logos!"}, {"id": "voices", "n": 31, "t": 70.0, "title": "Hearing from current members", "line": null, "desc": "I brought member stories into the presentation after explaining the opportunities. Hearing from businesses already involved gives prospects another perspective as they consider what membership could mean for them.", "note": "Real testimonies, too!"}, {"id": "benefits", "n": "R", "t": 84.0, "title": "Reviewing what membership includes", "line": null, "desc": "I grouped the benefits into a summary that can be brought back when a prospect wants to review the full offer. Keeping it optional lets me use it when a conversation calls for a recap.", "recap": true}, {"id": "join", "n": 32, "t": 98.0, "title": "Taking the next step", "line": null, "desc": "I returned to the opening map pin to connect the invitation to join with the story prospects have just followed. The final slide brings the price, contact details, and sign-up button together so they can act or ask another question.", "note": "Remember the location pin from the start?"}]}];
+const NARROW = '<svg width="40" height="34" viewBox="0 0 40 34" aria-hidden="true"><path d="M21 33 C 13 24, 27 14, 20 3"/><path d="M13 10 L 20 2 L 27 9"/></svg>';
+const playIcon = '<path d="M4 2.5v11l9.5-5.5z"/>', pauseIcon = '<rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/>';
+document.getElementById("chapters").innerHTML = CH.map((c,ci) => `
+  <article class="chap" data-c="${ci}">
+    <div class="chap-h"><h3>${esc(c.name)}</h3><span class="cn">Chapter ${ci+1}</span></div>
+    <div class="player">
+      <div class="screen">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="cur">${esc(c.slides[0].title)}</span></div>
+          <video muted playsinline preload="none" poster="${D}ch/ch${ci}.webp" aria-label="Chapter ${ci+1}, ${esc(c.name)}: every slide's opening scene, build and interactions"><source src="${D}ch/ch${ci}.mp4?v=4" type="video/mp4"></video>
+          <div class="scrub"><i></i>${c.slides.slice(1).map(x => `<b style="left:${(x.t/c.len*100).toFixed(2)}%"></b>`).join("")}</div></div>
+        ${c.slides.some(x => x.note) ? `<div class="now" aria-live="polite"><p class="hand nn" style="--rot:-1.5deg"></p></div>` : ""}
+        <button class="vbtn" type="button"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">${playIcon}</svg><span>Play</span></button>
+      </div>
+      <div class="sdet">
+        <div class="segs" role="tablist" aria-label="Slides in this chapter">${c.slides.map((x,k) => `<button class="seg" type="button" role="tab" data-k="${k}" aria-current="${!k}" aria-label="${x.recap ? "Optional recap" : "Slide " + x.n}: ${esc(x.title)}"><span>${x.recap ? "Recap" : x.n}</span><i></i></button>`).join("")}</div>
+        <div class="scard" aria-live="polite"><p class="sk">Slide <b class="skn">${c.slides[0].n}</b><span class="skof"> · <b class="ski">1</b> of ${c.slides.length} in this chapter</span></p><h4 class="st">${esc(c.slides[0].title)}</h4><p class="sd">${esc(c.slides[0].desc || "")}</p><span class="act"${c.slides[0].act ? "" : " hidden"}>${esc(c.slides[0].act || "")}</span></div>
+        <div class="snav"><button class="sprev" type="button" aria-label="Previous slide"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button><button class="snext" type="button" aria-label="Next slide"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button><span class="shint">or choose a slide above</span></div>
+      </div>
+    </div>
+  </article>`).join("");
+const SLOW = 1;
+CH.forEach(c => { c.slides.forEach(x => x.t = x.t * SLOW); c.len = c.len * SLOW; });
+document.querySelectorAll(".chap").forEach(ch => {
+  const c = CH[ch.dataset.c], v = ch.querySelector("video"), btn = ch.querySelector(".vbtn"), bar = ch.querySelector(".scrub i"), cur = ch.querySelector(".cur"),
+    segs = [...ch.querySelectorAll(".seg")], card = ch.querySelector(".scard"), now = ch.querySelector(".now"), nn = now && now.querySelector(".nn");
+  const skn = card.querySelector(".skn"), ski = card.querySelector(".ski"), st = card.querySelector(".st"), sd = card.querySelector(".sd"), act = card.querySelector(".act");
+  let last = -1;
+  const setBtn = () => { btn.querySelector("svg").innerHTML = v.paused ? playIcon : pauseIcon; btn.querySelector("span").textContent = v.paused ? "Play" : "Pause"; };
+  const idx = t => { let k = 0; c.slides.forEach((x,i) => { if(t >= x.t - .05) k = i; }); return k; };
+  const show = k => { const x = c.slides[k];
+    segs.forEach((b,i) => { b.setAttribute("aria-current", i === k); b.classList.toggle("done", i < k); });
+    cur.textContent = x.title; card.querySelector(".sk").firstChild.textContent = x.recap ? "" : "Slide "; skn.textContent = x.recap ? "Optional recap" : x.n; ski.textContent = k + 1; st.textContent = x.title; sd.textContent = x.desc || ""; act.textContent = x.act || ""; act.hidden = !x.act;
+    card.classList.remove("swap"); void card.offsetWidth; card.classList.add("swap");
+    if(nn){ nn.innerHTML = x.note ? NARROW + esc(x.note) : ""; nn.hidden = !x.note; if(window.inkRe && x.note) inkRe(nn); } };
+  const tick = () => { const t = v.currentTime, len = v.duration || c.len, k = idx(t), x = c.slides[k], end = c.slides[k+1] ? c.slides[k+1].t : len;
+    bar.style.width = (t / len * 100) + "%";
+    if(k !== last){ last = k; show(k); }
+    segs.forEach((b,i) => b.style.setProperty("--p", i < k ? "100%" : i === k ? Math.min(100, (t - x.t) / (end - x.t) * 100) + "%" : "0%")); };
+  v.addEventListener("timeupdate", tick); v.addEventListener("seeked", tick);
+  v.addEventListener("play", setBtn); v.addEventListener("pause", setBtn);
+  btn.addEventListener("click", () => { ch._user = true; v.paused ? v.play() : v.pause(); });
+  const go = i => { i = (i + c.slides.length) % c.slides.length; ch._user = true; v.currentTime = c.slides[i].t + .02; last = -1; tick(); v.play().catch(() => {}); };
+  segs.forEach((b,i) => b.addEventListener("click", () => go(i)));
+  ch.querySelector(".sprev").addEventListener("click", () => go(idx(v.currentTime) - 1));
+  ch.querySelector(".snext").addEventListener("click", () => go(idx(v.currentTime) + 1));
+  ch._v = v;
+});
+/* chapter tabs */
+const ctabs = document.getElementById("ctabs"), chaps = [...document.querySelectorAll(".chap")];
+ctabs.innerHTML = CH.map((c,i) => `<button type="button" role="tab" data-c="${i}" aria-selected="${!i}"><span class="tn">${i+1}</span><span class="tl">${esc(c.name)}</span><i></i></button>`).join("");
+const tabs = [...ctabs.children];
+let curCh = 0;
+function showCh(i, play){ curCh = i; chaps.forEach((c,k) => { c.hidden = k !== i; if(k !== i && !c._v.paused) c._v.pause(); });
+  tabs.forEach((t,k) => { t.setAttribute("aria-selected", k === i); t.style.setProperty("--p", "0%"); });
+  const t = tabs[i]; if(ctabs.scrollWidth > ctabs.clientWidth) ctabs.scrollTo({left: t.offsetLeft - 16, behavior: "smooth"});
+  const v = chaps[i]._v; if(play){ v.currentTime = 0; v.play().catch(() => {}); } }
+tabs.forEach((t,i) => t.addEventListener("click", () => showCh(i, true)));
+chaps.forEach((c,i) => { c._v.addEventListener("timeupdate", () => { if(i === curCh) tabs[i].style.setProperty("--p", (c._v.currentTime / (c._v.duration || 1) * 100) + "%"); });
+  c._v.addEventListener("ended", () => { if(i === curCh){ c._user = false; c._paused = false; showCh((i + 1) % chaps.length, true); } }); });
+showCh(0, false);
+const vio = new IntersectionObserver(es => es.forEach(e => { const ch = e.target, v = ch._v;
+  if(e.isIntersecting){ if(!calm && !ch._paused) v.play().catch(() => {}); }
+  else if(!v.paused){ v.pause(); } }), {threshold:.45});
+document.querySelectorAll(".chap").forEach(ch => { vio.observe(ch); ch._v.addEventListener("pause", () => { if(ch._user && ch.getBoundingClientRect().top < innerHeight && ch.getBoundingClientRect().bottom > 0) ch._paused = true; }); ch._v.addEventListener("play", () => ch._paused = false); });
+
+/* the rounds */
+const ROUNDS = [["1", "First build of four chapters from the existing deck, kit and one-sheeter."], ["2", "Story bridges and heading entrances. Interactive day's-drive map, Countryside globe, Valley Forge Sports, referrals wiring, road-trip journey, live website mock."], ["3", "Bigger social phones, PR rebuilt with a ticker and clippings, campaigns rebuilt."], ["4", "Equal-width heading lockups everywhere, plus a run of new slides including In the Know."], ["5", "Plain-language hotel slide, slower intros that also play on phones, and a phone-only layout pass."], ["6", "Swipeable phone carousels, a live page-view ticker, new Festivals, Montco Mobile and Visitor data slides, and my headshot on Join."], ["+", "A story line and a why-it-matters subline before every slide from the journey onward."], ["7", "Video stages, kiosks at three places, rebuilt passes, an insights dashboard. New scenes: newspaper, Monty's road trip, guide rack, ask-a-local, portal login."], ["8", "Illustrated scenes around each event video, party lights at Meetups, Member HQ on a laptop and phone."], ["9", "The made-up 6,000-rooms stat removed, frames around videos removed and videos enlarged. New scenes: key card, ballroom, newspaper headline."], ["10", "New storyline order. People walk into the hotel instead of cars. Lanyards show group types. Join rebuilt like the one-sheet."], ["11", "Monty badge, pass carousel, lighter event accents, curated testimonials, benefits hidden by default."], ["12", "Swinging lanyards, looping streamers, flowering vines, real member logos, join slide polish."], ["13", "Guests check in and light up the hotel, a waving golf flag, one smooth route from pin to price."], ["14", "Faster globe intro, member mix as a street of buildings. New scenes: hotels light up, a pass route, members fill the county."]];
+document.getElementById("rounds") && (document.getElementById("rounds").innerHTML = ROUNDS.map(r => `<li><span class="rk">${r[0] === "+" ? "Between rounds" : "Round"}</span><b>${r[0] === "+" ? "6+" : r[0]}</b><p>${esc(r[1])}</p></li>`).join(""));
+
+/* controls: sticky viewer that spotlights each control */
+const SCREENS = {
+  tailor:{src:D+"tailor-food.webp",w:1440,h:900},
+  overview:{src:D+"overview.webp",w:1440,h:900},
+  tools:{src:D+"tools.webp",w:1440,h:900}
+};
+const NOTES = [
+  ["tailor",[1000,108,425,198],"Tailor it to the business","Every slide is tagged by the kind of business it matters to. Pick hotels and venues, food and drink, attractions and arts, retail or services, and the slides that don't apply are skipped."],
+  ["tailor",[1000,432,425,405],"Still my call, slide by slide","Presets are a starting point. Any single slide can be switched on or off by hand, the list flags which ones aren't typical for that business, and the hidden recap slide can be turned back on."],
+  ["tailor",[1000,318,425,106],"Scenes on or off","When time is short, the story scenes can be turned off for the whole presentation or one slide at a time. Pressing next during a scene skips straight to the slide."],
+  ["overview",[60,120,1320,500],"All slides","Pressing G opens every slide grouped by chapter, so I can jump straight to the slide a prospect asks about. Skipped slides stay visible but dimmed."],
+  ["tools",[415,24,705,56],"Six chapters across the top","Who we are, how we bring visitors, where you show up, co-op advertising, events and membership. The current chapter is highlighted, so everyone knows where they are in the story."],
+  ["tools",[70,822,1300,66],"A star that travels","The progress bar is split by chapter, with a star marking the current slide, plus back and next buttons for clicking through on a phone or touchscreen."],
+  ["tools",[1100,20,272,64],"Out of the way while presenting","The presenter tools stay hidden until you hover over them, so the audience sees a clean screen. Arrows, G, T, I and F cover everything from the keyboard."]
+];
+const port = document.getElementById("port"), box = document.getElementById("spotbox"), num = document.getElementById("spotnum");
+const pans = {};
+Object.entries(SCREENS).forEach(([k,s]) => { const p = document.createElement("div"); p.className = "pan"; p.hidden = true; p.innerHTML = `<img src="${s.src}" alt="" loading="lazy">`; port.insertBefore(p, box); pans[k] = p; });
+const csegs = document.getElementById("csegs"), ccard = document.getElementById("ccard");
+csegs.innerHTML = NOTES.map((n,i) => `<button class="seg" type="button" data-i="${i}" aria-label="${i+1}: ${esc(n[2])}"><span>${i+1}</span><i></i></button>`).join("");
+document.getElementById("ctot").textContent = NOTES.length;
+const cbtns = [...csegs.children];
+let cur = -1, ctimer = null, cuser = false, cvis = false, cstart = 0;
+function focusNote(i){
+  i = (i + NOTES.length) % NOTES.length; cur = i; cstart = performance.now();
+  const [sk,[x,y,w,h]] = NOTES[i], sc = SCREENS[sk], s = port.clientWidth / sc.w;
+  Object.entries(pans).forEach(([k,p]) => p.hidden = k !== sk);
+  const pd = 6;
+  Object.assign(box.style, {left:(x*s-pd)+"px", top:(y*s-pd)+"px", width:(w*s+pd*2)+"px", height:(h*s+pd*2)+"px"});
+  num.textContent = i+1;
+  cbtns.forEach((b,k) => { b.setAttribute("aria-current", k === i); b.style.setProperty("--p", k < i ? "100%" : "0%"); });
+  document.getElementById("cn").textContent = i+1; document.getElementById("ct").textContent = NOTES[i][2]; document.getElementById("cd").textContent = NOTES[i][3];
+  ccard.classList.remove("swap"); void ccard.offsetWidth; ccard.classList.add("swap");
+}
+const CDUR = 4000;
+(function cloop(t){ if(cvis && !cuser && cur >= 0){ const p = Math.min(1,(performance.now()-cstart)/CDUR); cbtns[cur].style.setProperty("--p", (p*100)+"%"); if(p >= 1) focusNote(cur+1); } requestAnimationFrame(cloop); })();
+cbtns.forEach((b,i) => b.addEventListener("click", () => { cuser = true; focusNote(i); cbtns[i].style.setProperty("--p","100%"); }));
+document.getElementById("cprev").addEventListener("click", () => { cuser = true; focusNote(cur-1); cbtns[cur].style.setProperty("--p","100%"); });
+document.getElementById("cnext").addEventListener("click", () => { cuser = true; focusNote(cur+1); cbtns[cur].style.setProperty("--p","100%"); });
+new IntersectionObserver(es => es.forEach(e => { cvis = e.isIntersecting; if(cvis) cstart = performance.now(); }), {threshold:.2}).observe(document.querySelector(".ctl .dgrid"));
+focusNote(0);
+addEventListener("resize", () => focusNote(Math.max(0,cur)));
+if(calm) cuser = true;
+
+
+/* journey traveller */
+(()=>{const sv=document.querySelector('.after .route');if(!sv)return;const pth=sv.querySelector('.rp'),dot=sv.querySelector('.trav'),st=[...sv.querySelectorAll('.st circle')],tx=[...sv.querySelectorAll('.tx text')];
+const L0=pth.getTotalLength(),FR=[0,.26,.5,.74,1];st.forEach((c,i)=>{const q=pth.getPointAtLength(L0*FR[i]);c.setAttribute('cx',q.x);c.setAttribute('cy',q.y);if(tx[i]){tx[i].setAttribute('x',Math.min(372,Math.max(28,q.x)));tx[i].setAttribute('y',q.y+(i%2?-16:26))}});
+const L=L0,stops=st.map(c=>{const cx=+c.getAttribute('cx'),cy=+c.getAttribute('cy');let best=0,bd=1e9;for(let l=0;l<=L;l+=2){const q=pth.getPointAtLength(l),d=(q.x-cx)**2+(q.y-cy)**2;if(d<bd){bd=d;best=l}}return best});
+if(calm){const q=pth.getPointAtLength(L);dot.setAttribute('cx',q.x);dot.setAttribute('cy',q.y);return}let k=0,from=0,t0=performance.now(),phase='hold';const MOVE=1300,HOLD=1100;
+const lit=i=>{st.forEach((c,j)=>c.classList.toggle('on',j<=i));tx.forEach((c,j)=>c.classList.toggle('on',j===i))};lit(0);
+(function f(now){const el=now-t0;if(phase==='hold'){if(el>(k===stops.length-1?HOLD*2:HOLD)){if(k===stops.length-1){k=0;lit(0);const q=pth.getPointAtLength(stops[0]);dot.setAttribute('cx',q.x);dot.setAttribute('cy',q.y);t0=now}else{phase='move';from=stops[k];t0=now}}}
+else{const p=Math.min(1,el/MOVE),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2,l=from+(stops[k+1]-from)*e,q=pth.getPointAtLength(l);dot.setAttribute('cx',q.x);dot.setAttribute('cy',q.y);if(p>=1){k++;phase='hold';t0=now;lit(k)}}requestAnimationFrame(f)})(t0);})();
+/* full circle toggle */
+(()=>{const c=document.querySelector('.circle');if(!c)return;const fl=c.querySelector('.cflip'),lb=c.querySelector('.cl'),bs=[...c.querySelectorAll('.ctog button')],qs=[...c.querySelectorAll('.cq')];let st='a',user=false;
+const set=k=>{st=k;fl.classList.toggle('to-b',k==='b');lb.textContent=k==='a'?'Slide 2':'The last slide';bs.forEach(b=>b.classList.toggle('on',b.dataset.s===k));qs.forEach(q=>q.classList.toggle('on',q.classList.contains(k)))};
+bs.forEach(b=>b.addEventListener('click',()=>{user=true;set(b.dataset.s)}));let vis=false;new IntersectionObserver(es=>vis=es[0].isIntersecting,{threshold:.4}).observe(c);
+setInterval(()=>{if(vis&&!user&&!calm)set(st==='a'?'b':'a')},3800);})();
+/* one-sheet flip */
+(()=>{const w=document.querySelector('.flipwrap');if(!w)return;const f=w.querySelector('.flip'),bs=[...w.querySelectorAll('.ftog button')],cs=[...w.querySelectorAll('.fcap')];let s=0;
+const set=k=>{s=k;w.classList.toggle('isback',k===1);bs.forEach((b,i)=>b.classList.toggle('on',i===k));cs.forEach((c,i)=>c.classList.toggle('on',i===k))};
+let user=false,vis=false;bs.forEach((b,i)=>b.addEventListener('click',()=>{user=true;set(i)}));new IntersectionObserver(es=>vis=es[0].isIntersecting,{threshold:.35}).observe(w);setInterval(()=>{if(vis&&!user&&!calm)set(s?0:1)},4000);})();
+/* scroll-ins */
+const once = (els, cls="in", opts={threshold:.2}) => { const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add(cls); io.unobserve(e.target); } }), opts); els.forEach(el => io.observe(el)); };
+once(document.querySelectorAll(".rise,.stagebox"));
+setTimeout(() => document.querySelector(".hnote").classList.add("in"), 1200);
+
+</script>
+<script>/*HWARR*/
+(()=>{const n=document.querySelector('.intro .hero-art .hnote'),sv=n&&n.querySelector('svg');if(!sv)return;
+const place=()=>{if(innerWidth<=900){sv.style.cssText='';return}let W;const ic=[...n.querySelectorAll('.ic')];if(ic.length){const q=ic.findIndex((e,i)=>e.textContent==='W');if(q<0)return;W=(ic[q-1]&&/[‘']/.test(ic[q-1].textContent)?ic[q-1]:ic[q]).getBoundingClientRect()}else{const w=document.createTreeWalker(n,NodeFilter.SHOW_TEXT);let t,node,idx=-1;while(t=w.nextNode()){const i=t.data.search(/[‘']?Why/);if(i>=0){node=t;idx=i;break}}if(!node)return;const r=document.createRange();r.setStart(node,idx);r.setEnd(node,idx+1);W=r.getBoundingClientRect()}
+const _=0,N=n.getBoundingClientRect(),sw=sv.getBoundingClientRect().width||66;
+sv.style.setProperty('right','auto','important');let L=W.left-N.left-sw,T=W.top-N.top;sv.style.setProperty('top',T+'px','important');sv.style.setProperty('left',L+'px','important');
+const pth=sv.querySelector('path'),m=pth.getScreenCTM(),pt=pth.getPointAtLength(0),sx=m.a*pt.x+m.c*pt.y+m.e,sy=m.b*pt.x+m.d*pt.y+m.f,tx=W.left-4,ty=W.top+W.height*.5;
+sv.style.setProperty('left',(L+tx-sx)+'px','important');sv.style.setProperty('top',(T+ty-sy)+'px','important');};
+place();addEventListener('resize',place);document.fonts&&document.fonts.ready.then(place);setTimeout(place,1200);setTimeout(place,3000);})();
+</script>
+<script>/*NOWMOVE*/
+(()=>{const mq=matchMedia('(min-width:901px)');const run=()=>document.querySelectorAll('.chap').forEach(ch=>{const now=ch.querySelector('.now'),sd=ch.querySelector('.sdet'),scr=ch.querySelector('.vbtn')||ch.querySelector('video');if(!now||!sd)return;
+if(mq.matches){if(now.parentElement!==sd){sd.insertBefore(now,sd.querySelector('.snav'));now.classList.add('side')}}else if(now.classList.contains('side')){now.classList.remove('side');ch.querySelector('.screen .browser').after(now)}});
+run();mq.addEventListener('change',run);})();
+</script>
+<script>/*GLV*/(()=>{const vs=document.querySelectorAll('.glv');if(!vs.length||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.preload='auto';v.play().catch(()=>{})}else v.pause()}),{threshold:.3});vs.forEach(v=>io.observe(v))})();</script>
+<script>
+//INK
+window.realDash = window.realDash || (p => { let L = 0; try { L = Math.ceil(p.getTotalLength()) + 2; } catch(e) {} if(!L) return; p.removeAttribute("pathLength"); p.style.strokeDasharray = L + " " + L; if(!p.style.strokeDashoffset) p.style.strokeDashoffset = L; });
+document.querySelectorAll('path[pathLength="1"]').forEach(window.realDash);
+(()=>{
+  const SEL = ".hnote,.hand,.endnote,.note,.pnote,.smnote .chg";
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("inkon");
+  const busy = new WeakSet();
+  const prep = el => {
+    busy.add(el);
+    const plain = el.querySelectorAll(".iw");
+    if(plain.length){ plain.forEach(w => w.replaceWith(document.createTextNode(w.textContent))); el.normalize(); }
+    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {acceptNode: n => n.parentNode.closest("svg") ? 2 : 1});
+    const nodes = []; while(walk.nextNode()) nodes.push(walk.currentNode);
+    let i = 0;
+    nodes.forEach(t => {
+      if(!t.textContent.trim()) return;
+      const f = document.createDocumentFragment();
+      t.textContent.split(/(\s+)/).forEach(part => {
+        if(!part) return;
+        if(/^\s+$/.test(part)){ f.appendChild(document.createTextNode(part)); return; }
+        const w = document.createElement("span"); w.className = "iw";
+        [...part].forEach(c => { const s = document.createElement("span"); s.className = "ic"; s.style.setProperty("--i", i++); s.textContent = c; w.appendChild(s); });
+        f.appendChild(w);
+      });
+      t.replaceWith(f);
+    });
+    el.style.setProperty("--n", i);
+    el.style.setProperty("--d", Math.max(16, Math.min(42, Math.round(2400 / Math.max(i,1)))));
+    el.querySelectorAll("svg path").forEach(window.realDash);
+    el.classList.add("ink");
+    if(getComputedStyle(el).position === "static") el.style.position = "relative";
+    setTimeout(() => busy.delete(el), 0);
+  };
+  const go = el => { el.classList.remove("go"); void el.offsetWidth; el.classList.add("go"); };
+  const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ go(e.target); io.unobserve(e.target); } }), {threshold: .6, rootMargin: "0px 0px -8% 0px"});
+  const add = el => { if(el._ink) return; el._ink = 1; prep(el); io.observe(el); };
+  window.inkRe = el => { if(!el._ink){ add(el); return; } prep(el); const r = el.getBoundingClientRect(); if(r.bottom > 0 && r.top < innerHeight) go(el); else { el.classList.remove("go"); io.observe(el); } };
+  const scan = root => { if(root.matches && root.matches(SEL)) add(root); root.querySelectorAll && root.querySelectorAll(SEL).forEach(add); };
+  scan(document);
+  new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => { if(n.nodeType === 1 && !(n.classList && (n.classList.contains("iw") || n.classList.contains("ic")))) scan(n); }))).observe(document.body, {childList: true, subtree: true});
+})();
+//INK-END
+</script>
+</body>
+</html>
