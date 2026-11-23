@@ -162,7 +162,7 @@ PAGES.append(dict(
 # ------------------------------------------------------------------ ATTRACTIONS & EVENTS (DRAFT)
 PAGES.append(dict(
     slug="attractions-events", nav_label="Attraction and venue websites",
-    photos=dict(hero="images/attractions-hero.jpg", hero_pos="65% 40%",
+    photos=dict(hub="images/attractions-hub.jpg", hero="images/attractions-hero.jpg", hero_pos="65% 40%",
                 band="images/attractions-band.jpg", band_pos="40% 55%",
                 process="images/attractions-process.jpg", process_pos="center 40%",
                 cta="images/attractions-cta.jpg", cta_x="-240px", cta_y="85%"),

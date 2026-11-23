@@ -397,7 +397,7 @@ HUB = """<!DOCTYPE html>
 
 def build_hub():
     def bg(p):
-        u = img_url(p.get("photos", {}).get("hero"))
+        u = img_url(p.get("photos", {}).get("hub") or p.get("photos", {}).get("hero"))
         return ' style="--bg:%s"' % u.replace('"', "'") if u else ""
     cards = "\n".join('      <li><a href="/web-design/%s/"%s><h2>%s</h2><p>%s</p><span class="go">See the page →</span></a></li>'
                       % (p["slug"], bg(p), p["nav_label"], html.escape(p["meta"])) for p in PAGES)
@@ -413,7 +413,7 @@ if __name__ == "__main__":
         imgdir = os.path.join(site, "images", "landing")
         os.makedirs(imgdir, exist_ok=True)
         for p in PAGES:
-            for k in ("hero", "band", "process", "cta"):
+            for k in ("hub", "hero", "band", "process", "cta"):
                 if p.get("photos", {}).get(k):
                     from PIL import Image
                     src = os.path.join(HERE, p["photos"][k])
