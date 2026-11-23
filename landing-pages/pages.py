@@ -280,7 +280,7 @@ PAGES.append(dict(
     quiet_link=("/vftcb-presentation.html", "interactive membership presentation I designed for Valley Forge Tourism", "Take a look at the ", "."),
     give_h2="Make your pitch easy to follow.",
     demo=dict(type="embed", caption="Try it: my Valley Forge Tourism presentation",
-              url="/vftcb-presentation.html", link_text="Open it full screen"),
+              url="https://vftcb-membership.netlify.app/", link_text="Open it full screen"),
     tiles=[("A story, not a stack of slides", "We’ll shape your content into a clear story first, so every slide moves people toward the next step."),
            ("Interactive, when it helps", "Clickable sections, tabs, and simple animations let people explore the parts they care about without getting lost."),
            ("Built for the room and the follow-up", "It runs in a web browser, so it looks right on a projector in the room, on a laptop across the table, and on a phone when someone opens your link later."),
