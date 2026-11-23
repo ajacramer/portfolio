@@ -345,13 +345,17 @@ HUB = """<!DOCTYPE html>
   .label{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light)}
   h1{font-family:var(--head);font-weight:800;font-size:clamp(40px,5.4vw,64px);line-height:1.05;margin:12px 0 30px;text-wrap:balance}
   .cards{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-  .cards a{display:flex;flex-direction:column;gap:8px;height:100%;text-decoration:none;background:var(--navy);border-radius:16px;padding:22px;border-top:4px solid var(--teal);
+  .cards a{position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;gap:8px;height:100%;min-height:260px;text-decoration:none;background:var(--navy);border-radius:16px;padding:22px;border-top:4px solid var(--teal);
     transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease}
+  .cards a:before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg,none) center/cover no-repeat;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .cards a:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(32,30,67,.25) 0%,rgba(32,30,67,.72) 50%,rgba(26,24,56,.93) 100%)}
+  .cards h2,.cards p{text-shadow:0 1px 12px rgba(20,19,42,.7)}
+  .cards p{color:#D8DCE8}
   .cards li:nth-child(even) a{border-top-color:var(--sun)}
   .cards h2{font-family:var(--head);font-size:22px;line-height:1.15}
   .cards p{font-size:15px;color:var(--muted);text-wrap:pretty}
   .cards .go{margin-top:auto;font-family:"Space Mono";font-weight:700;font-size:12px;color:var(--sun)}
-  @media (hover:hover){.cards a:hover{transform:translateY(-4px);box-shadow:0 18px 34px -16px rgba(80,140,155,.6)}}
+  @media (hover:hover){.cards a:hover{transform:translateY(-4px);box-shadow:0 18px 34px -16px rgba(80,140,155,.6)}.cards a:hover:before{transform:scale(1.06)}}
   footer.site-foot{border-top:1px solid rgba(80,140,155,.4);padding:2rem 0 2.6rem;margin-top:40px}
   footer.site-foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap}
   footer.site-foot .made{font:600 1.35rem/1 var(--hand);color:var(--sun)}
@@ -392,8 +396,11 @@ HUB = """<!DOCTYPE html>
 
 
 def build_hub():
-    cards = "\n".join('      <li><a href="/web-design/%s/"><h2>%s</h2><p>%s</p><span class="go">See the page →</span></a></li>'
-                      % (p["slug"], p["nav_label"], html.escape(p["meta"])) for p in PAGES)
+    def bg(p):
+        u = img_url(p.get("photos", {}).get("hero"))
+        return ' style="--bg:%s"' % u.replace('"', "'") if u else ""
+    cards = "\n".join('      <li><a href="/web-design/%s/"%s><h2>%s</h2><p>%s</p><span class="go">See the page →</span></a></li>'
+                      % (p["slug"], bg(p), p["nav_label"], html.escape(p["meta"])) for p in PAGES)
     return HUB.replace("%s", cards, 1)
 
 
