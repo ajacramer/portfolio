@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aja-design.com/sitemap.xml

@@ -16,7 +16,9 @@ Read this before changing anything on the site. It records how the site is built
 | `vftcb-membership.html` | VFTCB hub page linking the 4 mini projects |
 | `vftcb-presentation.html`, `vftcb-signup.html`, `vftcb-coop.html`, `vftcb-renewal.html` | VFTCB mini projects |
 | `freedom-from-hunger.html`, `beyond-barriers.html`, `last-chance-getaways.html` | Case studies |
-| `images/` | All images and videos, one folder per project (`vftcb/`, `ffh/`, `bb/`, `lcg/`, `deck/`) |
+| `images/` | All images and videos, one folder per project (`vftcb/`, `ffh/`, `bb/`, `lcg/`, `deck/`, `landing/`) |
+| `web-design/` | SEO landing pages (see below) |
+| `sitemap.xml`, `robots.txt` | For search engines |
 | `images/share-card.jpg` | Link preview image (1200×630) |
 | `favicon.ico`, `images/favicon-32.png`, `images/apple-touch-icon.png` | Site icon: an "A" plus a lilac dot on navy |
 
@@ -76,6 +78,18 @@ Claude then:
 4. Updates the "next project" links so the order stays a loop.
 5. Sets the page `<title>` to "Project name | Aja Cramer".
 6. Checks the page at desktop and phone widths before handing it back.
+
+## Landing pages (`site/web-design/`)
+- SEO landing pages: a hub at `/web-design/` plus one page per service: `restaurants`, `breweries-wineries-distilleries`, `retail`, `attractions-events`, `contractors-home-services`, `presentations`. Each lives at `site/web-design/<slug>/index.html`.
+- **Don't edit those HTML files by hand.** They are generated from `landing-pages/` in the repo root (not public):
+  - `pages.py` holds every page's copy, photos, rotating words and sample screen. Aja's copy, word for word.
+  - `template.html` is the shared layout. A design change here applies to all pages.
+  - `build.py` builds them. Run `python3 build.py --repo ../site` from `landing-pages/` to rebuild the pages, the hub and the WebP photos in `site/images/landing/`. Run `python3 build.py` alone for self-contained preview files in `landing-pages/out/`.
+- Photos are Adobe Stock (free license), tinted purple for the hero and teal elsewhere. Source JPGs are in `landing-pages/images/`.
+- Each page's contact form is the same Netlify form as the home page (`work-with-me`, same fields, same thank-you sequence), with a hidden `source-page` field so the email says which page it came from. The home page form has `source-page` = "Home page" so Netlify keeps that field. If the home page form fields change, change `template.html` to match.
+- Rules for these pages: no single word alone on a last line; step numbers 02 and 04 are lilac; each page varies its buttons (hero names the business, "Let's grab coffee" after the steps, "Start the conversation" on the form).
+- The Presentations page shows `vftcb-presentation.html` live in a scaled frame. It works because it's the same site. Don't add headers that block framing from the same origin.
+- `site/sitemap.xml` and `site/robots.txt` list every public page. Add new pages to the sitemap.
 
 ## After hours / blog (not built yet)
 - Right now it's a "Coming soon" card for nail art, coding experiments and fun write-ups.
