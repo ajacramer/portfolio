@@ -25,6 +25,9 @@ Read this before changing anything on the site. It records how the site is built
 "View the next project" order: VFTCB hub → Freedom From Hunger → Last Chance Getaways → Beyond Barriers → VFTCB hub. The VFTCB minis go Presentation → Sign-up → Co-op → Renewal.
 
 ## Rules Aja has set (always follow)
+**Name**
+- The business name is **Aja Cramer Designs**: page titles, footers, metadata and structured data. The header logo on the home page and case studies stays "Aja Cramer" (the landing pages use "Aja Cramer Designs"). Her personal name, Aja Cramer, stays in the About copy.
+
 **Colors**
 - Never use pure white or pure black.
 - Off-white is `#E7E3F1` (`--paper`) and near-black is `#14132A` (`--ink`).
@@ -76,7 +79,7 @@ Claude then:
 2. Puts the images in `images/<short-name>/`.
 3. Adds a work card to the home page.
 4. Updates the "next project" links so the order stays a loop.
-5. Sets the page `<title>` to "Project name | Aja Cramer".
+5. Sets the page `<title>` to "Project name | Aja Cramer Designs".
 6. Checks the page at desktop and phone widths before handing it back.
 
 ## Landing pages (`site/web-design/`)
