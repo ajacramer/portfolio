@@ -52,6 +52,7 @@ Read this before changing anything on the site. It records how the site is built
 
 **Fonts**
 - League Spartan for headings, Instrument Sans for body text, Space Mono for labels, Caveat for handwritten notes.
+- The services page and landing pages never use Space Mono (Aja dislikes it there). Buttons, labels and small links on those pages use League Spartan, and buttons match the home page button (League Spartan 700, 1.05rem).
 - Each hero word has its own display font.
 
 ## Things that are easy to break

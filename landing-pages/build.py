@@ -105,11 +105,11 @@ DECK_CSS = """  /* sample slide deck */
   .slide.s1{background:radial-gradient(circle at 85% 20%,rgba(182,156,255,.45),transparent 50%),linear-gradient(135deg,var(--navy),var(--blue))}
   .slide.s2{background:linear-gradient(135deg,var(--teal-deep),var(--navy))}
   .slide.s3{background:radial-gradient(circle at 15% 85%,rgba(80,140,155,.5),transparent 55%),var(--navy)}
-  .slide .k{font-family:"Space Mono";font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-light)}
+  .slide .k{font-family:var(--head);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-light)}
   .slide h4{font-family:"League Spartan";font-weight:800;font-size:28px;line-height:1.05}
   .slide ul{list-style:none;display:grid;gap:7px;font-size:14px}
   .slide li:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--sun);margin-right:9px}
-  .slide .sbtn{align-self:flex-start;background:var(--sun);color:var(--ink);font-family:"Space Mono";font-weight:700;font-size:12px;padding:8px 14px;border-radius:999px}
+  .slide .sbtn{align-self:flex-start;background:var(--sun);color:var(--ink);font-family:var(--head);font-weight:700;font-size:12px;padding:8px 14px;border-radius:999px}
   .deck-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}
   .deck-nav button{width:34px;height:34px;border-radius:50%;border:1px solid #3A3770;background:var(--navy);color:var(--paper);font-size:16px;cursor:pointer;transition:background .2s,border-color .2s}
   .deck-nav button:hover{border-color:var(--sun);background:#2A2754}
@@ -169,9 +169,9 @@ EMBED_CSS = """  /* live project embed */
   .embed{width:100%;max-width:440px}
   .embed-screen{position:relative;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:#0E0D20;border:1px solid #2E2B5C;
     box-shadow:0 30px 60px -20px rgba(80,140,155,.45)}
-  .embed-screen:before{content:"Loading the presentation…";position:absolute;inset:0;display:grid;place-items:center;font-family:"Space Mono";font-size:11px;color:var(--muted)}
+  .embed-screen:before{content:"Loading the presentation…";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--head);font-size:11px;color:var(--muted)}
   .embed-screen iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;transform:scale(var(--es,.34))}
-  .embed-link{display:inline-block;margin-top:14px;font-family:"Space Mono";font-size:12px;color:var(--sun);text-decoration:underline;text-decoration-color:rgba(182,156,255,.45);text-underline-offset:4px}
+  .embed-link{display:inline-block;margin-top:14px;font-family:var(--head);font-size:12px;color:var(--sun);text-decoration:underline;text-decoration-color:rgba(182,156,255,.45);text-underline-offset:4px}
   .embed-link:hover{text-decoration-color:var(--sun)}"""
 
 EMBED_JS = """  // Live embed of a real project, scaled to fit its frame
@@ -202,10 +202,10 @@ CARD_CSS = """  /* real project card */
     box-shadow:0 30px 60px -20px rgba(80,140,155,.45);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;gap:8px;
     transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
   .pcard-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .pcard-screen .k{font-family:"Space Mono";font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-light);position:relative}
+  .pcard-screen .k{font-family:var(--head);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-light);position:relative}
   .pcard-screen h4{font-family:"League Spartan";font-weight:800;font-size:28px;line-height:1.05;position:relative}
   .pcard-blurb{margin-top:14px;font-size:15px;color:var(--muted)}
-  .pcard-go{display:inline-block;margin-top:12px;font-family:"Space Mono";font-weight:700;font-size:13px;color:var(--sun)}
+  .pcard-go{display:inline-block;margin-top:12px;font-family:var(--head);font-weight:700;font-size:13px;color:var(--sun)}
   .pcard-go:after{content:" →";display:inline-block;transition:transform .25s}
   @media (hover:hover){.pcard:hover .pcard-screen{transform:translateY(-4px);box-shadow:0 36px 70px -20px rgba(182,156,255,.5)}.pcard:hover .pcard-go:after{transform:translateX(4px)}}"""
 
@@ -374,7 +374,7 @@ SERVICES = """<!DOCTYPE html>
 <meta name="theme-color" content="#201E43">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 @@SCHEMA@@
 </script>
@@ -397,7 +397,7 @@ SERVICES = """<!DOCTYPE html>
   .site-top nav a{text-decoration:none;font:600 1rem/1 var(--head);padding:.6rem .9rem;border-radius:999px;transition:background .2s,color .2s}
   .site-top nav a:hover,.site-top nav a[aria-current]{background:var(--blue);color:var(--sun)}
   .hub{padding:56px 0 10px}
-  .label{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light)}
+  .label{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light)}
   h1{font-family:var(--head);font-weight:800;font-size:clamp(40px,5.4vw,64px);line-height:1.05;margin:12px 0 16px}
   h1 em{font-style:normal;color:var(--sun)}
   .intro{font-size:19px;max-width:40rem;margin-bottom:34px}
@@ -413,9 +413,9 @@ SERVICES = """<!DOCTYPE html>
   .cards li:nth-child(even) a{border-top-color:var(--sun)}
   .cards h3{font-family:var(--head);font-size:22px;line-height:1.15;text-shadow:0 1px 12px rgba(20,19,42,.7)}
   .cards p{font-size:15px;color:#D8DCE8;text-shadow:0 1px 12px rgba(20,19,42,.7)}
-  .cards .go{margin-top:auto;font-family:"Space Mono";font-weight:700;font-size:12px;color:var(--sun)}
+  .cards .go{margin-top:auto;font-family:var(--head);font-weight:700;font-size:12px;color:var(--sun)}
   @media (hover:hover){.cards a:hover{transform:translateY(-4px);box-shadow:0 18px 34px -16px rgba(80,140,155,.6)}.cards a:hover:before{transform:scale(1.06)}}
-  .btn{display:inline-block;background:var(--sun);color:var(--ink);font:700 15px/1 var(--head);padding:15px 22px;border-radius:999px;text-decoration:none;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
+  .btn{display:inline-block;background:var(--sun);color:var(--ink);font:700 1.05rem/1 var(--head);letter-spacing:.01em;padding:1.05rem 1.6rem .95rem;border-radius:999px;text-decoration:none;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
   @media (hover:hover){.btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px -10px rgba(182,156,255,.75)}}
   footer.site-foot{border-top:1px solid rgba(80,140,155,.4);padding:2rem 0 2.6rem;margin-top:30px}
   footer.site-foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap}
