@@ -69,6 +69,9 @@ Read this before changing anything on the site. It records how the site is built
   - A hidden `subject` field makes the notification email read `**NEW DESIGN SUBMISSION** from [name]`. Keep the stars.
   - After sending, the thank-you sequence plays: a paper plane, a checkmark and the text "Thanks!".
 - **Tall screenshots** are split into tiles no taller than 1600px, because browsers drop very tall images.
+- **Hero word fonts load lazily.** The second Google Fonts link in `index.html` holds only the rotating-word fonts and uses `&text=` so each file contains just the lowercase letters (plus the dotless ı in "humanıty"). If a word ever needs other characters (capitals, punctuation), add them to `text=`. The script preloads the first two words, then always the next one (`preload()`), plus the extra fonts "weirdness" flicks through. Space Mono, League Spartan, Instrument Sans and Caveat load in full from the first link.
+- **Images** carry `width`/`height` (their real pixel size) so nothing jumps while loading, and `:where(img[width][height]){height:auto}` keeps CSS in charge of display size. Images below the first screen have `loading="lazy" decoding="async"`. The before/after slider images on the renewal and sign-up pages size from their height, so they have no `width`/`height`.
+- **Canonical URLs:** every page has `<link rel="canonical">` pointing at its own full URL (`https://aja-design.com/` for the home page, `https://aja-design.com/<page>.html` for project pages).
 
 ## How to add a new project
 Aja provides:

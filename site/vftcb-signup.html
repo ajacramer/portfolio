@@ -5,6 +5,7 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://aja-design.com/vftcb-signup.html">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sign-up and Welcome | Aja Cramer Designs</title>
 <meta name="description" content="A five-step membership sign-up and a new-member welcome that gets a listing live, for the Valley Forge Tourism &amp; Convention Board.">
@@ -834,6 +835,9 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
   header.top nav#main-nav a[aria-current],header.site-top nav#main-nav a[aria-current]{background:var(--blue);color:var(--sun)}
 }
 @media (max-width:640px) and (prefers-reduced-motion:reduce){.menu-btn span,nav#main-nav{transition:none!important}}
+
+/* images carry their real size (no layout jump while loading); CSS still controls display size */
+:where(img[width][height]){height:auto}
 </style>
 </head>
 <body>
@@ -913,7 +917,7 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
 @keyframes mq{to{transform:translateX(-50%)}}
 .pr .cov{position:absolute;right:3%;top:8%;height:84%;aspect-ratio:3/4;border-radius:8px;background:url(images/vftcb/renew.webp) 35% 50%/auto 160%;box-shadow:0 18px 30px -12px rgba(10,8,30,.95),0 0 0 1.5px rgba(191,198,214,.3);display:flex;align-items:flex-end;padding:.5rem}
 .pr .cov b{font:800 .7rem/1 var(--head);color:var(--paper);letter-spacing:.06em;text-transform:uppercase}
-</style><div class="ho"><div class="slw"><img src="images/vftcb/ba/s-slide.webp" alt=""><span class="ring"></span></div><svg class="arr" viewBox="0 0 60 30"><path class="ln" d="M2 22 C 20 2, 40 2, 55 16"/><path class="hd" d="M47.7 15.5 L57 17 L54.3 7.9"/></svg><img class="ph" src="images/vftcb/ba/s-phone.webp" alt=""></div></div>
+</style><div class="ho"><div class="slw"><img width="720" height="450" src="images/vftcb/ba/s-slide.webp" alt=""><span class="ring"></span></div><svg class="arr" viewBox="0 0 60 30"><path class="ln" d="M2 22 C 20 2, 40 2, 55 16"/><path class="hd" d="M47.7 15.5 L57 17 L54.3 7.9"/></svg><img class="ph" src="images/vftcb/ba/s-phone.webp" alt=""></div></div>
           <p class="label">Where it started</p>
           <h2 class="one">Signing up had to be quick</h2>
           <p>The presentation ends with a button to join. Whatever comes next has to keep that momentum: quick to finish on a phone, clear about price, and useful to our team the moment it arrives. Then, once someone joins, their listing needs to go live fast.</p>
@@ -986,7 +990,7 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
         <h2>Co-op Advertising Shop</h2>
         <p>A shop-style page where members browse ad options at member rates, build a wish list and send it to the team.</p>
       </div>
-      <div class="cover"><img class="layer" src="images/vftcb/coop.webp" alt="" style="aspect-ratio:16/10;object-fit:cover"></div>
+      <div class="cover"><img loading="lazy" decoding="async" width="1440" height="900" class="layer" src="images/vftcb/coop.webp" alt="" style="aspect-ratio:16/10;object-fit:cover"></div>
     </a>
   </section>
 </main>

@@ -5,9 +5,10 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://aja-design.com/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aja Cramer Designs | Web &amp; Digital Designer</title>
-<meta name="description" content="Aja Cramer is a digital designer who believes the internet should be as interesting as the people behind it.">
+<meta name="description" content="Aja Cramer Designs creates personality-filled websites, interactive presentations and digital graphics for small businesses in Chester and Montgomery counties, PA.">
 <meta name="theme-color" content="#201E43">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Aja Cramer Designs">
@@ -24,8 +25,9 @@
 <meta name="twitter:image" content="https://aja-design.com/images/share-card.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300..900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Caveat:wght@600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Chewy&family=Space+Mono:wght@700&family=Righteous&family=Abril+Fatface&family=Bagel+Fat+One&family=Fraunces:ital,opsz,wght@1,144,600&family=Rubik+Wet+Paint&family=Homemade+Apple&family=Cormorant+Garamond:ital,wght@1,600&family=Mystery+Quest&family=Cinzel+Decorative:wght@700&family=Nunito:wght@800&family=Rubik+Glitch&family=Monoton&family=Bungee&family=Gaegu:wght@700&family=Special+Elite&family=Fredoka:wght@600&family=Gluten:wght@800&family=League+Spartan:wght@500;600;800&family=Instrument+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300..900&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Caveat:wght@600&family=Space+Mono:wght@700&display=swap">
+<!-- Rotating hero word fonts: subset to just the letters the words use, so each file is tiny -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Chewy&family=Righteous&family=Abril+Fatface&family=Bagel+Fat+One&family=Fraunces:ital,opsz,wght@1,144,600&family=Homemade+Apple&family=Cormorant+Garamond:ital,wght@1,600&family=Mystery+Quest&family=Cinzel+Decorative:wght@700&family=Nunito:wght@800&family=Rubik+Glitch&family=Monoton&family=Bungee&family=Gaegu:wght@700&family=Special+Elite&family=Fredoka:wght@600&family=Gluten:wght@800&text=abcdefghijklmnopqrstuvwxyz%C4%B1&display=swap">
 <style>
 :root{
   --navy:#201E43;
@@ -652,6 +654,8 @@ a:hover .wgo::after,a:focus-visible .wgo::after{transform:translateX(5px)}
 @media (max-width:800px){.dkm{order:-1}.dkno{font-size:1.2rem}}
 /*/DECK*/
 /* services (before work) */
+.svc-intro p{margin:0}
+.svc-intro .svc-local{margin-top:.8rem;font-size:1rem;color:var(--teal);font-weight:600}
 .svc{padding-bottom:0}
 .svc .sec-head{margin-bottom:clamp(1.8rem,3.5vw,2.6rem)}
 .svc-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:1rem}
@@ -698,6 +702,9 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
   header.top nav#main-nav a[aria-current],header.site-top nav#main-nav a[aria-current]{background:var(--blue);color:var(--sun)}
 }
 @media (max-width:640px) and (prefers-reduced-motion:reduce){.menu-btn span,nav#main-nav{transition:none!important}}
+
+/* images carry their real size (no layout jump while loading); CSS still controls display size */
+:where(img[width][height]){height:auto}
 </style>
 <script type="application/ld+json">
 {
@@ -876,7 +883,10 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
     <div class="wrap">
       <div class="sec-head">
         <h2 id="svc-h">What can we make <span class="spot">together?</span></h2>
-        <p>I design websites, interactive presentations and digital graphics for businesses that want something more thoughtful, useful and unmistakably their own.</p>
+        <div class="svc-intro">
+          <p>I design websites, interactive presentations and digital graphics for businesses that want something more thoughtful, useful and unmistakably their own.</p>
+          <p class="svc-local">Based in Downingtown, PA, and working with small businesses throughout Chester and Montgomery counties.</p>
+        </div>
       </div>
       <div class="svc-grid">
         <div class="svc-card">
@@ -914,13 +924,13 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
       <ol class="projects" id="projects" style="display:none" aria-hidden="true"></ol>
 <ol class="deck wk"><li class="dk" style="--i:0"><a href="vftcb-membership.html">
   <div class="dkt"><span class="dkk">Web design · 2026</span><h3>Valley Forge Tourism Membership Journey</h3><p>A connected membership experience for a tourism board, from the first pitch through sign-up, onboarding, and renewal.</p><ul class="wtags"><li>Web design</li><li>UI/UX</li><li>Front-end build</li></ul><span class="wgo">Open the case study</span></div>
-  <div class="dkm"><div class="dm k-vftcb" aria-hidden="true"><i class="dmg"></i><div class="dmx sheet" style="--x:14%;--y:-2%;--w:28%;--r:5deg;--d:3"><img src="images/deck/onesheet/page2.webp" alt="" loading="lazy"></div><div class="dmx sheet" style="--x:0%;--y:4%;--w:30%;--r:-8deg;--d:2"><img src="images/deck/onesheet/page1.webp" alt="" loading="lazy"></div><div class="dml" style="--d:1"><div class="lid"><video muted loop playsinline preload="none" poster="images/vftcb/rec/reel-hub.webp"><source src="images/vftcb/rec/reel-hub.mp4" type="video/mp4"></video></div><div class="base"></div></div><div class="dmp" style="--d:5"><video muted loop playsinline preload="none" poster="images/deck/reel-phone.webp"><source src="images/deck/reel-phone.mp4?v=2" type="video/mp4"></video></div><i class="dms" style="--sx:88%;--sy:8%"></i><i class="dms b" style="--sx:4%;--sy:78%"></i></div><span class="wnote dkno"><svg width="34" height="26" viewBox="0 0 34 26" aria-hidden="true"><path d="M32 22 C 20 22, 8 16, 5 4"/><path d="M1 10 L 5 2 L 11 9"/></svg><span>Built around the work I do every day.</span></span></div></a></li><li class="dk" style="--i:1"><a href="freedom-from-hunger.html">
+  <div class="dkm"><div class="dm k-vftcb" aria-hidden="true"><i class="dmg"></i><div class="dmx sheet" style="--x:14%;--y:-2%;--w:28%;--r:5deg;--d:3"><img width="935" height="1210" src="images/deck/onesheet/page2.webp" alt="" loading="lazy"></div><div class="dmx sheet" style="--x:0%;--y:4%;--w:30%;--r:-8deg;--d:2"><img width="935" height="1210" src="images/deck/onesheet/page1.webp" alt="" loading="lazy"></div><div class="dml" style="--d:1"><div class="lid"><video muted loop playsinline preload="none" poster="images/vftcb/rec/reel-hub.webp"><source src="images/vftcb/rec/reel-hub.mp4" type="video/mp4"></video></div><div class="base"></div></div><div class="dmp" style="--d:5"><video muted loop playsinline preload="none" poster="images/deck/reel-phone.webp"><source src="images/deck/reel-phone.mp4?v=2" type="video/mp4"></video></div><i class="dms" style="--sx:88%;--sy:8%"></i><i class="dms b" style="--sx:4%;--sy:78%"></i></div><span class="wnote dkno"><svg width="34" height="26" viewBox="0 0 34 26" aria-hidden="true"><path d="M32 22 C 20 22, 8 16, 5 4"/><path d="M1 10 L 5 2 L 11 9"/></svg><span>Built around the work I do every day.</span></span></div></a></li><li class="dk" style="--i:1"><a href="freedom-from-hunger.html">
   <div class="dkt"><span class="dkk">Web design · 2025</span><h3>Freedom From Hunger Microsite</h3><p>A campaign microsite that helps neighbors and local businesses take part in an annual food drive.</p><ul class="wtags"><li>Web design</li><li>UX research</li><li>HTML, CSS, JS</li></ul><span class="wgo">Open the case study</span></div>
-  <div class="dkm"><div class="dm k-ffh" aria-hidden="true"><i class="dmg"></i><div class="dmx card" style="--x:-5%;--y:-3%;--w:34%;--r:-7deg;--d:2"><img src="images/ffh/sharecard.webp" alt="" loading="lazy"></div><div class="dml" style="--d:1"><div class="lid"><video muted loop playsinline preload="none" poster="images/ffh/rec/reel.webp"><source src="images/ffh/rec/reel.mp4" type="video/mp4"></video></div><div class="base"></div></div><div class="dmp" style="--d:5"><video muted loop playsinline preload="none" poster="images/ffh/rec/mobile.webp"><source src="images/ffh/rec/mobile.mp4" type="video/mp4"></video></div><i class="dms" style="--sx:88%;--sy:8%"></i><i class="dms b" style="--sx:4%;--sy:78%"></i></div><span class="wnote dkno"><svg width="34" height="26" viewBox="0 0 34 26" aria-hidden="true"><path d="M32 22 C 20 22, 8 16, 5 4"/><path d="M1 10 L 5 2 L 11 9"/></svg><span>My first design for a real campaign!</span></span></div></a></li><li class="dk" style="--i:2"><a href="last-chance-getaways.html">
+  <div class="dkm"><div class="dm k-ffh" aria-hidden="true"><i class="dmg"></i><div class="dmx card" style="--x:-5%;--y:-3%;--w:34%;--r:-7deg;--d:2"><img width="1200" height="630" src="images/ffh/sharecard.webp" alt="" loading="lazy"></div><div class="dml" style="--d:1"><div class="lid"><video muted loop playsinline preload="none" poster="images/ffh/rec/reel.webp"><source src="images/ffh/rec/reel.mp4" type="video/mp4"></video></div><div class="base"></div></div><div class="dmp" style="--d:5"><video muted loop playsinline preload="none" poster="images/ffh/rec/mobile.webp"><source src="images/ffh/rec/mobile.mp4" type="video/mp4"></video></div><i class="dms" style="--sx:88%;--sy:8%"></i><i class="dms b" style="--sx:4%;--sy:78%"></i></div><span class="wnote dkno"><svg width="34" height="26" viewBox="0 0 34 26" aria-hidden="true"><path d="M32 22 C 20 22, 8 16, 5 4"/><path d="M1 10 L 5 2 L 11 9"/></svg><span>My first design for a real campaign!</span></span></div></a></li><li class="dk" style="--i:2"><a href="last-chance-getaways.html">
   <div class="dkt"><span class="dkk">Interactive · 2024</span><h3>Last Chance Getaways</h3><p>A luxury travel site with a catch. The more you browse, the more the climate crisis shows through.</p><ul class="wtags"><li>Interactive</li><li>Concept</li><li>Storytelling</li></ul><span class="wgo">Open the case study</span></div>
-  <div class="dkm"><div class="dm k-lcg" aria-hidden="true"><i class="dmg"></i><div class="dmx post" style="--x:62%;--y:52%;--w:38%;--r:6deg;--d:4"><span class="pw"><img src="images/lcg/venice-before.webp" alt="" loading="lazy"><img class="aft" src="images/lcg/venice-after.webp" alt="" loading="lazy"></span><span class="pc">Wish you were here</span></div><div class="dml" style="--d:1"><div class="lid"><video muted loop playsinline preload="none" poster="images/lcg/rec/reel.webp"><source src="images/lcg/rec/reel.mp4" type="video/mp4"></video></div><div class="base"></div></div><i class="dms" style="--sx:88%;--sy:8%"></i><i class="dms b" style="--sx:4%;--sy:78%"></i></div><span class="wnote dkno"><svg width="34" height="26" viewBox="0 0 34 26" aria-hidden="true"><path d="M32 22 C 20 22, 8 16, 5 4"/><path d="M1 10 L 5 2 L 11 9"/></svg><span>My experiment in interactive satire.</span></span></div></a></li><li class="dk" style="--i:3"><a href="beyond-barriers.html">
+  <div class="dkm"><div class="dm k-lcg" aria-hidden="true"><i class="dmg"></i><div class="dmx post" style="--x:62%;--y:52%;--w:38%;--r:6deg;--d:4"><span class="pw"><img width="1456" height="816" src="images/lcg/venice-before.webp" alt="" loading="lazy"><img width="1456" height="816" class="aft" src="images/lcg/venice-after.webp" alt="" loading="lazy"></span><span class="pc">Wish you were here</span></div><div class="dml" style="--d:1"><div class="lid"><video muted loop playsinline preload="none" poster="images/lcg/rec/reel.webp"><source src="images/lcg/rec/reel.mp4" type="video/mp4"></video></div><div class="base"></div></div><i class="dms" style="--sx:88%;--sy:8%"></i><i class="dms b" style="--sx:4%;--sy:78%"></i></div><span class="wnote dkno"><svg width="34" height="26" viewBox="0 0 34 26" aria-hidden="true"><path d="M32 22 C 20 22, 8 16, 5 4"/><path d="M1 10 L 5 2 L 11 9"/></svg><span>My experiment in interactive satire.</span></span></div></a></li><li class="dk" style="--i:3"><a href="beyond-barriers.html">
   <div class="dkt"><span class="dkk">UI/UX · 2024</span><h3>Beyond Barriers</h3><p>An adaptive fitness app concept designed around different abilities, needs, and ways to move.</p><ul class="wtags"><li>UI/UX</li><li>Accessibility</li><li>Group project</li></ul><span class="wgo">Open the case study</span></div>
-  <div class="dkm"><div class="dm k-bb" aria-hidden="true"><i class="dmg"></i><div class="dml" style="--d:1"><div class="lid"><video muted loop playsinline preload="none" poster="images/bb/rec/reel.webp"><source src="images/bb/rec/reel.mp4" type="video/mp4"></video></div><div class="base"></div></div><div class="dmp cyc" style="--d:5"><img src="images/bb/bb-home.webp" alt="" loading="lazy" style="--n:0"><img src="images/bb/bb-workout.webp" alt="" loading="lazy" style="--n:1"><img src="images/bb/bb-voice.webp" alt="" loading="lazy" style="--n:2"><img src="images/bb/bb-login.webp" alt="" loading="lazy" style="--n:3"></div><i class="dms" style="--sx:88%;--sy:8%"></i><i class="dms b" style="--sx:4%;--sy:78%"></i></div><span class="wnote dkno"><svg width="34" height="26" viewBox="0 0 34 26" aria-hidden="true"><path d="M32 22 C 20 22, 8 16, 5 4"/><path d="M1 10 L 5 2 L 11 9"/></svg><span>An academic experiment in UI/UX<br>centered around usability</span></span></div></a></li></ol>
+  <div class="dkm"><div class="dm k-bb" aria-hidden="true"><i class="dmg"></i><div class="dml" style="--d:1"><div class="lid"><video muted loop playsinline preload="none" poster="images/bb/rec/reel.webp"><source src="images/bb/rec/reel.mp4" type="video/mp4"></video></div><div class="base"></div></div><div class="dmp cyc" style="--d:5"><img width="374" height="803" src="images/bb/bb-home.webp" alt="" loading="lazy" style="--n:0"><img width="374" height="803" src="images/bb/bb-workout.webp" alt="" loading="lazy" style="--n:1"><img width="374" height="803" src="images/bb/bb-voice.webp" alt="" loading="lazy" style="--n:2"><img width="374" height="803" src="images/bb/bb-login.webp" alt="" loading="lazy" style="--n:3"></div><i class="dms" style="--sx:88%;--sy:8%"></i><i class="dms b" style="--sx:4%;--sy:78%"></i></div><span class="wnote dkno"><svg width="34" height="26" viewBox="0 0 34 26" aria-hidden="true"><path d="M32 22 C 20 22, 8 16, 5 4"/><path d="M1 10 L 5 2 L 11 9"/></svg><span>An academic experiment in UI/UX<br>centered around usability</span></span></div></a></li></ol>
     </div>
   </section>
 
@@ -932,7 +942,7 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
           <span class="ph-c ph-a" aria-hidden="true"></span>
           <span class="ph-c ph-b" aria-hidden="true"></span>
           <span class="ph-ghost" aria-hidden="true"></span>
-          <img src="images/aja-headshot.webp" alt="Aja smiling with her arms crossed" width="451" height="670">
+          <img loading="lazy" decoding="async" src="images/aja-headshot.webp" alt="Aja smiling with her arms crossed" width="451" height="670">
           <span class="ph-rule" aria-hidden="true"></span>
           <span class="ph-name" aria-hidden="true">Aja Cramer<b>Digital designer</b></span>
         </div>
@@ -969,7 +979,7 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
       <div class="ah2" id="ah2">
         <div class="ahbg" aria-hidden="true"><canvas class="aurora"></canvas><div class="ahsky"></div>
         <div class="ribbon" aria-hidden="true"><span>✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon ✦ Coming soon </span></div></div>
-        <div class="ecl" role="button" tabindex="0" aria-label="Click the moon"><span class="halo"></span><span class="corona"></span><span class="clip"><span class="mn"></span><span class="disc"></span></span><span class="gem"></span><img class="wolf" src="images/wolf.png" alt="" aria-hidden="true"></div>
+        <div class="ecl" role="button" tabindex="0" aria-label="Click the moon"><span class="halo"></span><span class="corona"></span><span class="clip"><span class="mn"></span><span class="disc"></span></span><span class="gem"></span><img loading="lazy" decoding="async" width="270" height="400" class="wolf" src="images/wolf.png" alt="" aria-hidden="true"></div>
         <div class="ahtx">
           <h3>After hours</h3>
           <p>Nail art, coding experiments, and other things I make just because I want to, plus a few fun thoughts and write-ups.</p>
@@ -1286,7 +1296,12 @@ function staticHand(){
   stage.appendChild(g);
 }
 const fontSpec = d => `${d.fst||"normal"} ${d.fw||400} 40px "${d.f}"`;
-if(document.fonts) W.forEach(d => document.fonts.load(fontSpec(d)).catch(() => {}));
+/* load hero word fonts only when they're about to be needed: the first two now, then always the next one */
+const WEIRD = ["Rubik Glitch","Monoton","Chewy","Abril Fatface","Space Mono","Shrikhand","Special Elite","Bungee","Homemade Apple"];
+const preload = k => { if(!document.fonts) return; const d = W[k % W.length]; if(d.hand) return;
+  document.fonts.load(fontSpec(d)).catch(() => {});
+  if(d.w === "weirdness") WEIRD.forEach(f => document.fonts.load(`400 40px "${f}"`).catch(() => {})); };
+preload(0); preload(1);
 function show(k){
   clearStage();
   const d = W[k], g0 = gen;
@@ -1306,7 +1321,7 @@ function next(){
   const out = stage.animate([{opacity:1},{opacity:0,transform:stage.style.transform + " translateY(-4%)"}],{duration:260,easing:"ease-in"});
   out.onfinish = () => { wi = (wi+1) % W.length; show(wi); schedule(); };
 }
-function schedule(){ clearTimeout(timer); if(!paused) timer = setTimeout(next, HOLD[W[wi].w] || 3500); }
+function schedule(){ clearTimeout(timer); preload(wi+1); if(!paused) timer = setTimeout(next, HOLD[W[wi].w] || 3500); }
 function stop(){ clearTimeout(timer); timer = null; }
 
 fitStage();

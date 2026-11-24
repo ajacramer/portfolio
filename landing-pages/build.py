@@ -400,7 +400,8 @@ SERVICES = """<!DOCTYPE html>
   .label{font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light)}
   h1{font-family:var(--head);font-weight:800;font-size:clamp(40px,5.4vw,64px);line-height:1.05;margin:12px 0 16px}
   h1 em{font-style:normal;color:var(--sun)}
-  .intro{font-size:19px;max-width:40rem;margin-bottom:34px}
+  .intro{font-size:19px;max-width:40rem;margin-bottom:10px}
+  .local{font-weight:600;color:var(--teal-light);margin-bottom:34px}
   .group{padding:26px 0 30px;border-top:1px solid rgba(80,140,155,.3)}
   .group-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:12px 40px;align-items:end;margin-bottom:20px}
   .group h2{font-family:var(--head);font-weight:800;font-size:clamp(28px,3.2vw,38px);line-height:1.05}
@@ -442,6 +443,7 @@ SERVICES = """<!DOCTYPE html>
     <div class="label">Based in Downingtown, PA</div>
     <h1>What can we make <em>together?</em></h1>
     <p class="intro">@@INTRO@@</p>
+    <p class="local">Based in Downingtown, PA, and working with small businesses throughout Chester and Montgomery counties.</p>
 @@GROUPS@@
   </div>
 </main>

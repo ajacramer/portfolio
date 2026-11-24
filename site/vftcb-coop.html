@@ -5,6 +5,7 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://aja-design.com/vftcb-coop.html">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Co-op Advertising Shop | Aja Cramer Designs</title>
 <meta name="description" content="A shop-style co-op advertising page where Valley Forge Tourism members browse ad options at member rates and send a wish list.">
@@ -834,6 +835,9 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
   header.top nav#main-nav a[aria-current],header.site-top nav#main-nav a[aria-current]{background:var(--blue);color:var(--sun)}
 }
 @media (max-width:640px) and (prefers-reduced-motion:reduce){.menu-btn span,nav#main-nav{transition:none!important}}
+
+/* images carry their real size (no layout jump while loading); CSS still controls display size */
+:where(img[width][height]){height:auto}
 </style>
 </head>
 <body>
@@ -986,7 +990,7 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
         <h2>Renewal and Thank You</h2>
         <p>A renewal experience that reviews the year, invites member feedback, and follows up with a useful thank-you and member kit.</p>
       </div>
-      <div class="cover"><img class="layer" src="images/vftcb/renew.webp" alt="" style="aspect-ratio:16/10;object-fit:cover"></div>
+      <div class="cover"><img loading="lazy" decoding="async" width="1440" height="900" class="layer" src="images/vftcb/renew.webp" alt="" style="aspect-ratio:16/10;object-fit:cover"></div>
     </a>
   </section>
 </main>
