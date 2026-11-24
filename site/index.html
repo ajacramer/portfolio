@@ -656,8 +656,10 @@ a:hover .wgo::after,a:focus-visible .wgo::after{transform:translateX(5px)}
 /* services (before work) */
 .svc-intro p{margin:0;text-wrap:pretty}
 .svc-intro .svc-local{margin-top:.8rem;font-size:1rem;color:var(--teal);font-weight:600}
-.svc{padding-bottom:0}
-.svc .sec-head{margin-bottom:clamp(1.8rem,3.5vw,2.6rem)}
+.svc{padding-top:clamp(1.5rem,4vh,3rem);padding-bottom:clamp(4rem,10vh,7rem)}
+.svc .sec-head{grid-template-columns:1fr;gap:1.2rem;margin-bottom:clamp(1.8rem,3.5vw,2.6rem)}
+.svc .sec-head .svc-intro p{max-width:40rem}
+@media (min-width:620px){.svc-nw{white-space:nowrap}}
 .svc-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:1rem}
 .svc-card{display:flex;flex-direction:column;gap:.7rem;padding:clamp(1.3rem,2.4vw,1.8rem);border-radius:24px;background:rgba(20,19,42,.45);box-shadow:inset 0 0 0 1.5px rgba(80,140,155,.45);position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
 .svc-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--teal)}
@@ -882,7 +884,7 @@ footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-tra
   <section class="sec svc" id="services" aria-labelledby="svc-h">
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="svc-h">What can we make <span class="spot">together?</span></h2>
+        <h2 id="svc-h">What can we<br> <span class="svc-nw">make <span class="spot">together?</span></span></h2>
         <div class="svc-intro">
           <p>I design websites, interactive presentations and digital graphics for businesses that want something more thoughtful, useful and unmistakably their&nbsp;own.</p>
           <p class="svc-local">Based in Downingtown, PA, and working with small businesses throughout Chester and Montgomery&nbsp;counties.</p>
