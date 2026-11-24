@@ -782,6 +782,15 @@ pre,.code,table,img,video,svg{max-width:100%}
 .inkon .ink.hand::before{opacity:0;transition:opacity .3s}
 .inkon .ink.hand.go::before{opacity:1}
 /*/INK*/
+
+/* phones: room for four nav links */
+@media (max-width:560px){.top .logo{font-size:1.12rem;white-space:nowrap}.top nav{gap:0}.top nav a{padding:.45rem .34rem;font-size:.84rem}}
+
+/* footer services list */
+footer .fsvc{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem 1.1rem;padding-top:1rem;border-top:1px solid rgba(80,140,155,.2);font-size:.85rem}
+footer .fsvc a{text-decoration:none;color:var(--muted);font-weight:600}
+footer .fsvc a:hover{color:var(--sun)}
+footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
 </style>
 </head>
 <body>
@@ -791,6 +800,7 @@ pre,.code,table,img,video,svg{max-width:100%}
     <a class="logo" href="index.html" aria-label="Aja Cramer, home">Aja Cramer<i aria-hidden="true"></i></a>
     <nav aria-label="Main">
       <a href="index.html#work">Work</a>
+      <a href="/services/">Services</a>
       <a href="index.html#about">About</a>
       <a href="index.html#contact">Contact</a>
     </nav>
@@ -963,9 +973,10 @@ pre,.code,table,img,video,svg{max-width:100%}
   <div class="wrap">
     <span class="made">Made with care.</span>
     <nav aria-label="Footer">
-      <a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a><a href="https://www.linkedin.com/in/ajacramer/" rel="noopener">LinkedIn</a>
+      <a href="index.html#work">Work</a><a href="/services/">Services</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a><a href="https://www.linkedin.com/in/ajacramer/" rel="noopener">LinkedIn</a>
     </nav>
     <small>Aja Cramer Designs | Digital Designer</small>
+    <nav class="fsvc" aria-label="Services"><a class="fsvc-h" href="/services/">Services</a><a href="/web-design/restaurants/">Restaurant Website Design</a><a href="/web-design/breweries-wineries-distilleries/">Brewery, Winery &amp; Distillery Website Design</a><a href="/web-design/retail/">Retail &amp; Small Shop Website Design</a><a href="/web-design/attractions-events/">Attraction &amp; Event Venue Website Design</a><a href="/web-design/contractors-home-services/">Contractor &amp; Home Services Website Design</a><a href="/web-design/presentations/">Interactive Presentation Design</a></nav>
   </div>
 </footer>
 

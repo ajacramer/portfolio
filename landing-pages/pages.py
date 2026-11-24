@@ -13,7 +13,7 @@ PAGES = []
 
 # ------------------------------------------------------------------ RESTAURANTS (Aja's copy)
 PAGES.append(dict(
-    slug="restaurants", nav_label="Restaurant websites",
+    slug="restaurants", nav_label="Restaurant Website Design",
     title="Restaurant Website Design in Chester & Montgomery County, PA | Aja Cramer Designs",
     meta="I design websites for restaurants, cafés, and bakeries in Chester and Montgomery counties, PA, with menus, hours, and ordering that are easy to find.",
     service="Restaurant website design", audience="Restaurants, cafés, and bakeries", crumb="Restaurants",
@@ -61,7 +61,7 @@ PAGES.append(dict(
 
 # ------------------------------------------------------------------ BREWERIES, WINERIES, DISTILLERIES (DRAFT)
 PAGES.append(dict(
-    slug="breweries-wineries-distilleries", nav_label="Brewery, winery, and distillery websites",
+    slug="breweries-wineries-distilleries", nav_label="Brewery, Winery &amp; Distillery Website Design",
     photos=dict(hero="images/breweries-hero.jpg", hero_pos="60% 40%",
                 band="images/breweries-band.jpg", band_pos="20% 55%",
                 process="images/breweries-process.jpg", process_pos="center 35%",
@@ -111,7 +111,7 @@ PAGES.append(dict(
 
 # ------------------------------------------------------------------ RETAIL (DRAFT)
 PAGES.append(dict(
-    slug="retail", nav_label="Shop websites",
+    slug="retail", nav_label="Retail &amp; Small Shop Website Design",
     photos=dict(hero="images/retail-hero.jpg", hero_pos="70% 45%",
                 band="images/retail-band.jpg", band_pos="42% 55%",
                 process="images/retail-process.jpg", process_pos="center 40%",
@@ -161,7 +161,7 @@ PAGES.append(dict(
 
 # ------------------------------------------------------------------ ATTRACTIONS & EVENTS (DRAFT)
 PAGES.append(dict(
-    slug="attractions-events", nav_label="Attraction and venue websites",
+    slug="attractions-events", nav_label="Attraction &amp; Event Venue Website Design",
     photos=dict(hub="images/attractions-hub.jpg", hero="images/attractions-hero.jpg", hero_pos="65% 40%",
                 band="images/attractions-band.jpg", band_pos="40% 55%",
                 process="images/attractions-process.jpg", process_pos="center 40%",
@@ -211,7 +211,7 @@ PAGES.append(dict(
 
 # ------------------------------------------------------------------ CONTRACTORS & HOME SERVICES (DRAFT)
 PAGES.append(dict(
-    slug="contractors-home-services", nav_label="Contractor and home service websites",
+    slug="contractors-home-services", nav_label="Contractor &amp; Home Services Website Design",
     photos=dict(hero="images/contractors-hero.jpg", hero_pos="55% 50%",
                 band="images/contractors-band.jpg", band_pos="0% 50%",
                 process="images/contractors-process.jpg", process_pos="center 40%",
@@ -261,7 +261,7 @@ PAGES.append(dict(
 
 # ------------------------------------------------------------------ PRESENTATIONS (DRAFT)
 PAGES.append(dict(
-    slug="presentations", nav_label="Interactive presentations",
+    slug="presentations", nav_label="Interactive Presentation Design",
     photos=dict(hero="images/presentations-hero.jpg", hero_pos="35% 40%",
                 band="images/presentations-band.jpg", band_pos="10% 40%",
                 process="images/presentations-process.jpg", process_pos="center 45%",

@@ -272,7 +272,8 @@ def build(p):
          "audience": {"@type": "BusinessAudience", "audienceType": p["audience"]}, "areaServed": area},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aja-design.com/"},
-            {"@type": "ListItem", "position": 2, "name": p["crumb"], "item": url}]},
+            {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://aja-design.com/services/"},
+            {"@type": "ListItem", "position": 3, "name": p["crumb"], "item": url}]},
         {"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": strip_tags(q), "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}}
             for q, a in p["faq"]]}]}
@@ -299,6 +300,9 @@ def build(p):
     pre = "Presentation" if p["slug"] == "presentations" else "Website design"
     rep["HELP_CHIPS"] = "\n".join('          <label><input type="checkbox" name="help" value="%s"%s><span>%s</span></label>' % (h, " checked" if h == pre else "", h) for h in helps)
     rep["MORE_LINKS"] = "\n".join('      <li><a href="/web-design/%s/">%s</a></li>' % (o["slug"], o["nav_label"]) for o in PAGES if o["slug"] != p["slug"])
+    rep["SITE_NAV"] = site_nav()
+    rep["SITE_FOOT"] = site_footer()
+    rep["FSVC_CSS"] = FOOTER_SVC_CSS.replace("footer ", "footer.site-foot ")
     for k, v in rep.items():
         s = s.replace("{{%s}}" % k, v)
     left = re.findall(r"\{\{[A-Z_0-9]+\}\}", s)
@@ -309,14 +313,60 @@ def build(p):
     return s
 
 
-HUB = """<!DOCTYPE html>
+INTRO = "I design websites, interactive presentations and digital graphics for businesses that want something more thoughtful, useful and unmistakably their own."
+GROUPS = [
+    ("Websites for local businesses",
+     "Responsive websites, redesigns and landing pages created around what your customers actually need to do.",
+     ["restaurants", "breweries-wineries-distilleries", "retail", "attractions-events", "contractors-home-services"]),
+    ("Interactive presentations",
+     "Pitch decks and browser-based presentations designed to work in the room and as a link afterward.",
+     ["presentations"]),
+    ("Digital graphics",
+     "Email graphics, social media templates and coordinated campaign visuals for launches, events and seasonal promotions.",
+     []),
+]
+
+
+def site_nav(prefix="/"):
+    """Main navigation used on every page. prefix is '/' everywhere except the home page, which uses '' for its own anchors."""
+    return ('<a href="%s#work">Work</a><a href="/services/">Services</a><a href="%s#about">About</a><a href="%s#contact">Contact</a>'
+            % (prefix, prefix, prefix))
+
+
+def footer_services():
+    links = "".join('<a href="/web-design/%s/">%s</a>' % (p["slug"], p["nav_label"]) for p in PAGES)
+    return '<nav class="fsvc" aria-label="Services"><a class="fsvc-h" href="/services/">Services</a>%s</nav>' % links
+
+
+FOOTER_SVC_CSS = """footer .fsvc{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem 1.1rem;padding-top:1rem;border-top:1px solid rgba(80,140,155,.2);font-size:.85rem}
+footer .fsvc a{text-decoration:none;color:var(--muted);font-weight:600}
+footer .fsvc a:hover{color:var(--sun)}
+footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}"""
+
+
+def site_footer(prefix="/"):
+    return """<footer class="site-foot">
+  <div class="wrap">
+    <span class="made">Made with care.</span>
+    <nav aria-label="Footer"><a href="%s#work">Work</a><a href="/services/">Services</a><a href="%s#about">About</a><a href="%s#contact">Contact</a><a href="https://www.linkedin.com/in/ajacramer/" rel="noopener">LinkedIn</a></nav>
+    <small>Aja Cramer Designs | Digital Designer</small>
+    %s
+  </div>
+</footer>""" % (prefix, prefix, prefix, footer_services())
+
+
+SERVICES = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Web Design for Local Businesses | Aja Cramer Designs</title>
-<meta name="description" content="Website and presentation design by Aja Cramer, a web designer based in Downingtown, PA.">
-<link rel="canonical" href="https://aja-design.com/web-design/">
+<title>Services | Aja Cramer Designs</title>
+<meta name="description" content="@@INTRO@@">
+<link rel="canonical" href="https://aja-design.com/services/">
+<meta property="og:title" content="Services | Aja Cramer Designs">
+<meta property="og:description" content="@@INTRO@@">
+<meta property="og:url" content="https://aja-design.com/services/">
+<meta property="og:site_name" content="Aja Cramer Designs">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
@@ -324,12 +374,16 @@ HUB = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+@@SCHEMA@@
+</script>
 <style>
   :root{--head:"League Spartan",system-ui,sans-serif;--body:"Instrument Sans",system-ui,sans-serif;--hand:"Caveat",cursive;
     --paper:#E7E3F1;--ink:#14132A;--navy:#201E43;--sun:#B69CFF;--teal:#508C9B;--blue:#134B70;--muted:#BFC6D6;--teal-light:#7FB5C2}
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--ink);color:var(--paper);font-family:var(--body);line-height:1.6;font-size:17px}
   a{color:inherit}
+  p,h1,h2,h3{text-wrap:pretty}
   .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
   .skip{position:absolute;left:-999px;top:.5rem;background:var(--sun);color:var(--ink);padding:.5rem 1rem;border-radius:6px;font-weight:600}
   .skip:focus{left:.5rem;z-index:50}
@@ -340,30 +394,38 @@ HUB = """<!DOCTYPE html>
   .logo:hover span{color:var(--teal-light)}
   .site-top nav{display:flex;gap:.3rem}
   .site-top nav a{text-decoration:none;font:600 1rem/1 var(--head);padding:.6rem .9rem;border-radius:999px;transition:background .2s,color .2s}
-  .site-top nav a:hover{background:var(--blue);color:var(--sun)}
-  .hub{padding:56px 0 30px}
+  .site-top nav a:hover,.site-top nav a[aria-current]{background:var(--blue);color:var(--sun)}
+  .hub{padding:56px 0 10px}
   .label{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light)}
-  h1{font-family:var(--head);font-weight:800;font-size:clamp(40px,5.4vw,64px);line-height:1.05;margin:12px 0 30px;text-wrap:balance}
+  h1{font-family:var(--head);font-weight:800;font-size:clamp(40px,5.4vw,64px);line-height:1.05;margin:12px 0 16px}
+  h1 em{font-style:normal;color:var(--sun)}
+  .intro{font-size:19px;max-width:40rem;margin-bottom:34px}
+  .group{padding:26px 0 30px;border-top:1px solid rgba(80,140,155,.3)}
+  .group-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:12px 40px;align-items:end;margin-bottom:20px}
+  .group h2{font-family:var(--head);font-weight:800;font-size:clamp(28px,3.2vw,38px);line-height:1.05}
+  .group-head p{color:var(--muted)}
   .cards{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-  .cards a{position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;gap:8px;height:100%;min-height:260px;text-decoration:none;background:var(--navy);border-radius:16px;padding:22px;border-top:4px solid var(--teal);
+  .cards a{position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;gap:8px;height:100%;min-height:240px;text-decoration:none;background:var(--navy);border-radius:16px;padding:22px;border-top:4px solid var(--teal);
     transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease}
   .cards a:before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg,none) center/cover no-repeat;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
   .cards a:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(32,30,67,.25) 0%,rgba(32,30,67,.72) 50%,rgba(26,24,56,.93) 100%)}
-  .cards h2,.cards p{text-shadow:0 1px 12px rgba(20,19,42,.7)}
-  .cards p{color:#D8DCE8}
   .cards li:nth-child(even) a{border-top-color:var(--sun)}
-  .cards h2{font-family:var(--head);font-size:22px;line-height:1.15}
-  .cards p{font-size:15px;color:var(--muted);text-wrap:pretty}
+  .cards h3{font-family:var(--head);font-size:22px;line-height:1.15;text-shadow:0 1px 12px rgba(20,19,42,.7)}
+  .cards p{font-size:15px;color:#D8DCE8;text-shadow:0 1px 12px rgba(20,19,42,.7)}
   .cards .go{margin-top:auto;font-family:"Space Mono";font-weight:700;font-size:12px;color:var(--sun)}
   @media (hover:hover){.cards a:hover{transform:translateY(-4px);box-shadow:0 18px 34px -16px rgba(80,140,155,.6)}.cards a:hover:before{transform:scale(1.06)}}
-  footer.site-foot{border-top:1px solid rgba(80,140,155,.4);padding:2rem 0 2.6rem;margin-top:40px}
+  .btn{display:inline-block;background:var(--sun);color:var(--ink);font:700 15px/1 var(--head);padding:15px 22px;border-radius:999px;text-decoration:none;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
+  @media (hover:hover){.btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px -10px rgba(182,156,255,.75)}}
+  footer.site-foot{border-top:1px solid rgba(80,140,155,.4);padding:2rem 0 2.6rem;margin-top:30px}
   footer.site-foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap}
   footer.site-foot .made{font:600 1.35rem/1 var(--hand);color:var(--sun)}
   footer.site-foot nav{display:flex;gap:1.25rem;flex-wrap:wrap}
   footer.site-foot nav a{text-decoration:none;color:var(--muted);font-weight:600}
   footer.site-foot nav a:hover{color:var(--sun)}
   footer.site-foot small{color:var(--muted);font-size:.9rem}
-  @media (max-width:560px){.site-top nav a{padding:.55rem .55rem;font-size:.95rem}.logo{font-size:18px}}
+  @@FSVC@@
+  @media (max-width:760px){.group-head{grid-template-columns:1fr}}
+  @media (max-width:560px){.site-top .wrap{padding:0 16px}.site-top nav{gap:0}.site-top nav a{padding:.42rem .26rem;font-size:.8rem}.site-top .logo,.logo{font-size:14px}}
 </style>
 </head>
 <body>
@@ -371,37 +433,51 @@ HUB = """<!DOCTYPE html>
 <header class="site-top">
   <div class="wrap">
     <a class="logo" href="/" aria-label="Aja Cramer Designs, home"><span>Aja</span>&nbsp;Cramer&nbsp;<span>Designs</span></a>
-    <nav aria-label="Main"><a href="/#work">Work</a><a href="/#about">About</a><a href="/#contact">Contact</a></nav>
+    <nav aria-label="Main">@@NAV@@</nav>
   </div>
 </header>
 <main id="main" class="hub">
   <div class="wrap">
     <div class="label">Based in Downingtown, PA</div>
-    <h1>Web design for local businesses</h1>
-    <ul class="cards">
-%s
-    </ul>
+    <h1>What can we make <em>together?</em></h1>
+    <p class="intro">@@INTRO@@</p>
+@@GROUPS@@
   </div>
 </main>
-<footer class="site-foot">
-  <div class="wrap">
-    <span class="made">Made with care.</span>
-    <nav aria-label="Footer"><a href="/#work">Work</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="https://www.linkedin.com/in/ajacramer/" rel="noopener">LinkedIn</a></nav>
-    <small>Aja Cramer Designs | Digital Designer</small>
-  </div>
-</footer>
+@@FOOTER@@
 </body>
 </html>
 """
 
 
-def build_hub():
+def build_services():
+    by = {p["slug"]: p for p in PAGES}
+
     def bg(p):
         u = img_url(p.get("photos", {}).get("hub") or p.get("photos", {}).get("hero"))
         return ' style="--bg:%s"' % u.replace('"', "'") if u else ""
-    cards = "\n".join('      <li><a href="/web-design/%s/"%s><h2>%s</h2><p>%s</p><span class="go">See the page →</span></a></li>'
-                      % (p["slug"], bg(p), p["nav_label"], html.escape(p["meta"])) for p in PAGES)
-    return HUB.replace("%s", cards, 1)
+    out = []
+    for title, desc, slugs in GROUPS:
+        body = ""
+        if slugs:
+            body = '      <ul class="cards">\n' + "\n".join(
+                '        <li><a href="/web-design/%s/"%s><h3>%s</h3><p>%s</p><span class="go">See the page →</span></a></li>'
+                % (s, bg(by[s]), by[s]["nav_label"], html.escape(by[s]["meta"])) for s in slugs) + "\n      </ul>"
+        else:
+            body = '      <a class="btn" href="/#contact">Start the conversation</a>'
+        out.append('    <section class="group">\n      <div class="group-head"><h2>%s</h2><p>%s</p></div>\n%s\n    </section>' % (title, desc, body))
+    schema = {"@context": "https://schema.org", "@graph": [
+        {"@type": "CollectionPage", "name": "Services", "url": "https://aja-design.com/services/",
+         "about": {"@id": "https://aja-design.com/#business"},
+         "hasPart": [{"@type": "WebPage", "name": strip_tags(p["nav_label"]), "url": "https://aja-design.com/web-design/%s/" % p["slug"]} for p in PAGES]},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aja-design.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://aja-design.com/services/"}]}]}
+    s = SERVICES
+    for k, v in {"INTRO": INTRO, "SCHEMA": json.dumps(schema, ensure_ascii=False, indent=2), "FSVC": FOOTER_SVC_CSS.replace("footer ", "footer.site-foot "),
+                 "NAV": site_nav().replace('<a href="/services/">', '<a href="/services/" aria-current="page">'), "GROUPS": "\n".join(out), "FOOTER": site_footer()}.items():
+        s = s.replace("@@%s@@" % k, v)
+    return s
 
 
 if __name__ == "__main__":
@@ -418,8 +494,18 @@ if __name__ == "__main__":
                     from PIL import Image
                     src = os.path.join(HERE, p["photos"][k])
                     Image.open(src).save(os.path.join(imgdir, os.path.basename(src).replace(".jpg", ".webp")), "WEBP", quality=74, method=6)
-        open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(build_hub())
-        print("built", os.path.join(out, "index.html"))
+        # keep the footer services list on the hand-built pages (home, case studies) in sync
+        import glob
+        for f in glob.glob(os.path.join(site, "*.html")):
+            s = open(f, encoding="utf-8").read()
+            s2 = re.sub(r'<nav class="fsvc".*?</nav>', lambda m: footer_services(), s, flags=re.S)
+            if s2 != s:
+                open(f, "w", encoding="utf-8").write(s2)
+        os.makedirs(os.path.join(site, "services"), exist_ok=True)
+        open(os.path.join(site, "services", "index.html"), "w", encoding="utf-8").write(build_services())
+        print("built", os.path.join(site, "services", "index.html"))
+        if os.path.exists(os.path.join(out, "index.html")):
+            os.remove(os.path.join(out, "index.html"))
     for p in PAGES:
         fn = os.path.join(out, ("%s/index.html" % p["slug"]) if REPO else "web-design-%s.html" % p["slug"])
         os.makedirs(os.path.dirname(fn), exist_ok=True)

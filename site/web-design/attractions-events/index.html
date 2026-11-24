@@ -77,6 +77,12 @@
         {
           "@type": "ListItem",
           "position": 2,
+          "name": "Services",
+          "item": "https://aja-design.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
           "name": "Attractions & Events",
           "item": "https://aja-design.com/web-design/attractions-events/"
         }
@@ -377,7 +383,7 @@
   .site-top nav{display:flex;gap:.3rem}
   .site-top nav a{text-decoration:none;font:600 1rem/1 var(--head);padding:.6rem .9rem;border-radius:999px;transition:background .2s,color .2s}
   .site-top nav a:hover{background:var(--blue);color:var(--sun)}
-  @media (max-width:560px){.site-top nav a{padding:.55rem .55rem;font-size:.95rem}.site-top .logo{font-size:18px}}
+  @media (max-width:560px){.site-top .wrap{padding:0 16px}.site-top nav{gap:0}.site-top nav a{padding:.42rem .26rem;font-size:.8rem}.site-top .logo,.logo{font-size:14px}}
   footer.site-foot{border-top:1px solid rgba(80,140,155,.4);padding:2rem 0 2.6rem;font-family:var(--body);font-size:inherit}
   footer.site-foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap}
   footer.site-foot .made{font:600 1.35rem/1 var(--hand);color:var(--sun)}
@@ -385,6 +391,10 @@
   footer.site-foot nav a{text-decoration:none;color:var(--muted);font-weight:600}
   footer.site-foot nav a:hover{color:var(--sun)}
   footer.site-foot small{color:var(--muted);font-size:.9rem}
+  footer.site-foot .fsvc{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem 1.1rem;padding-top:1rem;border-top:1px solid rgba(80,140,155,.2);font-size:.85rem}
+footer.site-foot .fsvc a{text-decoration:none;color:var(--muted);font-weight:600}
+footer.site-foot .fsvc a:hover{color:var(--sun)}
+footer.site-foot .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
 
   /* ===== animation ===== */
   /* 1. hero photo drift + headline words */
@@ -431,11 +441,7 @@
 <header class="site-top">
   <div class="wrap">
     <a class="logo" href="/" aria-label="Aja Cramer Designs, home"><span>Aja</span>&nbsp;Cramer&nbsp;<span>Designs</span></a>
-    <nav aria-label="Main">
-      <a href="/#work">Work</a>
-      <a href="/#about">About</a>
-      <a href="/#contact">Contact</a>
-    </nav>
+    <nav aria-label="Main"><a href="/#work">Work</a><a href="/services/">Services</a><a href="/#about">About</a><a href="/#contact">Contact</a></nav>
   </div>
 </header>
 
@@ -584,11 +590,11 @@
   <div class="wrap">
     <h2>Looking for something else?</h2>
     <ul class="more-links">
-      <li><a href="/web-design/restaurants/">Restaurant websites</a></li>
-      <li><a href="/web-design/breweries-wineries-distilleries/">Brewery, winery, and distillery websites</a></li>
-      <li><a href="/web-design/retail/">Shop websites</a></li>
-      <li><a href="/web-design/contractors-home-services/">Contractor and home service websites</a></li>
-      <li><a href="/web-design/presentations/">Interactive presentations</a></li>
+      <li><a href="/web-design/restaurants/">Restaurant Website Design</a></li>
+      <li><a href="/web-design/breweries-wineries-distilleries/">Brewery, Winery &amp; Distillery Website Design</a></li>
+      <li><a href="/web-design/retail/">Retail &amp; Small Shop Website Design</a></li>
+      <li><a href="/web-design/contractors-home-services/">Contractor &amp; Home Services Website Design</a></li>
+      <li><a href="/web-design/presentations/">Interactive Presentation Design</a></li>
     </ul>
   </div>
 </section>
@@ -598,8 +604,9 @@
 <footer class="site-foot">
   <div class="wrap">
     <span class="made">Made with care.</span>
-    <nav aria-label="Footer"><a href="/#work">Work</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="https://www.linkedin.com/in/ajacramer/" rel="noopener">LinkedIn</a></nav>
+    <nav aria-label="Footer"><a href="/#work">Work</a><a href="/services/">Services</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="https://www.linkedin.com/in/ajacramer/" rel="noopener">LinkedIn</a></nav>
     <small>Aja Cramer Designs | Digital Designer</small>
+    <nav class="fsvc" aria-label="Services"><a class="fsvc-h" href="/services/">Services</a><a href="/web-design/restaurants/">Restaurant Website Design</a><a href="/web-design/breweries-wineries-distilleries/">Brewery, Winery &amp; Distillery Website Design</a><a href="/web-design/retail/">Retail &amp; Small Shop Website Design</a><a href="/web-design/attractions-events/">Attraction &amp; Event Venue Website Design</a><a href="/web-design/contractors-home-services/">Contractor &amp; Home Services Website Design</a><a href="/web-design/presentations/">Interactive Presentation Design</a></nav>
   </div>
 </footer>
 

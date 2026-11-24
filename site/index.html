@@ -650,7 +650,35 @@ a:hover .wgo::after,a:focus-visible .wgo::after{transform:translateX(5px)}
 .motion .dk .dkno{opacity:0;transform:rotate(-2deg) translateY(10px);transition:opacity .6s ease .9s,transform .7s cubic-bezier(.2,.8,.2,1) .9s}
 .motion .dk.in .dkno{opacity:1;transform:rotate(-2deg)}
 @media (max-width:800px){.dkm{order:-1}.dkno{font-size:1.2rem}}
-/*/DECK*/</style>
+/*/DECK*/
+/* services (before work) */
+.svc{padding-bottom:0}
+.svc .sec-head{margin-bottom:clamp(1.8rem,3.5vw,2.6rem)}
+.svc-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:1rem}
+.svc-card{display:flex;flex-direction:column;gap:.7rem;padding:clamp(1.3rem,2.4vw,1.8rem);border-radius:24px;background:rgba(20,19,42,.45);box-shadow:inset 0 0 0 1.5px rgba(80,140,155,.45);position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.svc-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--teal)}
+.svc-card:nth-child(2):before{background:var(--sun)}
+.svc-card h3{margin:0;font:800 clamp(1.35rem,2.2vw,1.65rem)/1.1 var(--head);letter-spacing:-.02em;text-wrap:balance}
+.svc-card>p{margin:0;color:var(--muted);text-wrap:pretty}
+.svc-links{list-style:none;margin:.3rem 0 0;padding:0;display:grid;gap:.15rem}
+.svc-links a{display:inline-flex;gap:.45rem;align-items:baseline;text-decoration:none;font:600 .98rem/1.35 var(--body);color:var(--paper);padding:.3rem 0;background:linear-gradient(var(--sun),var(--sun)) left bottom/0 1.5px no-repeat;transition:background-size .3s,color .2s}
+.svc-links a:after{content:"\2192";color:var(--sun);transition:transform .25s}
+.svc-links a:hover{color:var(--sun);background-size:100% 1.5px}
+.svc-links a:hover:after{transform:translateX(4px)}
+@media (hover:hover){.svc-card:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1.5px var(--teal),0 18px 34px -18px rgba(80,140,155,.7)}}
+.svc-btn{margin-top:clamp(1.4rem,3vw,2rem)}
+@media (max-width:980px){.svc-grid{grid-template-columns:1fr 1fr}.svc-card:first-child{grid-column:1/-1}}
+@media (max-width:620px){.svc-grid{grid-template-columns:1fr}}
+
+/* phones: room for four nav links */
+@media (max-width:560px){.top .logo{font-size:1.12rem;white-space:nowrap}.top nav{gap:0}.top nav a{padding:.45rem .34rem;font-size:.84rem}}
+
+/* footer services list */
+footer .fsvc{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem 1.1rem;padding-top:1rem;border-top:1px solid rgba(80,140,155,.2);font-size:.85rem}
+footer .fsvc a{text-decoration:none;color:var(--muted);font-weight:600}
+footer .fsvc a:hover{color:var(--sun)}
+footer .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+</style>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -779,6 +807,7 @@ a:hover .wgo::after,a:focus-visible .wgo::after{transform:translateX(5px)}
     <a class="logo" href="#top" aria-label="Aja Cramer, home">Aja Cramer<i aria-hidden="true"></i></a>
     <nav aria-label="Main">
       <a href="#work">Work</a>
+      <a href="/services/">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -819,6 +848,40 @@ a:hover .wgo::after,a:focus-visible .wgo::after{transform:translateX(5px)}
             </div>
           </figure>
       </div>
+    </div>
+  </section>
+
+  <section class="sec svc" id="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="svc-h">What can we make <span class="spot">together?</span></h2>
+        <p>I design websites, interactive presentations and digital graphics for businesses that want something more thoughtful, useful and unmistakably their own.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <h3>Websites for local businesses</h3>
+          <p>Responsive websites, redesigns and landing pages created around what your customers actually need to do.</p>
+          <ul class="svc-links">
+            <li><a href="/web-design/restaurants/">Restaurant Website Design</a></li>
+            <li><a href="/web-design/breweries-wineries-distilleries/">Brewery, Winery &amp; Distillery Website Design</a></li>
+            <li><a href="/web-design/retail/">Retail &amp; Small Shop Website Design</a></li>
+            <li><a href="/web-design/attractions-events/">Attraction &amp; Event Venue Website Design</a></li>
+            <li><a href="/web-design/contractors-home-services/">Contractor &amp; Home Services Website Design</a></li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <h3>Interactive presentations</h3>
+          <p>Pitch decks and browser-based presentations designed to work in the room and as a link afterward.</p>
+          <ul class="svc-links">
+            <li><a href="/web-design/presentations/">Interactive Presentation Design</a></li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <h3>Digital graphics</h3>
+          <p>Email graphics, social media templates and coordinated campaign visuals for launches, events and seasonal promotions.</p>
+        </div>
+      </div>
+      <a class="btn svc-btn" href="/services/">Explore all services <span aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
 
@@ -947,9 +1010,10 @@ a:hover .wgo::after,a:focus-visible .wgo::after{transform:translateX(5px)}
 <footer>
   <div class="wrap">
     <nav aria-label="Footer">
-      <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a><a href="https://www.linkedin.com/in/ajacramer/" rel="noopener">LinkedIn</a>
+      <a href="#work">Work</a><a href="/services/">Services</a><a href="#about">About</a><a href="#contact">Contact</a><a href="https://www.linkedin.com/in/ajacramer/" rel="noopener">LinkedIn</a>
     </nav>
     <small>Aja Cramer Designs | Digital Designer</small>
+    <nav class="fsvc" aria-label="Services"><a class="fsvc-h" href="/services/">Services</a><a href="/web-design/restaurants/">Restaurant Website Design</a><a href="/web-design/breweries-wineries-distilleries/">Brewery, Winery &amp; Distillery Website Design</a><a href="/web-design/retail/">Retail &amp; Small Shop Website Design</a><a href="/web-design/attractions-events/">Attraction &amp; Event Venue Website Design</a><a href="/web-design/contractors-home-services/">Contractor &amp; Home Services Website Design</a><a href="/web-design/presentations/">Interactive Presentation Design</a></nav>
   </div>
 </footer>
 
@@ -1242,6 +1306,9 @@ if(!calm){
         const sh = fx(s,{left:(b.x+b.w/2-sz/2)+"px",top:(b.y+b.h/2-sz/2)+"px",width:sz+"px",height:sz+"px",background:i%2?TEAL:"rgba(80,140,155,.6)",borderRadius:kind==="polygon"?"0":kind,clipPath:kind==="polygon"?"polygon(50% 0,100% 100%,0 100%)":"none"});
         anim(sh,[{transform:`rotate(${rnd(-90,90)}deg) scale(0)`,opacity:0},{transform:"rotate(0) scale(1.1)",opacity:1,offset:.4},{transform:"scale(1)",opacity:1,offset:.6},{transform:"scale(.2)",opacity:0}],{duration:1300,delay:i*80,easing:"cubic-bezier(.3,1.4,.5,1)"});
         anim(c,[{opacity:0,transform:"scale(.3)"},{opacity:0,transform:"scale(.3)",offset:.55},{opacity:1,transform:"scale(1.15)",offset:.8},{opacity:1,transform:"none"}],{duration:1300,delay:i*80}); }); },
+    "together?": (s, L) => { L.forEach((c,i) => anim(c,[{transform:"translateY(.6em) scale(.4)",opacity:0},{transform:"translateY(-.12em) scale(1.12)",opacity:1,offset:.6},{transform:"none",opacity:1}],{duration:620,delay:i*55,easing:"cubic-bezier(.3,1.4,.5,1)"}));
+      setTimeout(() => { const b = plain(s).box(s); for(let n=0;n<10;n++){ const d = fx(s,{left:rnd(0,b.w)+"px",top:rnd(-10,b.h)+"px",width:"9px",height:"9px",borderRadius:"50%",background:n%2?TEAL:LIL});
+        anim(d,[{transform:"scale(0)",opacity:1},{transform:`translate(${rnd(-40,40)}px,${rnd(-50,-10)}px) scale(1)`,opacity:1,offset:.5},{transform:`translate(${rnd(-60,60)}px,${rnd(-80,-30)}px) scale(.2)`,opacity:0}],{duration:900,easing:"ease-out"}); } }, L.length*55+300); },
     "me.": (s, L) => { L.forEach((c,i) => anim(c,[{transform:"translateY(-120%) rotate(-12deg)",opacity:0},{transform:"translateY(0)",opacity:1,offset:.55,easing:"ease-out"},{transform:"translateY(-22%)",offset:.75,easing:"ease-in"},{transform:"none",opacity:1}],{duration:900,delay:i*110,easing:"linear"}));
     },
     "good.": (s, L) => { anim(s,[{transform:"scale(0,0)"},{transform:"scale(1.25,.75)",offset:.3},{transform:"scale(.85,1.15)",offset:.45},{transform:"scale(1.08,.94)",offset:.6},{transform:"none"}],{duration:900,easing:"ease-out"});

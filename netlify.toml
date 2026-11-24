@@ -1,3 +1,14 @@
 [build]
   publish = "site"
   command = ""
+
+# The landing page hub moved to /services/
+[[redirects]]
+  from = "/web-design"
+  to = "/services/"
+  status = 301
+
+[[redirects]]
+  from = "/web-design/"
+  to = "/services/"
+  status = 301
