@@ -7,6 +7,7 @@
 import base64, json, os, re, sys, html
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pages import PAGES
+import menu
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = "--repo" in sys.argv
@@ -502,12 +503,12 @@ if __name__ == "__main__":
             if s2 != s:
                 open(f, "w", encoding="utf-8").write(s2)
         os.makedirs(os.path.join(site, "services"), exist_ok=True)
-        open(os.path.join(site, "services", "index.html"), "w", encoding="utf-8").write(build_services())
+        open(os.path.join(site, "services", "index.html"), "w", encoding="utf-8").write(menu.apply(build_services()))
         print("built", os.path.join(site, "services", "index.html"))
         if os.path.exists(os.path.join(out, "index.html")):
             os.remove(os.path.join(out, "index.html"))
     for p in PAGES:
         fn = os.path.join(out, ("%s/index.html" % p["slug"]) if REPO else "web-design-%s.html" % p["slug"])
         os.makedirs(os.path.dirname(fn), exist_ok=True)
-        open(fn, "w", encoding="utf-8").write(build(p))
+        open(fn, "w", encoding="utf-8").write(menu.apply(build(p)))
         print("built", fn)

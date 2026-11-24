@@ -431,6 +431,26 @@ footer.site-foot .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14e
     .steps .n{opacity:1 !important}
     .rot .ch{opacity:1 !important;transform:none !important;filter:none !important}
   }
+
+/* mobile menu */
+.menu-btn{display:none}
+@media (max-width:640px){
+  header.top .wrap,header.site-top .wrap{position:relative}
+  .menu-btn{display:grid;place-content:center;gap:5px;width:44px;height:44px;margin-right:-8px;border:0;border-radius:12px;background:transparent;color:var(--paper);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .menu-btn span{display:block;width:22px;height:2.5px;border-radius:2px;background:currentColor;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
+  .menu-btn:focus-visible{outline:2px solid var(--sun);outline-offset:2px}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  header.top nav#main-nav,header.site-top nav#main-nav{position:absolute;top:100%;left:0;right:0;display:flex;flex-direction:column;gap:.15rem;
+    padding:.6rem var(--gutter,16px) 1.1rem;background:rgba(32,30,67,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(80,140,155,.4);box-shadow:0 18px 30px -18px rgba(20,19,42,.9);
+    visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .25s ease,transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s .3s}
+  .menu-open nav#main-nav{visibility:visible!important;opacity:1!important;transform:none!important;transition:opacity .25s ease,transform .3s cubic-bezier(.2,.8,.2,1)!important}
+  header.top nav#main-nav a,header.site-top nav#main-nav a{font:700 1.35rem/1 var(--head)!important;padding:.85rem .9rem!important;border-radius:14px}
+  header.top nav#main-nav a[aria-current],header.site-top nav#main-nav a[aria-current]{background:var(--blue);color:var(--sun)}
+}
+@media (max-width:640px) and (prefers-reduced-motion:reduce){.menu-btn span,nav#main-nav{transition:none!important}}
 </style>
 </head>
 <body>
@@ -441,7 +461,8 @@ footer.site-foot .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14e
 <header class="site-top">
   <div class="wrap">
     <a class="logo" href="/" aria-label="Aja Cramer Designs, home"><span>Aja</span>&nbsp;Cramer&nbsp;<span>Designs</span></a>
-    <nav aria-label="Main"><a href="/#work">Work</a><a href="/services/">Services</a><a href="/#about">About</a><a href="/#contact">Contact</a></nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav aria-label="Main" id="main-nav"><a href="/#work">Work</a><a href="/services/">Services</a><a href="/#about">About</a><a href="/#contact">Contact</a></nav>
   </div>
 </header>
 
@@ -559,7 +580,10 @@ footer.site-foot .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14e
         <label><span>Name</span><input name="name" autocomplete="name" required></label>
         <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
       </div>
-      <label><span>Business or organization</span><input name="organization" autocomplete="organization" required></label>
+      <div class="f2">
+        <label><span>Phone</span><input type="tel" name="phone" autocomplete="tel" required></label>
+        <label><span>Business or organization</span><input name="organization" autocomplete="organization" required></label>
+      </div>
       <fieldset><legend>What can I help with?</legend>
         <div class="chipset">
           <label><input type="checkbox" name="help" value="Website design" checked><span>Website design</span></label>
@@ -572,7 +596,7 @@ footer.site-foot .fsvc .fsvc-h{font:700 .72rem/1 var(--head);letter-spacing:.14e
       </fieldset>
       <div class="f2">
         <label><span>Timeline</span><select name="timeline" required><option value="">Choose one</option><option>As soon as possible</option><option>Within a month</option><option>1 to 3 months</option><option>Just exploring</option></select></label>
-        <label><span>Budget</span><input name="budget" placeholder="e.g. $1000 or a range" required></label>
+        <label><span>Budget</span><input name="budget" placeholder="Optional, e.g. $1000"></label>
       </div>
       <label><span>Tell me about your project</span><textarea name="message" rows="4" required placeholder="What you're hoping to make, and anything I should know."></textarea></label>
       <button class="btn" type="submit">Start the conversation</button>
@@ -786,9 +810,18 @@ const done=()=>{const ok=document.getElementById("cdone"),kids=[...f.children].f
   Promise.all(outs.map(a=>a.finished)).then(show);};
   const sb=f.querySelector("button[type=submit]");
 sb.disabled=true;sb.textContent="Sending…";if(!/aja-design\.com$|netlify\.app$/.test(location.hostname)){done();return}try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(d).toString()});if(r.ok){done();return}}catch(e){}
-const L=[["Name",d.get("name")],["Email",d.get("email")],["Organization",d.get("organization")],["Help with",d.getAll("help").join(", ")],["Timeline",d.get("timeline")],["Budget",d.get("budget")],["",""],["",d.get("message")]];
+const L=[["Name",d.get("name")],["Email",d.get("email")],["Phone",d.get("phone")],["Organization",d.get("organization")],["Help with",d.getAll("help").join(", ")],["Timeline",d.get("timeline")],["Budget",d.get("budget")],["",""],["",d.get("message")]];
 location.href="mailto:ajacramer@gmail.com?subject="+encodeURIComponent(d.get("subject"))+"&body="+encodeURIComponent(L.map(([k,v])=>k?k+": "+(v||"-"):v).join("\n"));done();});})();
 </script>
 
+<script>
+(()=>{const h=document.querySelector("header.top,header.site-top"),b=h&&h.querySelector(".menu-btn"),n=document.getElementById("main-nav");if(!b||!n)return;
+const set=o=>{h.classList.toggle("menu-open",o);b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu");};
+b.addEventListener("click",e=>{e.stopPropagation();set(!h.classList.contains("menu-open"));if(h.classList.contains("menu-open"))n.querySelector("a").focus({preventScroll:true});});
+n.addEventListener("click",e=>{if(e.target.closest("a"))set(false);});
+document.addEventListener("click",e=>{if(!h.contains(e.target))set(false);});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&h.classList.contains("menu-open")){set(false);b.focus();}});
+addEventListener("resize",()=>{if(innerWidth>640)set(false);});})();
+</script>
 </body>
 </html>

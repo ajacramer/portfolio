@@ -396,7 +396,10 @@
         <label><span>Name</span><input name="name" autocomplete="name" required></label>
         <label><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
       </div>
-      <label><span>Business or organization</span><input name="organization" autocomplete="organization" required></label>
+      <div class="f2">
+        <label><span>Phone</span><input type="tel" name="phone" autocomplete="tel" required></label>
+        <label><span>Business or organization</span><input name="organization" autocomplete="organization" required></label>
+      </div>
       <fieldset><legend>What can I help with?</legend>
         <div class="chipset">
 {{HELP_CHIPS}}
@@ -404,7 +407,7 @@
       </fieldset>
       <div class="f2">
         <label><span>Timeline</span><select name="timeline" required><option value="">Choose one</option><option>As soon as possible</option><option>Within a month</option><option>1 to 3 months</option><option>Just exploring</option></select></label>
-        <label><span>Budget</span><input name="budget" placeholder="e.g. $1000 or a range" required></label>
+        <label><span>Budget</span><input name="budget" placeholder="Optional, e.g. $1000"></label>
       </div>
       <label><span>Tell me about your project</span><textarea name="message" rows="4" required placeholder="What you're hoping to make, and anything I should know."></textarea></label>
       <button class="btn" type="submit">{{FORM_BTN}}</button>
@@ -574,7 +577,7 @@ const done=()=>{const ok=document.getElementById("cdone"),kids=[...f.children].f
   Promise.all(outs.map(a=>a.finished)).then(show);};
   const sb=f.querySelector("button[type=submit]");
 sb.disabled=true;sb.textContent="Sending…";if(!/aja-design\.com$|netlify\.app$/.test(location.hostname)){done();return}try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(d).toString()});if(r.ok){done();return}}catch(e){}
-const L=[["Name",d.get("name")],["Email",d.get("email")],["Organization",d.get("organization")],["Help with",d.getAll("help").join(", ")],["Timeline",d.get("timeline")],["Budget",d.get("budget")],["",""],["",d.get("message")]];
+const L=[["Name",d.get("name")],["Email",d.get("email")],["Phone",d.get("phone")],["Organization",d.get("organization")],["Help with",d.getAll("help").join(", ")],["Timeline",d.get("timeline")],["Budget",d.get("budget")],["",""],["",d.get("message")]];
 location.href="mailto:ajacramer@gmail.com?subject="+encodeURIComponent(d.get("subject"))+"&body="+encodeURIComponent(L.map(([k,v])=>k?k+": "+(v||"-"):v).join("\n"));done();});})();
 </script>
 

@@ -64,7 +64,7 @@ Read this before changing anything on the site. It records how the site is built
   - To test in the browser console: `eclipseNow()`, `howlNow()`, `auroraNow()`, `summonUFO()`.
   - The moon's glow is allowed to spill outside the card.
 - **Contact form**
-  - It's a Netlify Form named `work-with-me`, and every field is required.
+  - It's a Netlify Form named `work-with-me`. Fields: name, email, phone, business or organization, what can I help with, timeline, budget, message. Every field is required except budget.
   - A hidden `subject` field makes the notification email read `**NEW DESIGN SUBMISSION** from [name]`. Keep the stars.
   - After sending, the thank-you sequence plays: a paper plane, a checkmark and the text "Thanks!".
 - **Tall screenshots** are split into tiles no taller than 1600px, because browsers drop very tall images.
