@@ -304,6 +304,7 @@ def build(p):
     rep["SITE_NAV"] = site_nav()
     rep["SITE_FOOT"] = site_footer()
     rep["FSVC_CSS"] = FOOTER_SVC_CSS.replace("footer ", "footer.site-foot ")
+    rep["HOME_CSS"] = HOME_MATCH_CSS
     for k, v in rep.items():
         s = s.replace("{{%s}}" % k, v)
     left = re.findall(r"\{\{[A-Z_0-9]+\}\}", s)
@@ -356,6 +357,27 @@ def site_footer(prefix="/"):
 </footer>""" % (prefix, prefix, prefix, footer_services())
 
 
+HOME_MATCH_CSS = """
+  /* ===== match the home page: dotted navy background, buttons, cards ===== */
+  body{background:var(--navy) radial-gradient(rgba(182,156,255,.14) .7px,transparent 1px) 0 0/9px 9px}
+  :focus-visible{outline:3px solid var(--sun);outline-offset:4px;border-radius:6px}
+  h1,h2,h3{font-weight:800;letter-spacing:-.02em}
+  section h2,.group h2{letter-spacing:-.03em}
+  section,.group{border-top:0}
+  .btn{transition:transform .2s cubic-bezier(.3,1.6,.5,1),box-shadow .2s}
+  .btn:after{display:none}
+  .btn:active{transform:translateY(-1px) scale(.97)}
+  @media (hover:hover){.btn:hover{transform:translateY(-3px) rotate(-1.5deg);background-color:var(--sun);box-shadow:0 10px 0 -2px var(--teal)}}
+  .tile{position:relative;overflow:hidden;border-top:0;border-radius:24px;background:rgba(20,19,42,.45);box-shadow:inset 0 0 0 1.5px rgba(80,140,155,.45)}
+  .tile:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--teal)}
+  .promo-grid .tile:before{background:var(--sun)}
+  .tile.in:hover{box-shadow:inset 0 0 0 1.5px rgba(182,156,255,.7),0 18px 34px -16px rgba(10,8,30,.7)}
+  .cards a{border-radius:24px}
+  .more-links a{border:0;box-shadow:inset 0 0 0 1.5px rgba(80,140,155,.6);font-weight:600;transition:box-shadow .2s,color .2s,transform .2s}
+  .more-links a:hover{box-shadow:inset 0 0 0 1.5px var(--sun);color:var(--sun)}
+  details{border-bottom-color:rgba(80,140,155,.25)}
+"""
+
 SERVICES = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -372,9 +394,9 @@ SERVICES = """<!DOCTYPE html>
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <meta name="theme-color" content="#201E43">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/league-spartan.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'League Spartan';src:url(/fonts/league-spartan.woff2) format('woff2');font-weight:300 900;font-style:normal;font-display:swap}@font-face{font-family:'Instrument Sans';src:url(/fonts/instrument-sans.woff2) format('woff2');font-weight:400 600;font-style:normal;font-display:swap}@font-face{font-family:'Instrument Sans';src:url(/fonts/instrument-sans-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}@font-face{font-family:'Caveat';src:url(/fonts/caveat-600.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap}</style>
 <script type="application/ld+json">
 @@SCHEMA@@
 </script>
@@ -428,6 +450,7 @@ SERVICES = """<!DOCTYPE html>
   @@FSVC@@
   @media (max-width:760px){.group-head{grid-template-columns:1fr}}
   @media (max-width:560px){.site-top .wrap{padding:0 16px}.site-top nav{gap:0}.site-top nav a{padding:.42rem .26rem;font-size:.8rem}.site-top .logo,.logo{font-size:14px}}
+  @@HOME@@
 </style>
 </head>
 <body>
@@ -478,7 +501,7 @@ def build_services():
             {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://aja-design.com/services/"}]}]}
     s = SERVICES
     for k, v in {"INTRO": INTRO, "SCHEMA": json.dumps(schema, ensure_ascii=False, indent=2), "FSVC": FOOTER_SVC_CSS.replace("footer ", "footer.site-foot "),
-                 "NAV": site_nav().replace('<a href="/services/">', '<a href="/services/" aria-current="page">'), "GROUPS": "\n".join(out), "FOOTER": site_footer()}.items():
+                 "NAV": site_nav().replace('<a href="/services/">', '<a href="/services/" aria-current="page">'), "GROUPS": "\n".join(out), "FOOTER": site_footer(), "HOME": HOME_MATCH_CSS}.items():
         s = s.replace("@@%s@@" % k, v)
     return s
 

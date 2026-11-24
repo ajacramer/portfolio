@@ -54,6 +54,8 @@ Read this before changing anything on the site. It records how the site is built
 - League Spartan for headings, Instrument Sans for body text, Space Mono for labels, Caveat for handwritten notes.
 - The services page and landing pages never use Space Mono (Aja dislikes it there). Buttons, labels and small links on those pages use League Spartan, and buttons match the home page button (League Spartan 700, 1.05rem).
 - Each hero word has its own display font.
+- **Self-hosted fonts:** League Spartan, Instrument Sans (plus italic), Caveat and Space Mono live in `site/fonts/` as Latin-subset WOFF2 files (OFL licenses alongside). Every page declares them in an inline `<style>` with `@font-face` and preloads League Spartan and Instrument Sans. Space Mono is declared only on the home page. Don't add Google Fonts links for these four. Netlify caches `/fonts/*` for a year, so if a font file ever changes, give it a new file name.
+- Case studies still load their font-pairing showcase fonts (Playfair, Lato, etc.) from Google, without holding up the page.
 
 ## Things that are easy to break
 - **Hero "Bringing a little ___ back to the internet."** The words rotate, and each has its own font and animation. Each word waits for its font to load before it animates. Without that, "intention" lines up wrong on phones. Avoid `steps()` easing with `fill`, because Safari can freeze it partway.
@@ -69,7 +71,7 @@ Read this before changing anything on the site. It records how the site is built
   - A hidden `subject` field makes the notification email read `**NEW DESIGN SUBMISSION** from [name]`. Keep the stars.
   - After sending, the thank-you sequence plays: a paper plane, a checkmark and the text "Thanks!".
 - **Tall screenshots** are split into tiles no taller than 1600px, because browsers drop very tall images.
-- **Hero word fonts load lazily.** The second Google Fonts link in `index.html` holds only the rotating-word fonts and uses `&text=` so each file contains just the lowercase letters (plus the dotless ı in "humanıty"). If a word ever needs other characters (capitals, punctuation), add them to `text=`. The script preloads the first two words, then always the next one (`preload()`), plus the extra fonts "weirdness" flicks through. Space Mono, League Spartan, Instrument Sans and Caveat load in full from the first link.
+- **Hero word fonts load lazily.** The second Google Fonts link in `index.html` holds only the rotating-word fonts and uses `&text=` so each file contains just the lowercase letters (plus the dotless ı in "humanıty"). If a word ever needs other characters (capitals, punctuation), add them to `text=`. The script preloads the first two words, then always the next one (`preload()`), plus the extra fonts "weirdness" flicks through. League Spartan, Instrument Sans, Caveat and Space Mono are self-hosted (see Fonts below); only the hero word fonts come from Google.
 - **Images** carry `width`/`height` (their real pixel size) so nothing jumps while loading, and `:where(img[width][height]){height:auto}` keeps CSS in charge of display size. Images below the first screen have `loading="lazy" decoding="async"`. The before/after slider images on the renewal and sign-up pages size from their height, so they have no `width`/`height`.
 - **Canonical URLs:** every page has `<link rel="canonical">` pointing at its own full URL (`https://aja-design.com/` for the home page, `https://aja-design.com/<page>.html` for project pages).
 
